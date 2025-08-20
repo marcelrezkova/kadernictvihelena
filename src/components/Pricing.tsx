@@ -64,53 +64,6 @@ const Pricing: React.FC = () => {
     }
   ];
 
-  const packages = [
-    {
-      name: 'Svatební balíček',
-      price: '6.500 Kč',
-      originalPrice: '7.800 Kč',
-      description: 'Kompletní příprava nevěsty pro ten nejkrásnější den',
-      features: [
-        'Konzultace a plánování',
-        'Zkouška svatebního makeupu',
-        'Zkouška svatebního účesu',
-        'Svatební den - makeup a účes',
-        'Kosmetické ošetření před svatbou',
-        'Manikúra',
-        'Fotografování výsledku'
-      ],
-      popular: true
-    },
-    {
-      name: 'VIP Proměna',
-      price: '4.200 Kč',
-      originalPrice: '5.000 Kč',
-      description: 'Kompletní transformace pro speciální příležitosti',
-      features: [
-        'Konzultace a analýza',
-        'Nový střih a styling',
-        'Profesionální barvení',
-        'Kosmetické ošetření',
-        'Večerní makeup',
-        'Fotografování před/po',
-        'Poradenství domácí péče'
-      ]
-    },
-    {
-      name: 'Měsíční péče',
-      price: '2.800 Kč',
-      originalPrice: '3.400 Kč',
-      description: 'Pravidelná péče pro udržení dokonalého vzhledu',
-      features: [
-        'Střih a styling',
-        'Základní kosmetické ošetření',
-        'Hydratační maska',
-        'Styling produkty',
-        'Prioritní rezervace termínů',
-        '15% sleva na další služby'
-      ]
-    }
-  ];
 
   const scrollToBooking = () => {
     const element = document.getElementById('booking');
@@ -179,75 +132,6 @@ const Pricing: React.FC = () => {
           </div>
 
           {/* Package Deals */}
-          <div className="mb-16">
-            <div className="text-center mb-12">
-              <h3 className="font-playfair font-bold text-3xl text-neutral-800 dark:text-white mb-4">
-                Výhodné balíčky
-              </h3>
-              <p className="text-neutral-600 dark:text-neutral-300 font-inter">
-                Kombinace služeb s výraznou slevou pro maximální spokojenost
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {packages.map((pkg, index) => (
-                <div 
-                  key={index}
-                  className={`relative bg-gradient-to-br from-white to-neutral-50 dark:from-neutral-800 dark:to-neutral-900 rounded-2xl p-8 shadow-lg border border-neutral-200 dark:border-neutral-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ${
-                    pkg.popular ? 'ring-2 ring-primary-400 dark:ring-primary-500' : ''
-                  }`}
-                >
-                  {pkg.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <div className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-inter font-medium flex items-center space-x-1">
-                        <Star className="w-4 h-4" />
-                        <span>Nejoblíbenější</span>
-                      </div>
-                    </div>
-                  )}
-
-                  <div className="text-center mb-6">
-                    <h4 className="font-playfair font-bold text-xl text-neutral-800 dark:text-white mb-2">
-                      {pkg.name}
-                    </h4>
-                    <p className="text-neutral-600 dark:text-neutral-300 font-inter text-sm mb-4">
-                      {pkg.description}
-                    </p>
-                    <div className="flex items-center justify-center space-x-2">
-                      <span className="font-playfair font-bold text-3xl text-primary-600 dark:text-primary-400">
-                        {pkg.price}
-                      </span>
-                      <span className="text-neutral-500 dark:text-neutral-400 line-through text-lg">
-                        {pkg.originalPrice}
-                      </span>
-                    </div>
-                  </div>
-
-                  <ul className="space-y-3 mb-8">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start space-x-3">
-                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-neutral-600 dark:text-neutral-300 font-inter text-sm">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <button
-                    onClick={scrollToBooking}
-                    className={`w-full py-3 rounded-xl font-inter font-semibold transition-all duration-300 ${
-                      pkg.popular
-                        ? 'bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white shadow-lg hover:shadow-xl'
-                        : 'bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600 text-neutral-800 dark:text-white'
-                    }`}
-                  >
-                    Objednat balíček
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
 
           {/* Additional Info */}
           <div className="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-3xl p-8 md:p-12">
@@ -276,11 +160,11 @@ const Pricing: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-inter font-semibold text-neutral-800 dark:text-white mb-2">
-                    Slevy a akce
+                    Platební možnosti
                   </h4>
                   <p className="text-sm text-neutral-600 dark:text-neutral-300">
-                    Sledujte naše sociální sítě pro aktuální akce. 
-                    Sleva pro studenty a seniory 10%.
+                    Přijímáme hotovost i platební karty. 
+                    Ceny jsou konečné včetně všech služeb.
                   </p>
                 </div>
               </div>

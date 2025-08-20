@@ -98,43 +98,34 @@ const Services: React.FC = () => {
           {/* Special Offers */}
           <div className="bg-gradient-to-r from-primary-50 via-secondary-50 to-primary-50 dark:from-primary-900/20 dark:via-secondary-900/20 dark:to-primary-900/20 rounded-3xl p-8 md:p-12">
             <div className="text-center">
-              <div className="text-4xl mb-6">🎁</div>
+              <div className="text-4xl mb-6">💫</div>
               <h3 className="font-playfair font-bold text-2xl md:text-3xl text-neutral-800 dark:text-white mb-6">
-                Speciální nabídky
+                Proč si vybrat naše studio?
               </h3>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-xl p-6">
                   <h4 className="font-inter font-semibold text-neutral-800 dark:text-white mb-2">
-                    První návštěva
+                    Přes 20 let zkušeností
                   </h4>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-300 mb-3">
-                    20% sleva na všechny služby
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300">
+                    Dlouholetá praxe a neustálé vzdělávání v nových technologiích
                   </p>
-                  <span className="text-primary-600 dark:text-primary-400 font-bold">
-                    Platí do konce měsíce
-                  </span>
                 </div>
                 <div className="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-xl p-6">
                   <h4 className="font-inter font-semibold text-neutral-800 dark:text-white mb-2">
-                    Svatební balíček
+                    Individuální přístup
                   </h4>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-300 mb-3">
-                    Kompletní příprava nevěsty
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300">
+                    Každý účes je vytvořen klientce na míru podle jejích potřeb
                   </p>
-                  <span className="text-primary-600 dark:text-primary-400 font-bold">
-                    Vlasy + makeup + zkouška
-                  </span>
                 </div>
                 <div className="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-xl p-6">
                   <h4 className="font-inter font-semibold text-neutral-800 dark:text-white mb-2">
-                    Věrnostní program
+                    Kompletní služby
                   </h4>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-300 mb-3">
-                    Každá 10. návštěva zdarma
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300">
+                    Dámské, pánské, dětské kadeřnictví i líčení na jednom místě
                   </p>
-                  <span className="text-primary-600 dark:text-primary-400 font-bold">
-                    Pro stálé klientky
-                  </span>
                 </div>
               </div>
             </div>

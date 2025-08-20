@@ -1,4 +1,4 @@
-import { Scissors, Sparkles, Heart, Zap, Star, Moon } from 'lucide-react';
+import { Scissors, Users, Palette, Sparkles, Star, Heart } from 'lucide-react';
 
 export interface Service {
   id: string;
@@ -11,61 +11,74 @@ export interface Service {
 
 export const servicesData: Service[] = [
   {
-    id: 'kadernictvi',
+    id: 'damske',
     title: 'Dámské kadeřnictví',
-    description: 'Kompletní dámské kadeřnické služby s více než 20letou praxí',
+    description: 'Kompletní dámské kadeřnické služby pro všechny délky vlasů',
     icon: Scissors,
     features: [
-      'Dámské střihy všech délek',
-      'Barvení, melírování, kombinované barvení',
-      'Keratinové kúry a regenerace vlasů',
-      'Společenské a svatební účesy'
+      'Střihy pro krátké, polodlouhé i dlouhé vlasy',
+      'Mytí, foukaná, styling',
+      'Žehlení a vodová ondulace',
+      'Společenské účesy'
     ],
     price: 'od 150 Kč'
   },
   {
     id: 'panske',
     title: 'Pánské kadeřnictví',
-    description: 'Moderní pánské střihy a úprava vousů',
-    icon: Sparkles,
+    description: 'Klasické i moderní pánské střihy a péče',
+    icon: Users,
     features: [
-      'Klasické i moderní pánské střihy',
+      'Pánské střihy',
+      'Moderní střihy',
       'Střih strojkem',
-      'Úprava vousů',
-      'Kompletní služby včetně mytí'
+      'Úprava vousů'
     ],
     price: 'od 200 Kč'
   },
   {
     id: 'detske',
     title: 'Dětské kadeřnictví',
-    description: 'Šetrné a trpělivé kadeřnictví pro nejmenší',
+    description: 'Šetrné kadeřnictví pro nejmenší',
     icon: Heart,
     features: [
       'Dětské střihy',
-      'Trpělivý přístup k dětem',
-      'Bezpečné produkty',
-      'Příjemné prostředí pro děti'
+      'Trpělivý přístup',
+      'Příjemné prostředí',
+      'Bezpečné produkty'
     ],
     price: 'od 200 Kč'
   },
   {
     id: 'barveni',
-    title: 'Barvení vlasů',
-    description: 'Profesionální barvení, melírování a odbarvování',
-    icon: Zap,
+    title: 'Barvení a melírování',
+    description: 'Profesionální barvení všech typů',
+    icon: Palette,
     features: [
-      'Melírování přes čepici i folií',
+      'Melírování přes čepici i klasické',
       'Barevné melíry a tunely',
       'Kombinované barvení',
-      'Stahování a odbarvování'
+      'Stahování barvy'
     ],
-    price: 'od 310 Kč'
+    price: 'od 290 Kč'
+  },
+  {
+    id: 'pece',
+    title: 'Péče o vlasy',
+    description: 'Regenerační a ošetřující procedury',
+    icon: Sparkles,
+    features: [
+      'Keratinová kúra',
+      'Regenerace vlasů',
+      'Masáž hlavy',
+      'Přípravek Powerplex'
+    ],
+    price: 'od 40 Kč'
   },
   {
     id: 'specialni',
     title: 'Speciální služby',
-    description: 'Prodloužení vlasů, trvalé ondulace a další speciální úpravy',
+    description: 'Pokročilé kadeřnické techniky',
     icon: Star,
     features: [
       'Prodloužení vlasů',
@@ -74,18 +87,5 @@ export const servicesData: Service[] = [
       'Sundávání nastavených vlasů'
     ],
     price: 'od 380 Kč'
-  },
-  {
-    id: 'liceni',
-    title: 'Líčení a kosmetika',
-    description: 'Profesionální líčení a péče o pokožku',
-    icon: Moon,
-    features: [
-      'Denní i večerní líčení',
-      'Svatební makeup',
-      'Péče o pokožku',
-      'Poradenství pro celkovou vizáž'
-    ],
-    price: 'na dotaz'
   }
 ];
