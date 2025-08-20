@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Users, Clock, Heart } from 'lucide-react';
+import { Award, Users, Clock, Heart, MapPin } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const About: React.FC = () => {
@@ -128,6 +128,18 @@ const About: React.FC = () => {
               </h3>
               <p className="text-lg text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed">
                 "Mým cílem je pomáhat lidem skrz vlasy a make-up. Protože když člověk vypadá lépe, 
+                cítí se lépe a je šťastnější."
+              </p>
+              <div className="mt-6">
+                <span className="font-playfair italic text-primary-600 dark:text-primary-400">
+                  - Helena Bošínová
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Location */}
+          <div className="mt-20">
             <div className="bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700">
               <div className="p-6 text-center border-b border-neutral-200 dark:border-neutral-700">
                 <MapPin className="w-8 h-8 text-primary-500 mx-auto mb-3" />
@@ -167,11 +179,6 @@ const About: React.FC = () => {
                     <span>Bezplatné parkování Plaza</span>
                   </div>
                 </div>
-              </div>
-              <div className="mt-6">
-                <span className="font-playfair italic text-primary-600 dark:text-primary-400">
-                  - Helena Bošínová
-                </span>
               </div>
             </div>
           </div>
