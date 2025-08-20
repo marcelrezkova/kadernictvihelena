@@ -23,8 +23,8 @@ const Footer: React.FC = () => {
                 <span className="text-white font-playfair font-bold text-xl">B</span>
               </div>
               <div>
-                <h3 className="font-playfair font-bold text-xl">Studio Bošínová</h3>
-                <p className="text-neutral-400 text-sm font-inter">Kadeřnictví POHODA</p>
+                <h3 className="font-playfair font-bold text-xl">Kadeřnictví POHODA</h3>
+                <p className="text-neutral-400 text-sm font-inter">Helena Bošínová</p>
               </div>
             </div>
             <p className="text-neutral-300 font-inter text-sm leading-relaxed mb-6">

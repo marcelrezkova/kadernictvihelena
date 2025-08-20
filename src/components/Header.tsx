@@ -48,10 +48,10 @@ const Header: React.FC = () => {
             </div>
             <div>
               <h1 className="font-playfair font-bold text-lg text-neutral-800 dark:text-white">
-                Studio Bošínová
+                Kadeřnictví POHODA
               </h1>
               <p className="text-xs text-neutral-600 dark:text-neutral-400 font-inter">
-                Kadeřnictví & Kosmetika
+                Helena Bošínová
               </p>
             </div>
           </div>
