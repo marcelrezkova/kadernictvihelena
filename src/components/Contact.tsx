@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
               {/* Studio Info */}
               <div className="bg-gradient-to-br from-neutral-50 to-white dark:from-neutral-800 dark:to-neutral-900 rounded-2xl p-6 shadow-lg border border-neutral-200 dark:border-neutral-700">
                 <h3 className="font-playfair font-bold text-xl text-neutral-800 dark:text-white mb-6">
-                  Studio Bošínová
+                  Kadeřnictví POHODA
                 </h3>
                 
                 <div className="space-y-4">
@@ -40,11 +40,11 @@ const Contact: React.FC = () => {
                     <MapPin className="w-5 h-5 text-primary-500 mt-1 flex-shrink-0" />
                     <div>
                       <div className="font-inter font-medium text-neutral-800 dark:text-white">
-                        Adresa studia
+                        Adresa
                       </div>
                       <div className="text-neutral-600 dark:text-neutral-300 text-sm">
-                        Krásná ulice 123<br />
-                        110 00 Praha 1<br />
+                        Moskevská 637/6<br />
+                        Liberec<br />
                         Česká republika
                       </div>
                     </div>
@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
                         Telefon
                       </div>
                       <div className="text-neutral-600 dark:text-neutral-300 text-sm">
-                        +420 123 456 789
+                        739 469 932
                       </div>
                     </div>
                   </div>
@@ -69,7 +69,7 @@ const Contact: React.FC = () => {
                         E-mail
                       </div>
                       <div className="text-neutral-600 dark:text-neutral-300 text-sm">
-                        info@studio-bosinova.cz
+                        helena.bosinova@email.cz
                       </div>
                     </div>
                   </div>
@@ -78,10 +78,10 @@ const Contact: React.FC = () => {
                     <Award className="w-5 h-5 text-primary-500 mt-1 flex-shrink-0" />
                     <div>
                       <div className="font-inter font-medium text-neutral-800 dark:text-white">
-                        IČ
+                        Specializace
                       </div>
                       <div className="text-neutral-600 dark:text-neutral-300 text-sm">
-                        74335821
+                        Dámské, pánské, dětské kadeřnictví
                       </div>
                     </div>
                   </div>
@@ -97,38 +97,14 @@ const Contact: React.FC = () => {
                 
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-neutral-600 dark:text-neutral-300 font-inter">Pondělí</span>
-                    <span className="font-inter font-semibold text-neutral-800 dark:text-white">8:00 - 18:00</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-neutral-600 dark:text-neutral-300 font-inter">Úterý</span>
-                    <span className="font-inter font-semibold text-neutral-800 dark:text-white">8:00 - 18:00</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-neutral-600 dark:text-neutral-300 font-inter">Středa</span>
-                    <span className="font-inter font-semibold text-neutral-800 dark:text-white">8:00 - 18:00</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-neutral-600 dark:text-neutral-300 font-inter">Čtvrtek</span>
-                    <span className="font-inter font-semibold text-neutral-800 dark:text-white">8:00 - 18:00</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-neutral-600 dark:text-neutral-300 font-inter">Pátek</span>
-                    <span className="font-inter font-semibold text-neutral-800 dark:text-white">8:00 - 18:00</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-neutral-600 dark:text-neutral-300 font-inter">Sobota</span>
-                    <span className="font-inter font-semibold text-neutral-800 dark:text-white">9:00 - 16:00</span>
-                  </div>
-                  <div className="flex justify-between items-center border-t border-neutral-200 dark:border-neutral-700 pt-3">
-                    <span className="text-neutral-600 dark:text-neutral-300 font-inter">Neděle</span>
-                    <span className="font-inter font-semibold text-red-500">Zavřeno</span>
+                    <span className="text-neutral-600 dark:text-neutral-300 font-inter">Otevírací doba</span>
+                    <span className="font-inter font-semibold text-neutral-800 dark:text-white">Dle objednávek</span>
                   </div>
                 </div>
 
                 <div className="mt-6 p-4 bg-primary-50 dark:bg-primary-900/20 rounded-xl">
                   <p className="text-sm text-primary-700 dark:text-primary-300 font-inter">
-                    💡 <strong>Tip:</strong> Pro rezervaci mimo otevírací dobu nás kontaktujte telefonicky.
+                    🚗 <strong>Parkování:</strong> Bezplatné parkování v obchodním domě Plaza.
                   </p>
                 </div>
               </div>

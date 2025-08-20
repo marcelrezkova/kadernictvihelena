@@ -24,12 +24,12 @@ const Footer: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-playfair font-bold text-xl">Studio Bošínová</h3>
-                <p className="text-neutral-400 text-sm font-inter">Kadeřnictví & Kosmetika</p>
+                <p className="text-neutral-400 text-sm font-inter">Kadeřnictví POHODA</p>
               </div>
             </div>
             <p className="text-neutral-300 font-inter text-sm leading-relaxed mb-6">
-              S více než 15letou praxí v oboru krásy vám nabízíme profesionální péči 
-              v příjemném a moderním prostředí našeho studia.
+              Helena Bošínová se kadeřnicině věnuje přes 20 let. Specializuje se na dámské, 
+              pánské i dětské kadeřnictví v Kadeřnictví POHODA v Liberci.
             </p>
             <div className="flex space-x-4">
               <a
@@ -104,19 +104,20 @@ const Footer: React.FC = () => {
                 <MapPin className="w-5 h-5 text-primary-400 mt-0.5 flex-shrink-0" />
                 <div className="text-neutral-300 font-inter text-sm">
                   Krásná ulice 123<br />
-                  110 00 Praha 1
+                  Moskevská 637/6<br />
+                  Liberec
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary-400" />
                 <span className="text-neutral-300 font-inter text-sm">
-                  +420 123 456 789
+                  739 469 932
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary-400" />
                 <span className="text-neutral-300 font-inter text-sm">
-                  info@studio-bosinova.cz
+                  helena.bosinova@email.cz
                 </span>
               </div>
             </div>
@@ -124,9 +125,8 @@ const Footer: React.FC = () => {
             <div className="mt-6 p-4 bg-neutral-800 rounded-xl">
               <h5 className="font-inter font-semibold text-white mb-2">Otevírací doba</h5>
               <div className="text-neutral-300 font-inter text-sm space-y-1">
-                <div>Po-Pá: 8:00 - 18:00</div>
-                <div>So: 9:00 - 16:00</div>
-                <div>Ne: Zavřeno</div>
+                <div>Dle objednávek</div>
+                <div>Tel: 739 469 932</div>
               </div>
             </div>
           </div>
@@ -138,7 +138,7 @@ const Footer: React.FC = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-neutral-400 font-inter text-sm">
-              © {currentYear} Studio Bošínová. Všechna práva vyhrazena. IČ: 74335821
+              © {currentYear} Helena Bošínová - Kadeřnictví POHODA. Všechna práva vyhrazena.
             </div>
             <div className="flex items-center space-x-1 text-neutral-400 font-inter text-sm">
               <span>Vytvořeno s</span>

@@ -74,11 +74,11 @@ const Header: React.FC = () => {
             <div className="flex items-center space-x-3 text-sm text-neutral-600 dark:text-neutral-400">
               <div className="flex items-center space-x-1">
                 <Phone className="w-4 h-4" />
-                <span>+420 123 456 789</span>
+                <span>739 469 932</span>
               </div>
               <div className="flex items-center space-x-1">
                 <Mail className="w-4 h-4" />
-                <span>info@studio-bosinova.cz</span>
+                <span>helena.bosinova@email.cz</span>
               </div>
             </div>
             <button
@@ -98,10 +98,10 @@ const Header: React.FC = () => {
               {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              Helena Bošínová
               className="p-2 rounded-full bg-neutral-100 dark:bg-neutral-800"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              Kadeřnictví POHODA
             </button>
           </div>
         </div>
@@ -123,11 +123,11 @@ const Header: React.FC = () => {
                 <div className="flex flex-col space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
                   <div className="flex items-center space-x-2">
                     <Phone className="w-4 h-4" />
-                    <span>+420 123 456 789</span>
+                    <span>739 469 932</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Mail className="w-4 h-4" />
-                    <span>info@studio-bosinova.cz</span>
+                    <span>helena.bosinova@email.cz</span>
                   </div>
                 </div>
               </div>
