@@ -35,20 +35,20 @@ const Hero: React.FC = () => {
         }`}>
           <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-primary-400/20 backdrop-blur-sm rounded-full text-primary-100 text-sm font-inter font-medium mb-4">
-              ✨ Profesionální péče o vaši krásu
+              ✨ Kadeřnictví POHODA
             </span>
           </div>
 
           <h1 className="font-playfair font-bold text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
-            Váš sen o
+            Helena Bošínová
             <span className="block bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-              dokonalé kráse
+              Kadeřnictví
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-neutral-200 mb-8 font-inter leading-relaxed">
-            Objevte svou přirozenou krásu v našem moderním studiu. Specializujeme se na individuální přístup 
-            a poskytujeme kompletní služby v oblasti kadeřnictví, kosmetiky a wellness.
+            Dámské, pánské, dětské kadeřnictví. Barvím, odbarvuji, melíruji, foukám, natáčím, 
+            češu společenské i svatební účesy. Každý účes je vytvořen klientce na míru.
           </p>
 
           {/* Stats */}
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
             </div>
             <div className="flex items-center space-x-2 text-white">
               <Heart className="w-5 h-5 text-primary-400" />
-              <span className="font-inter font-medium">500+ spokojených klientek</span>
+              <span className="font-inter font-medium">Spokojené klientky</span>
             </div>
           </div>
 
@@ -80,7 +80,7 @@ const Hero: React.FC = () => {
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-4 border-2 border-white/30 hover:border-white text-white hover:bg-white/10 rounded-full font-inter font-semibold transition-all duration-300 backdrop-blur-sm"
             >
-              Naše služby
+              Kadeřnické služby
             </button>
           </div>
         </div>
@@ -98,13 +98,13 @@ const Hero: React.FC = () => {
                 Speciální nabídka
               </h3>
               <p className="text-neutral-200 text-sm font-inter mb-4">
-                První návštěva s 20% slevou na všechny služby
+                Konzultace zdarma při první návštěvě
               </p>
               <button
                 onClick={scrollToBooking}
                 className="w-full px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg font-inter font-medium transition-colors"
               >
-                Využít nabídku
+                Objednat se
               </button>
             </div>
           </div>

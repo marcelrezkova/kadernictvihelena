@@ -42,9 +42,9 @@ const About: React.FC = () => {
                 </h3>
                 <p className="text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed mb-6">
                   Jmenuji se Helena Bošínová a kadeřnicině se věnuji přes 20 let. Do Liberce jsme se 
-                  přistěhovali v roce 2013, nechala jsem se zaměstnat v kadeřnictví IrisHair. Momentálně 
-                  mě najdete v Kadeřnictví Pohoda v Moskevské 637/6, kde mě mezi sebe přijala parta 
-                  úžasných holek a kadeřnic.
+                  přistěhovali v roce 2013, nechala jsem se zaměstnat v kadeřnictví IrisHair. Pak přišli 
+                  děti, mateřská atd. Momentálně mě najdete v Kadeřnictví Pohoda v Moskevské 637/6, 
+                  kde mě mezi sebe přijala parta úžasných holek a kadeřnic.
                 </p>
                 <p className="text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed">
                   Stále nabírám novou klientelu. Stříhám dámské, pánské, dětské. Barvím, odbarvuji, 
@@ -56,16 +56,17 @@ const About: React.FC = () => {
               {/* Specializations */}
               <div>
                 <h4 className="font-inter font-semibold text-lg text-neutral-800 dark:text-white mb-4">
-                  Mé služby:
+                  Služby:
                 </h4>
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    'Dámské, pánské, dětské střihy',
+                    'Dámské kadeřnictví',
+                    'Pánské kadeřnictví', 
+                    'Dětské kadeřnictví',
                     'Barvení a odbarvování',
                     'Melírování',
                     'Společenské účesy',
-                    'Svatební účesy',
-                    'Líčení a péče o pokožku'
+                    'Svatební účesy'
                   ].map((item, index) => (
                     <div key={index} className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
@@ -80,13 +81,12 @@ const About: React.FC = () => {
               {/* Certifications */}
               <div className="bg-neutral-100 dark:bg-neutral-800 rounded-2xl p-6">
                 <h4 className="font-inter font-semibold text-lg text-neutral-800 dark:text-white mb-4">
-                  Zkušenosti & přístup:
+                  Přístup k práci:
                 </h4>
                 <p className="text-neutral-600 dark:text-neutral-300 font-inter text-sm leading-relaxed">
                   Neustále se školím v nových technologiích a rozvíjím svůj cit pro krásu a estetiku. 
-                  Sleduji nové trendy o vlasech a módě. Umím pracovat s barvami a dokážu klientce poradit 
-                  s celkovou vizáží, navrhnu vhodný typ střihu a barvy vlasů a účes doplním i doporučeným 
-                  typem líčení.
+                  Sleduji nové trendy o vlasech a módě. Umím pracovat s barvami a dokážu klientce 
+                  poradit s celkovou vizáží, navrhnu vhodný typ střihu a barvy vlasů.
                 </p>
               </div>
             </div>
@@ -125,12 +125,13 @@ const About: React.FC = () => {
             <div className="max-w-4xl mx-auto bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-3xl p-8 md:p-12">
               <div className="text-4xl mb-6">💎</div>
               <h3 className="font-playfair font-bold text-2xl md:text-3xl text-neutral-800 dark:text-white mb-6">
-                Mý cíl
+                Můj cíl
               </h3>
               <p className="text-lg text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed">
-                "Mým cílem je pomáhat lidem skrz vlasy a make-up. Protože když člověk vypadá lépe, cítí se lépe 
-                a svět ho bere v tom lepším světle. Když se cítí člověk dobře, jde mu vše lépe od ruky, je spokojený 
-                a šťastnější. Stále na sobě pracuji, pro svou práci se snažím dělat maximum a chci být v ní ta nejlepší."
+                "Mým cílem je pomáhat lidem skrz vlasy a make-up. Protože když člověk vypadá lépe, 
+                cítí se lépe a svět ho bere v tom lepším světle. Když se cítí člověk dobře, jde mu vše 
+                lépe od ruky, je spokojený a šťastnější. Stále na sobě pracuji, pro svou práci se snažím 
+                dělat maximum a chci být v ní ta nejlepší."
               </p>
               <div className="mt-6">
                 <span className="font-playfair italic text-primary-600 dark:text-primary-400">

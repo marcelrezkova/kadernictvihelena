@@ -22,15 +22,15 @@ const Services: React.FC = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400 text-sm font-inter font-medium mb-4">
-              Naše služby
+              Kadeřnické služby
             </span>
             <h2 className="font-playfair font-bold text-4xl md:text-5xl text-neutral-800 dark:text-white mb-6">
-              Kompletní péče
-              <span className="block text-primary-600 dark:text-primary-400">o vaši krásu</span>
+              Dámské, pánské
+              <span className="block text-primary-600 dark:text-primary-400">a dětské kadeřnictví</span>
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto font-inter leading-relaxed">
-              Nabízíme širokou škálu profesionálních služeb přizpůsobených vašim individuálním potřebám 
-              a přáním pro vaši dokonalou krásu.
+              Stříhám dámské, pánské, dětské. Barvím, odbarvuji, melíruji, foukám, natáčím, 
+              češu společenské i svatební účesy. Každý účes je vytvořen klientce na míru.
             </p>
           </div>
 
@@ -100,7 +100,7 @@ const Services: React.FC = () => {
             <div className="text-center">
               <div className="text-4xl mb-6">💫</div>
               <h3 className="font-playfair font-bold text-2xl md:text-3xl text-neutral-800 dark:text-white mb-6">
-                Proč si vybrat naše studio?
+                Proč si vybrat Kadeřnictví POHODA?
               </h3>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-xl p-6">
@@ -108,12 +108,12 @@ const Services: React.FC = () => {
                     Přes 20 let zkušeností
                   </h4>
                   <p className="text-sm text-neutral-600 dark:text-neutral-300">
-                    Dlouholetá praxe a neustálé vzdělávání v nových technologiích
+                    Neustále se školím v nových technologiích a sleduji trendy
                   </p>
                 </div>
                 <div className="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-xl p-6">
                   <h4 className="font-inter font-semibold text-neutral-800 dark:text-white mb-2">
-                    Individuální přístup
+                    Účes na míru
                   </h4>
                   <p className="text-sm text-neutral-600 dark:text-neutral-300">
                     Každý účes je vytvořen klientce na míru podle jejích potřeb
@@ -121,10 +121,10 @@ const Services: React.FC = () => {
                 </div>
                 <div className="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-xl p-6">
                   <h4 className="font-inter font-semibold text-neutral-800 dark:text-white mb-2">
-                    Kompletní služby
+                    Kompletní kadeřnictví
                   </h4>
                   <p className="text-sm text-neutral-600 dark:text-neutral-300">
-                    Dámské, pánské, dětské kadeřnictví i líčení na jednom místě
+                    Dámské, pánské, dětské kadeřnictví na jednom místě
                   </p>
                 </div>
               </div>

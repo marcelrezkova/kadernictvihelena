@@ -1,4 +1,4 @@
-import { Scissors, Users, Palette, Sparkles, Star, Heart } from 'lucide-react';
+import { Scissors, Users, Heart, Palette, Sparkles, Star } from 'lucide-react';
 
 export interface Service {
   id: string;
@@ -11,22 +11,22 @@ export interface Service {
 
 export const servicesData: Service[] = [
   {
-    id: 'damske',
+    id: 'damske-kadernctvi',
     title: 'Dámské kadeřnictví',
-    description: 'Kompletní dámské kadeřnické služby pro všechny délky vlasů',
+    description: 'Střihy, mytí, foukaná a styling pro dámy',
     icon: Scissors,
     features: [
-      'Střihy pro krátké, polodlouhé i dlouhé vlasy',
-      'Mytí, foukaná, styling',
-      'Žehlení a vodová ondulace',
-      'Společenské účesy'
+      'Střihy pro všechny délky vlasů',
+      'Mytí a foukaná',
+      'Styling a žehlení',
+      'Zastřižení ofiny'
     ],
     price: 'od 150 Kč'
   },
   {
-    id: 'panske',
+    id: 'panske-kadernctvi',
     title: 'Pánské kadeřnictví',
-    description: 'Klasické i moderní pánské střihy a péče',
+    description: 'Pánské střihy a úprava vousů',
     icon: Users,
     features: [
       'Pánské střihy',
@@ -37,22 +37,22 @@ export const servicesData: Service[] = [
     price: 'od 200 Kč'
   },
   {
-    id: 'detske',
+    id: 'detske-kadernctvi',
     title: 'Dětské kadeřnictví',
-    description: 'Šetrné kadeřnictví pro nejmenší',
+    description: 'Dětské střihy',
     icon: Heart,
     features: [
       'Dětské střihy',
-      'Trpělivý přístup',
-      'Příjemné prostředí',
-      'Bezpečné produkty'
+      'Mytí vlasů',
+      'Styling',
+      'Trpělivý přístup'
     ],
     price: 'od 200 Kč'
   },
   {
-    id: 'barveni',
+    id: 'barveni-melirovani',
     title: 'Barvení a melírování',
-    description: 'Profesionální barvení všech typů',
+    description: 'Barvení, odbarvování a melírování vlasů',
     icon: Palette,
     features: [
       'Melírování přes čepici i klasické',
@@ -63,9 +63,9 @@ export const servicesData: Service[] = [
     price: 'od 290 Kč'
   },
   {
-    id: 'pece',
+    id: 'pece-vlasy',
     title: 'Péče o vlasy',
-    description: 'Regenerační a ošetřující procedury',
+    description: 'Regenerace a ošetření vlasů',
     icon: Sparkles,
     features: [
       'Keratinová kúra',
@@ -76,16 +76,16 @@ export const servicesData: Service[] = [
     price: 'od 40 Kč'
   },
   {
-    id: 'specialni',
-    title: 'Speciální služby',
-    description: 'Pokročilé kadeřnické techniky',
+    id: 'spolecenske-ucesy',
+    title: 'Společenské účesy',
+    description: 'Společenské a svatební účesy',
     icon: Star,
     features: [
-      'Prodloužení vlasů',
-      'Trvalá ondulace',
-      'Narovnání vlasů',
-      'Sundávání nastavených vlasů'
+      'Společenské účesy',
+      'Svatební účesy',
+      'Vodová ondulace',
+      'Natáčení vlasů'
     ],
-    price: 'od 380 Kč'
+    price: 'od 500 Kč'
   }
 ];
