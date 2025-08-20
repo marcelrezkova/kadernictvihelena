@@ -10,55 +10,56 @@ const Pricing: React.FC = () => {
       category: 'Kadeřnictví',
       icon: '✂️',
       services: [
-        { name: 'Dámský střih', price: '800 Kč', duration: '60 min' },
-        { name: 'Dámský střih + foukaná', price: '1.200 Kč', duration: '90 min' },
-        { name: 'Barvení celé hlavy', price: '1.800 Kč', duration: '180 min' },
-        { name: 'Melírování', price: '2.200 Kč', duration: '240 min' },
-        { name: 'Balayage', price: '2.800 Kč', duration: '300 min' },
-        { name: 'Keratin kúra', price: '3.500 Kč', duration: '240 min' },
-        { name: 'Slavnostní účes', price: '1.500 Kč', duration: '120 min' },
-        { name: 'Úprava konečků', price: '400 Kč', duration: '30 min' }
+        { name: 'Dámský střih', price: '150-190 Kč', duration: '30 min' },
+        { name: 'Mytí, střih, foukaná, styling', price: '420-570 Kč', duration: '60 min' },
+        { name: 'Melírování', price: '500-850 Kč', duration: '120 min' },
+        { name: 'Barva odrost', price: '310-380 Kč', duration: '90 min' },
+        { name: 'Přeliv, barva', price: '400-600 Kč', duration: '120 min' },
+        { name: 'Společenské účesy', price: '500-1000 Kč', duration: '60-90 min' },
+        { name: 'Keratinová kúra', price: '250-450 Kč', duration: '90 min' },
+        { name: 'Trvalá ondulace', price: '380-650 Kč', duration: '120 min' }
       ]
     },
     {
       category: 'Kosmetika',
       icon: '✨',
       services: [
-        { name: 'Základní ošetření pleti', price: '1.200 Kč', duration: '75 min' },
-        { name: 'Hloubkové čištění', price: '1.500 Kč', duration: '90 min' },
-        { name: 'Anti-aging ošetření', price: '2.200 Kč', duration: '105 min' },
-        { name: 'Hydratační maska', price: '800 Kč', duration: '45 min' },
-        { name: 'Chemický peeling', price: '1.800 Kč', duration: '60 min' },
-        { name: 'Mikrodermabráze', price: '1.600 Kč', duration: '75 min' },
-        { name: 'LED terapie', price: '600 Kč', duration: '30 min' },
-        { name: 'Ošetření akné', price: '1.400 Kč', duration: '90 min' }
+        { name: 'Péče o pokožku', price: 'na dotaz', duration: '60 min' },
+        { name: 'Regenerace vlasů', price: '40-60 Kč', duration: '15 min' },
+        { name: 'Masáž hlavy', price: '50 Kč', duration: '15 min' },
+        { name: 'Narovnání vlasů', price: '250-550 Kč', duration: '60 min' },
+        { name: 'Stahování barvy', price: '500-900 Kč', duration: '120 min' },
+        { name: 'Prodloužení vlasů', price: '2500-4000 Kč', duration: '180-240 min' },
+        { name: 'Sundávání nastavených vlasů', price: '700-2500 Kč', duration: '90-180 min' },
+        { name: 'Přípravek Powerplex', price: '50-100 Kč', duration: '30 min' }
       ]
     },
     {
       category: 'Líčení & Permanentní makeup',
       icon: '💄',
       services: [
-        { name: 'Denní makeup', price: '800 Kč', duration: '45 min' },
-        { name: 'Večerní makeup', price: '1.200 Kč', duration: '60 min' },
-        { name: 'Svatební makeup', price: '2.500 Kč', duration: '120 min' },
-        { name: 'Svatební zkouška', price: '1.500 Kč', duration: '90 min' },
-        { name: 'Permanentní obočí', price: '4.500 Kč', duration: '180 min' },
-        { name: 'Permanentní linky', price: '3.500 Kč', duration: '150 min' },
-        { name: 'Permanentní rty', price: '4.000 Kč', duration: '180 min' },
-        { name: 'Korekce permanentního makeup', price: '1.500 Kč', duration: '90 min' }
+        { name: 'Líčení', price: 'na dotaz', duration: '45 min' },
+        { name: 'Svatební líčení', price: 'na dotaz', duration: '60 min' },
+        { name: 'Společenské líčení', price: 'na dotaz', duration: '45 min' },
+        { name: 'Barevné tunely', price: '100-200 Kč', duration: '30 min' },
+        { name: 'Styling (gel, lak, vosk)', price: '40 Kč', duration: '10 min' },
+        { name: 'Žehlení vlasů', price: '80-120 Kč', duration: '30 min' },
+        { name: 'Vodová ondulace', price: '130-180 Kč', duration: '45 min' },
+        { name: 'Zastřižení ofiny', price: '60-70 Kč', duration: '15 min' }
       ]
     },
     {
-      category: 'Wellness & Masáže',
-      icon: '🌸',
+      category: 'Speciální služby',
+      icon: '💫',
       services: [
-        { name: 'Relaxační masáž obličeje', price: '900 Kč', duration: '60 min' },
-        { name: 'Lymfodrenáž obličeje', price: '1.100 Kč', duration: '75 min' },
-        { name: 'Japonská masáž obličeje', price: '1.400 Kč', duration: '90 min' },
-        { name: 'Reflexní masáž', price: '800 Kč', duration: '45 min' },
-        { name: 'Aromaterapie', price: '600 Kč', duration: '30 min' },
-        { name: 'Gua sha ošetření', price: '1.200 Kč', duration: '75 min' },
-        { name: 'Kompletní wellness balíček', price: '3.500 Kč', duration: '240 min' }
+        { name: 'Mytí vlasů', price: '80-130 Kč', duration: '15 min' },
+        { name: 'Foukaná', price: '150-350 Kč', duration: '30-45 min' },
+        { name: 'Sušení', price: '70-110 Kč', duration: '20 min' },
+        { name: 'Top, mix střih', price: '180-240 Kč', duration: '45 min' },
+        { name: 'Dámský střih na sucho', price: '250-290 Kč', duration: '30 min' },
+        { name: 'Kombinované barvení', price: '500-850 Kč', duration: '150 min' },
+        { name: 'Barevný melír', price: '550-850 Kč', duration: '180 min' },
+        { name: 'Příplatek za dlouhé vlasy', price: '50-100 Kč', duration: '' }
       ]
     }
   ];

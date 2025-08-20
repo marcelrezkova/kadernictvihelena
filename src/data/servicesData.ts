@@ -13,79 +13,79 @@ export const servicesData: Service[] = [
   {
     id: 'kadernictvi',
     title: 'Kadeřnictví',
-    description: 'Kompletní péče o vaše vlasy od profesionálních střihů po kreativní barvení',
+    description: 'Dámské, pánské i dětské kadeřnictví s více než 20letou praxí',
     icon: Scissors,
     features: [
-      'Střihy pro všechny věkové kategorie',
-      'Barvení a melírování',
-      'Regenerační kúry',
+      'Dámské, pánské, dětské střihy',
+      'Barvení, odbarvování, melírování',
+      'Keratinové kúry a regenerace',
       'Slavnostní účesy'
     ],
-    price: 'od 800 Kč'
+    price: 'od 150 Kč'
   },
   {
-    id: 'kosmetika',
-    title: 'Kosmetika',
-    description: 'Profesionální ošetření pleti přizpůsobené vašim individuálním potřebám',
+    id: 'barveni',
+    title: 'Barvení vlasů',
+    description: 'Profesionální barvení, melírování a odbarvování všech typů vlasů',
     icon: Sparkles,
     features: [
-      'Hloubkové čištění pleti',
-      'Anti-aging ošetření',
-      'Hydratační kúry',
-      'Péče o problematickou pleť'
+      'Melírování přes čepici i folií',
+      'Barevné melíry a tunely',
+      'Kombinované barvení',
+      'Stahování a odbarvování'
     ],
-    price: 'od 1200 Kč'
+    price: 'od 310 Kč'
   },
   {
     id: 'liceni',
     title: 'Líčení',
-    description: 'Dokonalý makeup pro každou příležitost s důrazem na vaši přirozenou krásu',
+    description: 'Profesionální líčení a péče o pokožku pro každou příležitost',
     icon: Heart,
     features: [
-      'Denní makeup',
-      'Večerní líčení',
+      'Denní i večerní líčení',
       'Svatební makeup',
-      'Kurzy líčení'
+      'Péče o pokožku',
+      'Poradenství pro celkovou vizáž'
     ],
-    price: 'od 600 Kč'
-  },
-  {
-    id: 'anti-aging',
-    title: 'Anti-aging péče',
-    description: 'Moderní metody pro zachování mladistvého vzhledu a zdraví pleti',
-    icon: Zap,
-    features: [
-      'Radiofrekvence',
-      'Mikrojehličková mezoterapie',
-      'Kyselina hyaluronová',
-      'Botox aplikace'
-    ],
-    price: 'od 2000 Kč'
-  },
-  {
-    id: 'wellness',
-    title: 'Wellness',
-    description: 'Relaxační procedury pro tělo i duši v klidném prostředí našeho studia',
-    icon: Star,
-    features: [
-      'Relaxační masáže',
-      'Aromaterapie',
-      'Lymfodrenáže',
-      'Reflexní terapie'
-    ],
-    price: 'od 900 Kč'
+    price: 'na dotaz'
   },
   {
     id: 'specialni',
-    title: 'Speciální péče',
-    description: 'Individuální přístup k řešení specifických potřeb a požadavků',
+    title: 'Speciální služby',
+    description: 'Prodloužení vlasů, trvalé ondulace a další speciální úpravy',
+    icon: Zap,
+    features: [
+      'Prodloužení vlasů',
+      'Trvalá ondulace',
+      'Narovnání vlasů',
+      'Sundávání nastavených vlasů'
+    ],
+    price: 'od 380 Kč'
+  },
+  {
+    id: 'pece',
+    title: 'Péče o vlasy',
+    description: 'Regenerační kúry, masáže a speciální ošetření pro zdravé vlasy',
+    icon: Star,
+    features: [
+      'Keratinové kúry',
+      'Masáž hlavy',
+      'Regenerace vlasů',
+      'Přípravky Powerplex'
+    ],
+    price: 'od 40 Kč'
+  },
+  {
+    id: 'ucesy',
+    title: 'Společenské účesy',
+    description: 'Slavnostní a svatební účesy vytvořené na míru každé klientce',
     icon: Moon,
     features: [
-      'Konzultace dermatokosmetika',
-      'Péče pro citlivou pleť',
-      'Ošetření akné',
-      'Poradenství domácí péče'
+      'Svatební účesy',
+      'Společenské účesy',
+      'Účesy na míru',
+      'Konzultace a návrh'
     ],
-    price: 'na dotaz'
+    price: '500-1000 Kč'
   }
 ];
