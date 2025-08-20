@@ -126,7 +126,6 @@ const About: React.FC = () => {
               <h3 className="font-playfair font-bold text-2xl md:text-3xl text-neutral-800 dark:text-white mb-6">
                 Můj cíl
               </h3>
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
               <p className="text-lg text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed">
                 "Mým cílem je pomáhat lidem skrz vlasy a make-up. Protože když člověk vypadá lépe, 
                 cítí se lépe a svět ho bere v tom lepším světle. Když se cítí člověk dobře, jde mu vše 
@@ -137,7 +136,7 @@ const About: React.FC = () => {
                 <span className="font-playfair italic text-primary-600 dark:text-primary-400">
                   - Helena Bošínová
                 </span>
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </div>
             </div>
           </div>
         </div>
