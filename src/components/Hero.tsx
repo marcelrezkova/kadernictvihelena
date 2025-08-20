@@ -35,31 +35,33 @@ const Hero: React.FC = () => {
         }`}>
           <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-primary-400/20 backdrop-blur-sm rounded-full text-primary-100 text-sm font-inter font-medium mb-4">
-              ✨ Kadeřnictví POHODA
+              ✨ Profesionální kadeřnictví
             </span>
           </div>
 
           <h1 className="font-playfair font-bold text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
-            Helena Bošínová
+            <span className="block text-3xl md:text-4xl lg:text-5xl text-neutral-200 font-inter font-light mb-2">
+              Helena Bošínová
+            </span>
             <span className="block bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-              Kadeřnictví
+              Kadeřnictví POHODA
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-neutral-200 mb-8 font-inter leading-relaxed">
-            Dámské, pánské, dětské kadeřnictví. Barvím, odbarvuji, melíruji, foukám, natáčím, 
-            češu společenské i svatební účesy. Každý účes je vytvořen klientce na míru.
+          <p className="text-lg md:text-xl text-neutral-200 mb-8 font-inter leading-relaxed max-w-xl">
+            Více než 20 let zkušeností v oboru kadeřnictví. Specializuji se na dámské, pánské 
+            i dětské střihy, barvení, melírování a společenské účesy. Každý účes vytvářím na míru.
           </p>
 
           {/* Stats */}
           <div className="flex flex-wrap gap-6 mb-8">
             <div className="flex items-center space-x-2 text-white">
               <Award className="w-5 h-5 text-primary-400" />
-              <span className="font-inter font-medium">15+ let zkušeností</span>
+              <span className="font-inter font-medium">Přes 20 let praxe</span>
             </div>
             <div className="flex items-center space-x-2 text-white">
               <Heart className="w-5 h-5 text-primary-400" />
-              <span className="font-inter font-medium">Spokojené klientky</span>
+              <span className="font-inter font-medium">Individuální přístup</span>
             </div>
           </div>
 
@@ -67,11 +69,11 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={scrollToBooking}
-              className="group relative px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-full font-inter font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+              className="group relative px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-full font-inter font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
             >
               <span className="flex items-center justify-center space-x-2">
                 <Calendar className="w-5 h-5" />
-                <span>Objednat se</span>
+                <span>Rezervovat termín</span>
               </span>
               <div className="absolute inset-0 rounded-full bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
@@ -80,7 +82,7 @@ const Hero: React.FC = () => {
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-4 border-2 border-white/30 hover:border-white text-white hover:bg-white/10 rounded-full font-inter font-semibold transition-all duration-300 backdrop-blur-sm"
             >
-              Kadeřnické služby
+              Prohlédnout služby
             </button>
           </div>
         </div>
@@ -95,16 +97,16 @@ const Hero: React.FC = () => {
                 <span className="text-2xl">💫</span>
               </div>
               <h3 className="font-playfair font-bold text-white text-lg mb-2">
-                Speciální nabídka
+                První návštěva
               </h3>
               <p className="text-neutral-200 text-sm font-inter mb-4">
-                Konzultace zdarma při první návštěvě
+                Bezplatná konzultace o vhodné péči
               </p>
               <button
                 onClick={scrollToBooking}
                 className="w-full px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg font-inter font-medium transition-colors"
               >
-                Objednat se
+                Rezervovat
               </button>
             </div>
           </div>
