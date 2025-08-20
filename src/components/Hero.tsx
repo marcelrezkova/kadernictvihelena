@@ -33,12 +33,6 @@ const Hero: React.FC = () => {
         <div ref={ref} className={`max-w-2xl transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
         }`}>
-          <div className="mb-6">
-            <span className="inline-block px-4 py-2 bg-primary-400/20 backdrop-blur-sm rounded-full text-primary-100 text-sm font-inter font-medium mb-4">
-              Profesionální kadeřnictví
-            </span>
-          </div>
-
           <h1 className="font-playfair font-bold text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
             <span className="block text-3xl md:text-4xl lg:text-5xl text-neutral-200 font-inter font-light mb-2">
               Helena Bošínová

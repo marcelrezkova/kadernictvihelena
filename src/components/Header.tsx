@@ -46,14 +46,6 @@ const Header: React.FC = () => {
             <div className="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center">
               <span className="text-white font-playfair font-bold text-lg">B</span>
             </div>
-            <div>
-              <h1 className="font-playfair font-bold text-lg text-neutral-800 dark:text-white">
-                Kadeřnictví POHODA
-              </h1>
-              <p className="text-xs text-neutral-600 dark:text-neutral-400 font-inter">
-                Helena Bošínová
-              </p>
-            </div>
           </div>
 
           {/* Desktop Navigation */}
