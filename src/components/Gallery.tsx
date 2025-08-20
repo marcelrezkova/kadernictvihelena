@@ -1,40 +1,19 @@
-import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, X, Eye } from 'lucide-react';
+import React from 'react';
+import { Award, Users, Clock, Heart } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { galleryData, GalleryItem } from '../data/galleryData';
 
-const Gallery: React.FC = () => {
+const About: React.FC = () => {
   const { ref, isVisible } = useScrollReveal();
-  const [activeTab, setActiveTab] = useState(galleryData[0].id);
-  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [showBefore, setShowBefore] = useState(true);
 
-  const activeSection = galleryData.find(section => section.id === activeTab);
-
-  const openLightbox = (imageUrl: string, index: number) => {
-    setLightboxImage(imageUrl);
-    setCurrentImageIndex(index);
-  };
-
-  const closeLightbox = () => {
-    setLightboxImage(null);
-  };
-
-  const navigateLightbox = (direction: 'prev' | 'next') => {
-    if (!activeSection) return;
-    
-    const newIndex = direction === 'next' 
-      ? (currentImageIndex + 1) % activeSection.items.length
-      : (currentImageIndex - 1 + activeSection.items.length) % activeSection.items.length;
-    
-    setCurrentImageIndex(newIndex);
-    const currentItem = activeSection.items[newIndex];
-    setLightboxImage(showBefore ? currentItem.before : currentItem.after);
-  };
+  const stats = [
+    { icon: Award, value: '15+', label: 'Let zkušeností' },
+    { icon: Users, value: '500+', label: 'Spokojených klientek' },
+    { icon: Clock, value: '2000+', label: 'Hodin školení' },
+    { icon: Heart, value: '98%', label: 'Spokojenost' }
+  ];
 
   return (
-    <section id="gallery" className="py-20 bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-800">
+    <section id="about" className="py-20 bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-800">
       <div className="container mx-auto px-4">
         <div ref={ref} className={`transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -42,165 +21,128 @@ const Gallery: React.FC = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400 text-sm font-inter font-medium mb-4">
-              Galerie
+              O studiu
             </span>
             <h2 className="font-playfair font-bold text-4xl md:text-5xl text-neutral-800 dark:text-white mb-6">
-              Proměny vlasů
-              <span className="block text-primary-600 dark:text-primary-400">před a po</span>
+              Váš partner pro péči
+              <span className="block text-primary-600 dark:text-primary-400">o vlasy</span>
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto font-inter leading-relaxed">
-              Podívejte se na úžasné proměny vlasů našich klientek. Každá fotografie ukazuje 
-              profesionální přístup a kvalitu naší práce.
+              S více než 15letou praxí v oboru krásy vám nabízím profesionální péči 
+              v příjemném a moderním prostředí našeho studia.
             </p>
           </div>
 
-          {/* Gallery Grid */}
-          {activeSection && (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {activeSection.items.map((item, index) => (
-                <div key={item.id} className="group relative">
-                  <div className="bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-neutral-200 dark:border-neutral-700">
-                    {/* Before/After Images */}
-                    <div className="relative h-64 overflow-hidden">
-                      <div className="flex h-full">
-                        <div className="w-1/2 relative">
-                          <img
-                            src={item.before}
-                            alt={`${item.title} - před`}
-                            className="w-full h-full object-cover"
-                          />
-                          <div className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-lg text-xs font-inter font-medium">
-                            PŘED
-                          </div>
-                        </div>
-                        <div className="w-1/2 relative border-l-2 border-white">
-                          <img
-                            src={item.after}
-                            alt={`${item.title} - po`}
-                            className="w-full h-full object-cover"
-                          />
-                          <div className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-lg text-xs font-inter font-medium">
-                            PO
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* Overlay */}
-                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="flex space-x-3">
-                          <button
-                            onClick={() => openLightbox(item.before, index)}
-                            className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-                          >
-                            <Eye className="w-5 h-5" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Content */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="font-playfair font-bold text-2xl text-neutral-800 dark:text-white mb-4">
+                  Helena Bošínová
+                </h3>
+                <p className="text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed mb-6">
+                  Jmenuji se Helena Bošínová a kadeřnicině se věnuji přes 20 let. Do Liberce jsme se 
+                  přistěhovali v roce 2013, nechala jsem se zaměstnat v kadeřnictví IrisHair. Pak přišli 
+                  děti, mateřská atd. Momentálně mě najdete v Kadeřnictví Pohoda v Moskevské 637/6, 
+                  kde mě mezi sebe přijala parta úžasných holek a kadeřnic.
+                </p>
+                <p className="text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed">
+                  Stále nabírám novou klientelu. Stříhám dámské, pánské, dětské. Barvím, odbarvuji, 
+                  melíruji, foukám, natáčím, češu společenské i svatební účesy a věnuji se i líčení 
+                  a péči o pokožku. Každý účes je vytvořen klientce na míru.
+                </p>
+              </div>
 
-                    {/* Content */}
-                    <div className="p-6">
-                      <h3 className="font-playfair font-bold text-lg text-neutral-800 dark:text-white mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-neutral-600 dark:text-neutral-300 font-inter text-sm leading-relaxed">
-                        {item.description}
-                      </p>
+              {/* Specializations */}
+              <div>
+                <h4 className="font-inter font-semibold text-lg text-neutral-800 dark:text-white mb-4">
+                  Služby:
+                </h4>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    'Dámské kadeřnictví',
+                    'Pánské kadeřnictví', 
+                    'Dětské kadeřnictví',
+                    'Barvení a odbarvování',
+                    'Melírování',
+                    'Společenské účesy',
+                    'Svatební účesy'
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                      <span className="text-neutral-600 dark:text-neutral-300 font-inter text-sm">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Certifications */}
+              <div className="bg-neutral-100 dark:bg-neutral-800 rounded-2xl p-6">
+                <h4 className="font-inter font-semibold text-lg text-neutral-800 dark:text-white mb-4">
+                  Přístup k práci:
+                </h4>
+                <p className="text-neutral-600 dark:text-neutral-300 font-inter text-sm leading-relaxed">
+                  Neustále se školím v nových technologiích a rozvíjím svůj cit pro krásu a estetiku. 
+                  Sleduji nové trendy o vlasech a módě. Umím pracovat s barvami a dokážu klientce 
+                  poradit s celkovou vizáží, navrhnu vhodný typ střihu a barvy vlasů.
+                </p>
+              </div>
+            </div>
+
+            {/* Image & Stats */}
+            <div className="space-y-8">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-3xl blur-2xl opacity-20"></div>
+                <img
+                  src="https://images.pexels.com/photos/3992865/pexels-photo-3992865.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  alt="Paní Bošínová v salonu"
+                  className="relative w-full h-96 object-cover rounded-2xl shadow-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+              </div>
+
+              {/* Stats Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                {stats.map((stat, index) => (
+                  <div key={index} className="bg-white dark:bg-neutral-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <stat.icon className="w-8 h-8 text-primary-500 mx-auto mb-3" />
+                    <div className="font-playfair font-bold text-2xl text-neutral-800 dark:text-white mb-1">
+                      {stat.value}
+                    </div>
+                    <div className="text-neutral-600 dark:text-neutral-400 font-inter text-sm">
+                      {stat.label}
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          )}
+          </div>
 
-          {/* Call to Action */}
-          <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-3xl p-8 md:p-12 max-w-4xl mx-auto">
+          {/* Philosophy */}
+          <div className="mt-20 text-center">
+            <div className="max-w-4xl mx-auto bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-3xl p-8 md:p-12">
               <h3 className="font-playfair font-bold text-2xl md:text-3xl text-neutral-800 dark:text-white mb-6">
-                Staňte se další úspěšnou transformací
+                Můj cíl
               </h3>
-              <p className="text-lg text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed mb-8">
-                Každá klientka je jedinečná a my se těšíme na to, až budeme moci vytvořit vaši vlastní 
-                úžasnou proměnu. Objednejte se ještě dnes!
+              <p className="text-lg text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed">
+                "Mým cílem je pomáhat lidem skrz vlasy a make-up. Protože když člověk vypadá lépe, 
+                cítí se lépe a svět ho bere v tom lepším světle. Když se cítí člověk dobře, jde mu vše 
+                lépe od ruky, je spokojený a šťastnější. Stále na sobě pracuji, pro svou práci se snažím 
+                dělat maximum a chci být v ní ta nejlepší."
               </p>
-              <button
-                onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-full font-inter font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
-              >
-                Začít moji transformaci
-              </button>
+              <div className="mt-6">
+                <span className="font-playfair italic text-primary-600 dark:text-primary-400">
+                  - Helena Bošínová
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Lightbox */}
-      {lightboxImage && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-4xl w-full">
-            {/* Close Button */}
-            <button
-              onClick={closeLightbox}
-              className="absolute top-4 right-4 z-10 p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-            >
-              <X className="w-6 h-6" />
-            </button>
-
-            {/* Navigation */}
-            <button
-              onClick={() => navigateLightbox('prev')}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button
-              onClick={() => navigateLightbox('next')}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-
-            {/* Image */}
-            <img
-              src={lightboxImage}
-              alt="Galerie"
-              className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
-            />
-
-            {/* Toggle Button */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-              <button
-                onClick={() => {
-                  setShowBefore(true);
-                  setLightboxImage(activeSection!.items[currentImageIndex].before);
-                }}
-                className={`px-4 py-2 rounded-lg font-inter font-medium transition-colors ${
-                  showBefore
-                    ? 'bg-red-500 text-white'
-                    : 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30'
-                }`}
-              >
-                Před
-              </button>
-              <button
-                onClick={() => {
-                  setShowBefore(false);
-                  setLightboxImage(activeSection!.items[currentImageIndex].after);
-                }}
-                className={`px-4 py-2 rounded-lg font-inter font-medium transition-colors ${
-                  !showBefore
-                    ? 'bg-green-500 text-white'
-                    : 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30'
-                }`}
-              >
-                Po
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
 
-export default Gallery;
+export default About;
