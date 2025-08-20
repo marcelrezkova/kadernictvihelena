@@ -8,7 +8,7 @@ const Pricing: React.FC = () => {
   const pricingData = [
     {
       category: 'Kadeřnictví',
-      icon: '✂️',
+      icon: 'Scissors',
       services: [
         { name: 'Dámský střih', price: '150-190 Kč', duration: '30 min' },
         { name: 'Mytí, střih, foukaná, styling', price: '420-570 Kč', duration: '60 min' },
@@ -22,7 +22,7 @@ const Pricing: React.FC = () => {
     },
     {
       category: 'Pánské a dětské',
-      icon: '👨‍👦',
+      icon: 'Users',
       services: [
         { name: 'Pánský střih', price: '250 Kč', duration: '30 min' },
         { name: 'Dětský střih', price: '200 Kč', duration: '20 min' },
@@ -36,7 +36,7 @@ const Pricing: React.FC = () => {
     },
     {
       category: 'Doplňkové služby',
-      icon: '✨',
+      icon: 'Sparkles',
       services: [
         { name: 'Regenerace vlasů', price: '40-60 Kč', duration: '15 min' },
         { name: 'Masáž hlavy', price: '50 Kč', duration: '15 min' },
@@ -50,7 +50,7 @@ const Pricing: React.FC = () => {
     },
     {
       category: 'Líčení & kosmetika',
-      icon: '💄',
+      icon: 'Star',
       services: [
         { name: 'Líčení', price: 'na dotaz', duration: '45 min' },
         { name: 'Svatební líčení', price: 'na dotaz', duration: '60 min' },
@@ -104,7 +104,12 @@ const Pricing: React.FC = () => {
                 style={{ animationDelay: `${categoryIndex * 100}ms` }}
               >
                 <div className="text-center mb-6">
-                  <div className="text-3xl mb-3">{category.icon}</div>
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    {category.icon === 'Scissors' && <span className="text-white text-xl">✂</span>}
+                    {category.icon === 'Users' && <span className="text-white text-xl">👥</span>}
+                    {category.icon === 'Sparkles' && <span className="text-white text-xl">✨</span>}
+                    {category.icon === 'Star' && <span className="text-white text-xl">⭐</span>}
+                  </div>
                   <h3 className="font-playfair font-bold text-xl text-neutral-800 dark:text-white">
                     {category.category}
                   </h3>

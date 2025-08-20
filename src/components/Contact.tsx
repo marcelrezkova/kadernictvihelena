@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
 
                 <div className="mt-6 p-4 bg-primary-50 dark:bg-primary-900/20 rounded-xl">
                   <p className="text-sm text-primary-700 dark:text-primary-300 font-inter">
-                    🚗 <strong>Parkování:</strong> Bezplatné parkování v obchodním domě Plaza.
+                    <strong>Parkování:</strong> Bezplatné parkování v obchodním domě Plaza.
                   </p>
                 </div>
               </div>
@@ -153,7 +153,7 @@ const Contact: React.FC = () => {
 
                 <div className="mt-6 p-4 bg-secondary-50 dark:bg-secondary-900/20 rounded-xl">
                   <p className="text-sm text-secondary-700 dark:text-secondary-300 font-inter">
-                    📸 Sledujte naše nejnovější práce a inspirujte se pro vaši proměnu!
+                    Sledujte naše nejnovější práce a inspirujte se pro vaši proměnu!
                   </p>
                 </div>
               </div>
@@ -197,25 +197,25 @@ const Contact: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-gradient-to-br from-neutral-50 to-white dark:from-neutral-800 dark:to-neutral-900 rounded-2xl p-6 shadow-lg border border-neutral-200 dark:border-neutral-700">
                   <h4 className="font-playfair font-bold text-lg text-neutral-800 dark:text-white mb-4">
-                    🚗 Parkování
+                    Parkování
                   </h4>
                   <ul className="space-y-2 text-neutral-600 dark:text-neutral-300 font-inter text-sm">
-                    <li>• Bezplatné parkování před studiem</li>
-                    <li>• Parkovací místa pro klientky</li>
-                    <li>• Bezbariérový přístup</li>
-                    <li>• Dobré dopravní spojení</li>
+                    <li>Bezplatné parkování před studiem</li>
+                    <li>Parkovací místa pro klientky</li>
+                    <li>Bezbariérový přístup</li>
+                    <li>Dobré dopravní spojení</li>
                   </ul>
                 </div>
 
                 <div className="bg-gradient-to-br from-neutral-50 to-white dark:from-neutral-800 dark:to-neutral-900 rounded-2xl p-6 shadow-lg border border-neutral-200 dark:border-neutral-700">
                   <h4 className="font-playfair font-bold text-lg text-neutral-800 dark:text-white mb-4">
-                    🚌 MHD
+                    Veřejná doprava
                   </h4>
                   <ul className="space-y-2 text-neutral-600 dark:text-neutral-300 font-inter text-sm">
-                    <li>• Zastávka "Krásná" - 2 min chůze</li>
-                    <li>• Metro A - Náměstí Míru (10 min)</li>
-                    <li>• Autobus 123, 456 přímo k nám</li>
-                    <li>• Tram 11, 16 do centra</li>
+                    <li>Dobré dopravní spojení</li>
+                    <li>Autobusové zastávky v blízkosti</li>
+                    <li>Snadná dostupnost z centra</li>
+                    <li>Parkování v obchodním domě Plaza</li>
                   </ul>
                 </div>
               </div>
@@ -223,7 +223,6 @@ const Contact: React.FC = () => {
               {/* Special Notice */}
               <div className="bg-gradient-to-r from-primary-50 via-secondary-50 to-primary-50 dark:from-primary-900/20 dark:via-secondary-900/20 dark:to-primary-900/20 rounded-2xl p-8">
                 <div className="text-center">
-                  <div className="text-3xl mb-4">🎉</div>
                   <h3 className="font-playfair font-bold text-2xl text-neutral-800 dark:text-white mb-4">
                     Speciální pozvánka
                   </h3>

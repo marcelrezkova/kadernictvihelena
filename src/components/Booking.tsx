@@ -277,11 +277,11 @@ const Booking: React.FC = () => {
                       Důležité informace
                     </h4>
                     <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-300 font-inter">
-                      <li>• Rezervaci potvrdíme telefonicky nebo e-mailem do 24 hodin</li>
-                      <li>• Stornování je možné do 24 hodin před termínem</li>
-                      <li>• Při opožděním nad 15 minut může být termín zrušen</li>
-                      <li>• Přijímáme hotovost i platební karty</li>
-                      <li>• První konzultace je vždy zdarma</li>
+                      <li>Rezervaci potvrdíme telefonicky nebo e-mailem do 24 hodin</li>
+                      <li>Stornování je možné do 24 hodin před termínem</li>
+                      <li>Při opožděním nad 15 minut může být termín zrušen</li>
+                      <li>Přijímáme hotovost i platební karty</li>
+                      <li>První konzultace je vždy zdarma</li>
                     </ul>
                   </div>
                 </div>
@@ -299,7 +299,7 @@ const Booking: React.FC = () => {
                 </p>
                 <div className="bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl p-4">
                   <p className="text-sm text-green-700 dark:text-green-300 font-inter">
-                    📧 Potvrzovací e-mail byl odeslán na adresu: <strong>{formData.email}</strong>
+                    Potvrzovací e-mail byl odeslán na adresu: <strong>{formData.email}</strong>
                   </p>
                 </div>
               </div>

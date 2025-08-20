@@ -98,7 +98,6 @@ const Services: React.FC = () => {
           {/* Special Offers */}
           <div className="bg-gradient-to-r from-primary-50 via-secondary-50 to-primary-50 dark:from-primary-900/20 dark:via-secondary-900/20 dark:to-primary-900/20 rounded-3xl p-8 md:p-12">
             <div className="text-center">
-              <div className="text-4xl mb-6">💫</div>
               <h3 className="font-playfair font-bold text-2xl md:text-3xl text-neutral-800 dark:text-white mb-6">
                 Proč si vybrat Kadeřnictví POHODA?
               </h3>

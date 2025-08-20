@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
         }`}>
           <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-primary-400/20 backdrop-blur-sm rounded-full text-primary-100 text-sm font-inter font-medium mb-4">
-              ✨ Profesionální kadeřnictví
+              Profesionální kadeřnictví
             </span>
           </div>
 
@@ -94,7 +94,7 @@ const Hero: React.FC = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 max-w-sm border border-white/20">
             <div className="text-center">
               <div className="w-20 h-20 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl">💫</span>
+                <span className="text-2xl font-playfair font-bold text-white">H</span>
               </div>
               <h3 className="font-playfair font-bold text-white text-lg mb-2">
                 První návštěva

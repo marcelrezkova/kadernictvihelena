@@ -123,7 +123,6 @@ const About: React.FC = () => {
           {/* Philosophy */}
           <div className="mt-20 text-center">
             <div className="max-w-4xl mx-auto bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-3xl p-8 md:p-12">
-              <div className="text-4xl mb-6">💎</div>
               <h3 className="font-playfair font-bold text-2xl md:text-3xl text-neutral-800 dark:text-white mb-6">
                 Můj cíl
               </h3>
