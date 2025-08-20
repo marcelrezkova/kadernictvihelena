@@ -10,7 +10,9 @@ const Pricing: React.FC = () => {
       category: 'Dámské kadeřnictví',
       icon: 'Scissors',
       services: [
-        { name: 'Dámský střih', price: '150-190 Kč', duration: '30 min' },
+        { name: 'Dámský střih - krátké vlasy', price: '150 Kč', duration: '30 min' },
+        { name: 'Dámský střih - polodlouhé vlasy', price: '170 Kč', duration: '30 min' },
+        { name: 'Dámský střih - dlouhé vlasy', price: '190 Kč', duration: '30 min' },
         { name: 'Mytí, střih, foukaná, styling', price: '420-570 Kč', duration: '60 min' },
         { name: 'Melírování přes čepici', price: '500-850 Kč', duration: '120 min' },
         { name: 'Melírování klasické', price: '600-950 Kč', duration: '120 min' },
