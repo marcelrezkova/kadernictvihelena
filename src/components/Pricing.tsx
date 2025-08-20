@@ -7,25 +7,41 @@ const Pricing: React.FC = () => {
 
   const pricingData = [
     {
-      category: 'Kadeřnictví',
+      category: 'Dámské kadeřnictví',
       icon: 'Scissors',
       services: [
         { name: 'Dámský střih', price: '150-190 Kč', duration: '30 min' },
         { name: 'Mytí, střih, foukaná, styling', price: '420-570 Kč', duration: '60 min' },
-        { name: 'Melírování', price: '500-850 Kč', duration: '120 min' },
+        { name: 'Melírování přes čepici', price: '500-850 Kč', duration: '120 min' },
+        { name: 'Melírování klasické', price: '600-950 Kč', duration: '120 min' },
+        { name: 'Barevné melíry', price: '100-200 Kč', duration: '30 min' },
+        { name: 'Tunely', price: '100-200 Kč', duration: '30 min' },
         { name: 'Barva odrost', price: '310-380 Kč', duration: '90 min' },
         { name: 'Přeliv, barva', price: '400-600 Kč', duration: '120 min' },
+        { name: 'Kombinované barvení', price: '500-800 Kč', duration: '150 min' },
+        { name: 'Stahování barvy', price: '500-900 Kč', duration: '120 min' },
         { name: 'Společenské účesy', price: '500-1000 Kč', duration: '60-90 min' },
+        { name: 'Svatební účesy', price: '800-1200 Kč', duration: '90 min' },
+        { name: 'Vodová ondulace', price: '130-180 Kč', duration: '45 min' },
+        { name: 'Natáčení vlasů', price: '150-250 Kč', duration: '45 min' },
+        { name: 'Žehlení vlasů', price: '80-120 Kč', duration: '30 min' },
         { name: 'Keratinová kúra', price: '250-450 Kč', duration: '90 min' },
-        { name: 'Trvalá ondulace', price: '380-650 Kč', duration: '120 min' }
+        { name: 'Regenerace vlasů', price: '40-60 Kč', duration: '15 min' },
+        { name: 'Masáž hlavy', price: '50 Kč', duration: '15 min' },
+        { name: 'Trvalá ondulace', price: '380-650 Kč', duration: '120 min' },
+        { name: 'Narovnání vlasů', price: '250-550 Kč', duration: '60 min' },
+        { name: 'Prodloužení vlasů', price: '2500-4000 Kč', duration: '180-240 min' },
+        { name: 'Sundávání nastavených vlasů', price: '700-2500 Kč', duration: '90-180 min' },
+        { name: 'Přípravek Powerplex', price: '50-100 Kč', duration: '30 min' },
+        { name: 'Zastřižení ofiny', price: '60-70 Kč', duration: '15 min' },
+        { name: 'Mytí vlasů', price: '80-130 Kč', duration: '15 min' }
       ]
     },
     {
-      category: 'Pánské a dětské',
+      category: 'Pánské kadeřnictví',
       icon: 'Users',
       services: [
         { name: 'Pánský střih', price: '250 Kč', duration: '30 min' },
-        { name: 'Dětský střih', price: '200 Kč', duration: '20 min' },
         { name: 'Střih strojkem', price: '200 Kč', duration: '20 min' },
         { name: 'Moderní střih', price: '300 Kč', duration: '45 min' },
         { name: 'Úprava vousů', price: '110 Kč', duration: '15 min' },
@@ -35,35 +51,15 @@ const Pricing: React.FC = () => {
       ]
     },
     {
-      category: 'Doplňkové služby',
-      icon: 'Sparkles',
+      category: 'Dětské kadeřnictví',
+      icon: 'Heart',
       services: [
-        { name: 'Regenerace vlasů', price: '40-60 Kč', duration: '15 min' },
-        { name: 'Masáž hlavy', price: '50 Kč', duration: '15 min' },
-        { name: 'Narovnání vlasů', price: '250-550 Kč', duration: '60 min' },
-        { name: 'Stahování barvy', price: '500-900 Kč', duration: '120 min' },
-        { name: 'Prodloužení vlasů', price: '2500-4000 Kč', duration: '180-240 min' },
-        { name: 'Sundávání nastavených vlasů', price: '700-2500 Kč', duration: '90-180 min' },
-        { name: 'Přípravek Powerplex', price: '50-100 Kč', duration: '30 min' },
-        { name: 'Barevné tunely', price: '100-200 Kč', duration: '30 min' }
-      ]
-    },
-    {
-      category: 'Líčení & kosmetika',
-      icon: 'Star',
-      services: [
-        { name: 'Líčení', price: 'na dotaz', duration: '45 min' },
-        { name: 'Svatební líčení', price: 'na dotaz', duration: '60 min' },
-        { name: 'Společenské líčení', price: 'na dotaz', duration: '45 min' },
-        { name: 'Péče o pokožku', price: 'na dotaz', duration: '60 min' },
-        { name: 'Žehlení vlasů', price: '80-120 Kč', duration: '30 min' },
-        { name: 'Vodová ondulace', price: '130-180 Kč', duration: '45 min' },
-        { name: 'Zastřižení ofiny', price: '60-70 Kč', duration: '15 min' },
-        { name: 'Mytí vlasů', price: '80-130 Kč', duration: '15 min' }
+        { name: 'Dětský střih', price: '200 Kč', duration: '20 min' },
+        { name: 'Mytí vlasů', price: '50 Kč', duration: '10 min' },
+        { name: 'Styling', price: '30 Kč', duration: '10 min' }
       ]
     }
   ];
-
 
   const scrollToBooking = () => {
     const element = document.getElementById('booking');
@@ -94,7 +90,7 @@ const Pricing: React.FC = () => {
           </div>
 
           {/* Services Pricing */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
             {pricingData.map((category, categoryIndex) => (
               <div 
                 key={category.category}
@@ -106,16 +102,15 @@ const Pricing: React.FC = () => {
                 <div className="text-center mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center mx-auto mb-3">
                     {category.icon === 'Scissors' && <span className="text-white text-xl">✂</span>}
-                    {category.icon === 'Users' && <span className="text-white text-xl">👥</span>}
-                    {category.icon === 'Sparkles' && <span className="text-white text-xl">✨</span>}
-                    {category.icon === 'Star' && <span className="text-white text-xl">⭐</span>}
+                    {category.icon === 'Users' && <span className="text-white text-xl">👨</span>}
+                    {category.icon === 'Heart' && <span className="text-white text-xl">👶</span>}
                   </div>
                   <h3 className="font-playfair font-bold text-xl text-neutral-800 dark:text-white">
                     {category.category}
                   </h3>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {category.services.map((service, serviceIndex) => (
                     <div key={serviceIndex} className="flex justify-between items-start">
                       <div className="flex-1">
@@ -135,8 +130,6 @@ const Pricing: React.FC = () => {
               </div>
             ))}
           </div>
-
-          {/* Package Deals */}
 
           {/* Additional Info */}
           <div className="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-3xl p-8 md:p-12">
@@ -165,10 +158,10 @@ const Pricing: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-inter font-semibold text-neutral-800 dark:text-white mb-2">
-                    Platební možnosti
+                    Konzultace
                   </h4>
                   <p className="text-sm text-neutral-600 dark:text-neutral-300">
-                    Přijímáme hotovost i platební karty. 
+                    První konzultace je vždy zdarma. 
                     Ceny jsou konečné včetně všech služeb.
                   </p>
                 </div>
