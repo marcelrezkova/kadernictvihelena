@@ -24,8 +24,8 @@ const About: React.FC = () => {
               O studiu
             </span>
             <h2 className="font-playfair font-bold text-4xl md:text-5xl text-neutral-800 dark:text-white mb-6">
-              Váš partner v cestě 
-              <span className="block text-primary-600 dark:text-primary-400">za krásou</span>
+              Váš partner pro péči
+              <span className="block text-primary-600 dark:text-primary-400">o vlasy</span>
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto font-inter leading-relaxed">
               S více než 15letou praxí v oboru krásy vám nabízím profesionální péči 
