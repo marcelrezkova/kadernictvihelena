@@ -45,34 +45,13 @@ const Gallery: React.FC = () => {
               Galerie
             </span>
             <h2 className="font-playfair font-bold text-4xl md:text-5xl text-neutral-800 dark:text-white mb-6">
-              Před & Po
-              <span className="block text-primary-600 dark:text-primary-400">transformacích</span>
+              Proměny vlasů
+              <span className="block text-primary-600 dark:text-primary-400">před a po</span>
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto font-inter leading-relaxed">
-              Podívejte se na úžasné proměny našich klientek. Každá fotografie vypráví příběh 
-              o cestě k větší sebedůvěře a kráse.
+              Podívejte se na úžasné proměny vlasů našich klientek. Každá fotografie ukazuje 
+              profesionální přístup a kvalitu naší práce.
             </p>
-          </div>
-
-          {/* Category Tabs */}
-          <div className="flex justify-center mb-12">
-            <div className="bg-white dark:bg-neutral-800 rounded-2xl p-2 shadow-lg border border-neutral-200 dark:border-neutral-700">
-              <div className="flex space-x-2">
-                {galleryData.map((section) => (
-                  <button
-                    key={section.id}
-                    onClick={() => setActiveTab(section.id)}
-                    className={`px-6 py-3 rounded-xl font-inter font-medium transition-all duration-300 ${
-                      activeTab === section.id
-                        ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg'
-                        : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-700'
-                    }`}
-                  >
-                    {section.title}
-                  </button>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Gallery Grid */}
