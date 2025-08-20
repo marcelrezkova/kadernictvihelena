@@ -21,45 +21,45 @@ const Pricing: React.FC = () => {
       ]
     },
     {
-      category: 'Kosmetika',
+      category: 'Pánské a dětské',
+      icon: '👨‍👦',
+      services: [
+        { name: 'Pánský střih', price: '250 Kč', duration: '30 min' },
+        { name: 'Dětský střih', price: '200 Kč', duration: '20 min' },
+        { name: 'Střih strojkem', price: '200 Kč', duration: '20 min' },
+        { name: 'Moderní střih', price: '300 Kč', duration: '45 min' },
+        { name: 'Úprava vousů', price: '110 Kč', duration: '15 min' },
+        { name: 'Komplet (střih, mytí, sušení)', price: '400 Kč', duration: '45 min' },
+        { name: 'Melír přes čepici', price: '350-480 Kč', duration: '90 min' },
+        { name: 'Styling (vosk, gel, lak)', price: '50 Kč', duration: '10 min' }
+      ]
+    },
+    {
+      category: 'Doplňkové služby',
       icon: '✨',
       services: [
-        { name: 'Péče o pokožku', price: 'na dotaz', duration: '60 min' },
         { name: 'Regenerace vlasů', price: '40-60 Kč', duration: '15 min' },
         { name: 'Masáž hlavy', price: '50 Kč', duration: '15 min' },
         { name: 'Narovnání vlasů', price: '250-550 Kč', duration: '60 min' },
         { name: 'Stahování barvy', price: '500-900 Kč', duration: '120 min' },
         { name: 'Prodloužení vlasů', price: '2500-4000 Kč', duration: '180-240 min' },
         { name: 'Sundávání nastavených vlasů', price: '700-2500 Kč', duration: '90-180 min' },
-        { name: 'Přípravek Powerplex', price: '50-100 Kč', duration: '30 min' }
+        { name: 'Přípravek Powerplex', price: '50-100 Kč', duration: '30 min' },
+        { name: 'Barevné tunely', price: '100-200 Kč', duration: '30 min' }
       ]
     },
     {
-      category: 'Líčení & Permanentní makeup',
+      category: 'Líčení & kosmetika',
       icon: '💄',
       services: [
         { name: 'Líčení', price: 'na dotaz', duration: '45 min' },
         { name: 'Svatební líčení', price: 'na dotaz', duration: '60 min' },
         { name: 'Společenské líčení', price: 'na dotaz', duration: '45 min' },
-        { name: 'Barevné tunely', price: '100-200 Kč', duration: '30 min' },
-        { name: 'Styling (gel, lak, vosk)', price: '40 Kč', duration: '10 min' },
+        { name: 'Péče o pokožku', price: 'na dotaz', duration: '60 min' },
         { name: 'Žehlení vlasů', price: '80-120 Kč', duration: '30 min' },
         { name: 'Vodová ondulace', price: '130-180 Kč', duration: '45 min' },
-        { name: 'Zastřižení ofiny', price: '60-70 Kč', duration: '15 min' }
-      ]
-    },
-    {
-      category: 'Speciální služby',
-      icon: '💫',
-      services: [
-        { name: 'Mytí vlasů', price: '80-130 Kč', duration: '15 min' },
-        { name: 'Foukaná', price: '150-350 Kč', duration: '30-45 min' },
-        { name: 'Sušení', price: '70-110 Kč', duration: '20 min' },
-        { name: 'Top, mix střih', price: '180-240 Kč', duration: '45 min' },
-        { name: 'Dámský střih na sucho', price: '250-290 Kč', duration: '30 min' },
-        { name: 'Kombinované barvení', price: '500-850 Kč', duration: '150 min' },
-        { name: 'Barevný melír', price: '550-850 Kč', duration: '180 min' },
-        { name: 'Příplatek za dlouhé vlasy', price: '50-100 Kč', duration: '' }
+        { name: 'Zastřižení ofiny', price: '60-70 Kč', duration: '15 min' },
+        { name: 'Mytí vlasů', price: '80-130 Kč', duration: '15 min' }
       ]
     }
   ];
