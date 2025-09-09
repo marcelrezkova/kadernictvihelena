@@ -12,10 +12,10 @@ export const useTheme = () => {
   useEffect(() => {
     const root = document.documentElement;
     if (isDark) {
-      root.setAttribute('data-theme', 'dark');
+      root.classList.add('dark');
       localStorage.setItem('theme', 'dark');
     } else {
-      root.setAttribute('data-theme', 'light');
+      root.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
   }, [isDark]);
