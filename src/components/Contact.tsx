@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, MessageSquare, Send } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const Contact: React.FC = () => {
@@ -17,18 +17,17 @@ const Contact: React.FC = () => {
               Kontakt
             </span>
             <h2 className="font-playfair font-bold text-4xl md:text-5xl text-neutral-800 dark:text-white mb-6">
-              Spojte se
-              <span className="block text-primary-600 dark:text-primary-400">s námi</span>
+              Kde nás
+              <span className="block text-primary-600 dark:text-primary-400">najdete</span>
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto font-inter leading-relaxed">
-              Máte dotazy nebo si chcete domluvit termín? Rádi vám odpovíme a pomůžeme 
-              s výběrem vhodné služby.
+              Navštivte nás v kadeřnictví POHODA v centru Liberce. Těšíme se na vás!
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="max-w-2xl mx-auto">
             {/* Contact Information */}
-            <div className="space-y-8">
+            <div className="space-y-8 mb-16">
               <div>
                 <h3 className="font-playfair font-bold text-2xl text-neutral-800 dark:text-white mb-6">
                   Kontaktní informace
@@ -102,87 +101,10 @@ const Contact: React.FC = () => {
                 </div>
               </div>
             </div>
-
-            {/* Contact Form */}
-            <div className="bg-white dark:bg-neutral-800 rounded-2xl p-8 shadow-lg border border-neutral-200 dark:border-neutral-700">
-              <h3 className="font-playfair font-bold text-2xl text-neutral-800 dark:text-white mb-6">
-                Napište nám
-              </h3>
-              
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-inter font-medium text-neutral-700 dark:text-neutral-300 mb-2">
-                      Jméno *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-neutral-700 text-neutral-800 dark:text-white font-inter"
-                      placeholder="Vaše jméno"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-inter font-medium text-neutral-700 dark:text-neutral-300 mb-2">
-                      Telefon
-                    </label>
-                    <input
-                      type="tel"
-                      className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-neutral-700 text-neutral-800 dark:text-white font-inter"
-                      placeholder="123 456 789"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-inter font-medium text-neutral-700 dark:text-neutral-300 mb-2">
-                    E-mail *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-neutral-700 text-neutral-800 dark:text-white font-inter"
-                    placeholder="vas@email.cz"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-inter font-medium text-neutral-700 dark:text-neutral-300 mb-2">
-                    Předmět
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-neutral-700 text-neutral-800 dark:text-white font-inter"
-                    placeholder="Dotaz ohledně služeb"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-inter font-medium text-neutral-700 dark:text-neutral-300 mb-2">
-                    <MessageSquare className="w-4 h-4 inline mr-2" />
-                    Zpráva *
-                  </label>
-                  <textarea
-                    required
-                    rows={5}
-                    className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-neutral-700 text-neutral-800 dark:text-white font-inter resize-none"
-                    placeholder="Napište nám svůj dotaz nebo požadavek..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full px-6 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-lg font-inter font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-2"
-                >
-                  <Send className="w-5 h-5" />
-                  <span>Odeslat zprávu</span>
-                </button>
-              </form>
-            </div>
           </div>
 
           {/* Location Map */}
-          <div className="mt-20">
+          <div>
             <div className="bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700">
               <div className="p-6 text-center border-b border-neutral-200 dark:border-neutral-700">
                 <MapPin className="w-8 h-8 text-primary-500 mx-auto mb-3" />
