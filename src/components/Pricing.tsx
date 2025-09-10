@@ -98,77 +98,99 @@ const Pricing: React.FC = () => {
           </div>
 
           {/* Services Pricing */}
-          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+          <div className="space-y-12 mb-20">
             {pricingData.map((category, categoryIndex) => (
-              <div 
+              <div
                 key={category.category}
-                className={`bg-gradient-to-br from-neutral-50 to-white dark:from-neutral-800 dark:to-neutral-900 rounded-2xl p-6 shadow-lg border border-neutral-200 dark:border-neutral-700 hover:shadow-xl transition-all duration-300 ${
+                className={`bg-gradient-to-br from-neutral-50 to-white dark:from-neutral-800 dark:to-neutral-900 rounded-2xl shadow-lg border border-neutral-200 dark:border-neutral-700 hover:shadow-xl transition-all duration-300 overflow-hidden ${
                   isVisible ? 'animate-fade-in-up' : ''
                 }`}
                 style={{ animationDelay: `${categoryIndex * 100}ms` }}
               >
-                <div className="text-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    {category.icon === 'Scissors' && <span className="text-white text-xl">✂</span>}
-                    {category.icon === 'Users' && <span className="text-white text-xl">👨</span>}
-                    {category.icon === 'Heart' && <span className="text-white text-xl">👶</span>}
+                {/* Category Header */}
+                <div className="bg-gradient-to-r from-primary-500 to-primary-600 p-6 text-center">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-4">
+                    {category.icon === 'Scissors' && <span className="text-white text-2xl">✂️</span>}
+                    {category.icon === 'Users' && <span className="text-white text-2xl">👨</span>}
+                    {category.icon === 'Heart' && <span className="text-white text-2xl">👶</span>}
                   </div>
-                  <h3 className="font-playfair font-bold text-xl text-neutral-800 dark:text-white">
+                  <h3 className="font-playfair font-bold text-2xl text-white mb-2">
                     {category.category}
                   </h3>
+                  <p className="text-white/80 font-inter text-sm">
+                    {category.services.length} služeb
+                  </p>
                 </div>
 
-                <div className="space-y-3">
-                  {category.services.map((service, serviceIndex) => (
-                    <div key={serviceIndex} className="flex justify-between items-start">
-                      <div className="flex-1">
-                        <div className="font-inter font-medium text-sm text-neutral-800 dark:text-white">
-                          {service.name}
+                {/* Services Grid */}
+                <div className="p-6">
+                  <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
+                    {category.services.map((service, serviceIndex) => (
+                      <div 
+                        key={serviceIndex} 
+                        className="bg-white/50 dark:bg-neutral-700/50 rounded-lg p-4 hover:bg-white/80 dark:hover:bg-neutral-700/80 transition-colors"
+                      >
+                        <div className="flex justify-between items-start mb-2">
+                          <div className="flex-1 pr-3">
+                            <div className="font-inter font-medium text-sm text-neutral-800 dark:text-white leading-tight">
+                              {service.name}
+                            </div>
+                          </div>
+                          <div className="font-inter font-bold text-primary-600 dark:text-primary-400 text-sm whitespace-nowrap">
+                            {service.price}
+                          </div>
                         </div>
-                        <div className="text-xs text-neutral-500 dark:text-neutral-400">
+                        <div className="text-xs text-neutral-500 dark:text-neutral-400 flex items-center">
+                          <span className="w-1 h-1 bg-primary-400 rounded-full mr-2"></span>
                           {service.duration}
                         </div>
                       </div>
-                      <div className="font-inter font-bold text-primary-600 dark:text-primary-400 text-sm ml-2">
-                        {service.price}
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Additional Info */}
-          <div className="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-3xl p-8 md:p-12">
+          <div className="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-3xl p-8 md:p-12 max-w-6xl mx-auto">
             <div className="text-center">
               <h3 className="font-playfair font-bold text-2xl text-neutral-800 dark:text-white mb-6">
                 Důležité informace
               </h3>
-              <div className="grid md:grid-cols-3 gap-6 text-left">
-                <div>
+              <div className="grid md:grid-cols-3 gap-8 text-left">
+                <div className="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-xl p-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white text-xl">📅</span>
+                  </div>
                   <h4 className="font-inter font-semibold text-neutral-800 dark:text-white mb-2">
                     Rezervace a stornovací podmínky
                   </h4>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-300">
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
                     Rezervace lze stornovat do 24 hodin před termínem zdarma. 
                     Později účtujeme 50% z ceny služby.
                   </p>
                 </div>
-                <div>
+                <div className="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-xl p-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white text-xl">💳</span>
+                  </div>
                   <h4 className="font-inter font-semibold text-neutral-800 dark:text-white mb-2">
                     Platební možnosti
                   </h4>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-300">
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
                     Přijímáme hotovost, platební karty i bezhotovostní převod. 
                     Stravenky bohužel nepřijímáme.
                   </p>
                 </div>
-                <div>
+                <div className="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-xl p-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white text-xl">💬</span>
+                  </div>
                   <h4 className="font-inter font-semibold text-neutral-800 dark:text-white mb-2">
                     Konzultace
                   </h4>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-300">
+                  <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
                     První konzultace je vždy zdarma. 
                     Ceny jsou konečné včetně všech služeb.
                   </p>
