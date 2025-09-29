@@ -190,49 +190,49 @@ export const pricingCategories: PricingCategory[] = [
   {
     id: 'damske',
     title: 'Dámské kadeřnictví',
-    icon: '✂️',
+    icon: '',
     color: 'from-pink-500 to-rose-500',
     description: 'Střihy, mytí, foukaná a styling pro dámy'
   },
   {
     id: 'barveni',
     title: 'Barvení a melírování',
-    icon: '🎨',
+    icon: '',
     color: 'from-purple-500 to-indigo-500',
     description: 'Profesionální barvení a melírování všech typů'
   },
   {
     id: 'pece',
     title: 'Péče o vlasy',
-    icon: '💆‍♀️',
+    icon: '',
     color: 'from-green-500 to-emerald-500',
     description: 'Regenerační a keratinové ošetření'
   },
   {
     id: 'spolecenske',
     title: 'Společenské účesy',
-    icon: '👑',
+    icon: '',
     color: 'from-amber-500 to-orange-500',
     description: 'Účesy pro speciální příležitosti'
   },
   {
     id: 'panske',
     title: 'Pánské kadeřnictví',
-    icon: '👨',
+    icon: '',
     color: 'from-blue-500 to-indigo-500',
     description: 'Klasické i moderní pánské střihy'
   },
   {
     id: 'detske',
     title: 'Dětské kadeřnictví',
-    icon: '👶',
+    icon: '',
     color: 'from-pink-400 to-purple-400',
     description: 'Šetrné střihy pro nejmenší'
   },
   {
     id: 'specialni',
     title: 'Speciální služby',
-    icon: '⭐',
+    icon: '',
     color: 'from-violet-500 to-purple-500',
     description: 'Prodloužení vlasů a další speciální služby'
   }
