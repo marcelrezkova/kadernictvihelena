@@ -1,37 +1,71 @@
-import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, X, Eye } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, X, Play, Pause } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { galleryData, GalleryItem } from '../data/galleryData';
+import { galleryImages, getImagesByCategory, getCategoryLabel, GalleryImage } from '../data/galleryImages';
 
 const Gallery: React.FC = () => {
   const { ref, isVisible } = useScrollReveal();
-  const [activeTab, setActiveTab] = useState(galleryData[0].id);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState<GalleryImage['category'] | 'all'>('all');
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [showBefore, setShowBefore] = useState(true);
 
-  const activeSection = galleryData.find(section => section.id === activeTab);
+  // Filtrované obrázky podle kategorie
+  const filteredImages = selectedCategory === 'all' 
+    ? galleryImages 
+    : getImagesByCategory(selectedCategory);
 
-  const openLightbox = (imageUrl: string, index: number) => {
-    setLightboxImage(imageUrl);
-    setCurrentImageIndex(index);
+  // Auto-play funkce
+  useEffect(() => {
+    if (!isAutoPlay || filteredImages.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % filteredImages.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isAutoPlay, filteredImages.length]);
+
+  // Navigace kolotoče
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % filteredImages.length);
+  };
+
+  const goToPrevious = () => {
+    setCurrentIndex((prev) => (prev - 1 + filteredImages.length) % filteredImages.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+  };
+
+  // Lightbox funkce
+  const openLightbox = (imageSrc: string) => {
+    setLightboxImage(imageSrc);
+    setIsAutoPlay(false);
   };
 
   const closeLightbox = () => {
     setLightboxImage(null);
+    setIsAutoPlay(true);
   };
 
-  const navigateLightbox = (direction: 'prev' | 'next') => {
-    if (!activeSection) return;
-    
-    const newIndex = direction === 'next' 
-      ? (currentImageIndex + 1) % activeSection.items.length
-      : (currentImageIndex - 1 + activeSection.items.length) % activeSection.items.length;
-    
-    setCurrentImageIndex(newIndex);
-    const currentItem = activeSection.items[newIndex];
-    setLightboxImage(showBefore ? currentItem.before : currentItem.after);
-  };
+  // Reset indexu při změně kategorie
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [selectedCategory]);
+
+  if (filteredImages.length === 0) {
+    return (
+      <section id="gallery" className="py-20 bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-800">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-neutral-600 dark:text-neutral-300">Žádné obrázky v této kategorii.</p>
+        </div>
+      </section>
+    );
+  }
+
+  const currentImage = filteredImages[currentIndex];
 
   return (
     <section id="gallery" className="py-20 bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-800">
@@ -45,89 +79,164 @@ const Gallery: React.FC = () => {
               Galerie
             </span>
             <h2 className="font-playfair font-bold text-4xl md:text-5xl text-neutral-800 dark:text-white mb-6">
-              Proměny vlasů
-              <span className="block text-primary-600 dark:text-primary-400">před a po</span>
+              Naše
+              <span className="block text-primary-600 dark:text-primary-400">práce</span>
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto font-inter leading-relaxed">
-              Podívejte se na úžasné proměny vlasů našich klientek. Každá fotografie ukazuje 
-              profesionální přístup a kvalitu naší práce.
+              Podívejte se na výsledky naší práce a nechte se inspirovat pro svou další návštěvu.
             </p>
           </div>
 
-          {/* Gallery Grid */}
-          {activeSection && (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {activeSection.items.map((item, index) => (
-                <div key={item.id} className="group relative">
-                  <div className="bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-neutral-200 dark:border-neutral-700">
-                    {/* Before/After Images */}
-                    <div className="relative h-64 overflow-hidden">
-                      <div className="flex h-full">
-                        <div className="w-1/2 relative">
-                          <img
-                            src={item.before}
-                            alt={`${item.title} - před`}
-                            className="w-full h-full object-cover"
-                          />
-                          <div className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-lg text-xs font-inter font-medium">
-                            PŘED
-                          </div>
-                        </div>
-                        <div className="w-1/2 relative border-l-2 border-white">
-                          <img
-                            src={item.after}
-                            alt={`${item.title} - po`}
-                            className="w-full h-full object-cover"
-                          />
-                          <div className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-lg text-xs font-inter font-medium">
-                            PO
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* Overlay */}
-                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="flex space-x-3">
-                          <button
-                            onClick={() => openLightbox(item.before, index)}
-                            className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-                          >
-                            <Eye className="w-5 h-5" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+          {/* Category Filters */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            <button
+              onClick={() => setSelectedCategory('all')}
+              className={`px-4 py-2 rounded-full font-inter font-medium text-sm transition-all duration-300 ${
+                selectedCategory === 'all'
+                  ? 'bg-primary-500 text-white shadow-lg'
+                  : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700'
+              }`}
+            >
+              Vše
+            </button>
+            {['hairstyles', 'salon', 'before-after', 'products'].map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category as GalleryImage['category'])}
+                className={`px-4 py-2 rounded-full font-inter font-medium text-sm transition-all duration-300 ${
+                  selectedCategory === category
+                    ? 'bg-primary-500 text-white shadow-lg'
+                    : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700'
+                }`}
+              >
+                {getCategoryLabel(category as GalleryImage['category'])}
+              </button>
+            ))}
+          </div>
 
-                    {/* Content */}
-                    <div className="p-6">
-                      <h3 className="font-playfair font-bold text-lg text-neutral-800 dark:text-white mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-neutral-600 dark:text-neutral-300 font-inter text-sm leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
+          {/* Carousel Container */}
+          <div className="max-w-4xl mx-auto">
+            <div className="relative bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-2xl border border-neutral-200 dark:border-neutral-700">
+              
+              {/* Main Image */}
+              <div className="relative h-96 md:h-[500px] overflow-hidden">
+                <img
+                  src={currentImage.src}
+                  alt={currentImage.alt}
+                  className="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+                  onClick={() => openLightbox(currentImage.src)}
+                />
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                
+                {/* Navigation Arrows */}
+                {filteredImages.length > 1 && (
+                  <>
+                    <button
+                      onClick={goToPrevious}
+                      className="absolute left-4 top-1/2 transform -translate-y-1/2 p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-all duration-300 group"
+                    >
+                      <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
+                    </button>
+                    <button
+                      onClick={goToNext}
+                      className="absolute right-4 top-1/2 transform -translate-y-1/2 p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-all duration-300 group"
+                    >
+                      <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </>
+                )}
+
+                {/* Auto-play Control */}
+                {filteredImages.length > 1 && (
+                  <button
+                    onClick={() => setIsAutoPlay(!isAutoPlay)}
+                    className="absolute top-4 right-4 p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
+                  >
+                    {isAutoPlay ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+                  </button>
+                )}
+
+                {/* Image Info */}
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="font-playfair font-bold text-xl text-white mb-1">
+                    {currentImage.title}
+                  </h3>
+                  <p className="text-white/80 font-inter text-sm">
+                    {currentImage.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Thumbnails */}
+              {filteredImages.length > 1 && (
+                <div className="p-4 bg-neutral-50 dark:bg-neutral-900">
+                  <div className="flex space-x-2 overflow-x-auto pb-2">
+                    {filteredImages.map((image, index) => (
+                      <button
+                        key={image.id}
+                        onClick={() => goToSlide(index)}
+                        className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                          index === currentIndex
+                            ? 'border-primary-500 scale-110'
+                            : 'border-transparent hover:border-primary-300'
+                        }`}
+                      >
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full h-full object-cover"
+                        />
+                      </button>
+                    ))}
                   </div>
                 </div>
-              ))}
+              )}
+
+              {/* Progress Indicators */}
+              {filteredImages.length > 1 && (
+                <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  {filteredImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => goToSlide(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentIndex
+                          ? 'bg-white scale-125'
+                          : 'bg-white/50 hover:bg-white/75'
+                      }`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
-          )}
+
+            {/* Gallery Stats */}
+            <div className="text-center mt-8">
+              <p className="text-neutral-600 dark:text-neutral-400 font-inter text-sm">
+                {currentIndex + 1} z {filteredImages.length} obrázků
+                {selectedCategory !== 'all' && (
+                  <span className="ml-2">• {getCategoryLabel(selectedCategory)}</span>
+                )}
+              </p>
+            </div>
+          </div>
 
           {/* Call to Action */}
           <div className="text-center mt-16">
             <div className="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-3xl p-8 md:p-12 max-w-4xl mx-auto">
               <h3 className="font-playfair font-bold text-2xl md:text-3xl text-neutral-800 dark:text-white mb-6">
-                Staňte se další úspěšnou transformací
+                Líbí se vám naše práce?
               </h3>
               <p className="text-lg text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed mb-8">
-                Každá klientka je jedinečná a my se těšíme na to, až budeme moci vytvořit vaši vlastní 
-                úžasnou proměnu. Objednejte se ještě dnes!
+                Objednejte se a nechte si vytvořit svůj vlastní jedinečný účes v našem studiu.
               </p>
               <button
                 onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-full font-inter font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
               >
-                Začít moji transformaci
+                Objednat se na termín
               </button>
             </div>
           </div>
@@ -138,64 +247,17 @@ const Gallery: React.FC = () => {
       {lightboxImage && (
         <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
           <div className="relative max-w-4xl w-full">
-            {/* Close Button */}
             <button
               onClick={closeLightbox}
               className="absolute top-4 right-4 z-10 p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
             >
               <X className="w-6 h-6" />
             </button>
-
-            {/* Navigation */}
-            <button
-              onClick={() => navigateLightbox('prev')}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button
-              onClick={() => navigateLightbox('next')}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-
-            {/* Image */}
             <img
               src={lightboxImage}
               alt="Galerie"
               className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
             />
-
-            {/* Toggle Button */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-              <button
-                onClick={() => {
-                  setShowBefore(true);
-                  setLightboxImage(activeSection!.items[currentImageIndex].before);
-                }}
-                className={`px-4 py-2 rounded-lg font-inter font-medium transition-colors ${
-                  showBefore
-                    ? 'bg-red-500 text-white'
-                    : 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30'
-                }`}
-              >
-                Před
-              </button>
-              <button
-                onClick={() => {
-                  setShowBefore(false);
-                  setLightboxImage(activeSection!.items[currentImageIndex].after);
-                }}
-                className={`px-4 py-2 rounded-lg font-inter font-medium transition-colors ${
-                  !showBefore
-                    ? 'bg-green-500 text-white'
-                    : 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30'
-                }`}
-              >
-                Po
-              </button>
-            </div>
           </div>
         </div>
       )}
