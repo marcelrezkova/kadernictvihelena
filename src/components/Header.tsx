@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 
 const Header: React.FC = () => {
@@ -47,11 +47,6 @@ const Header: React.FC = () => {
               alt="Logo" 
               className="h-10 w-auto"
             />
-          </div>
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-playfair font-bold text-lg">B</span>
-            </div>
           </div>
 
           {/* Desktop Navigation */}
