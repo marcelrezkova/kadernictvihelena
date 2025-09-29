@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Sun, Moon, Phone, Mail } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 
 const Header: React.FC = () => {
@@ -48,7 +48,7 @@ const Header: React.FC = () => {
               className="h-10 w-auto"
             />
           </div>
-
+          
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {menuItems.map((item) => (
