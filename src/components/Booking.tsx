@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, User, Phone, Mail, MessageSquare, CheckCircle, AlertCircle } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { servicesData } from '../data/servicesData';
+import { allServices } from '../data/pricing';
 
 const Booking: React.FC = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -179,9 +179,9 @@ const Booking: React.FC = () => {
                         className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-neutral-700 text-neutral-800 dark:text-white font-inter"
                       >
                         <option value="">Vyberte službu</option>
-                        {servicesData.map((service) => (
-                          <option key={service.id} value={service.title}>
-                            {service.title}
+                        {allServices.map((service) => (
+                          <option key={service.name} value={service.name}>
+                            {service.name}
                           </option>
                         ))}
                       </select>
