@@ -73,10 +73,10 @@ const Hero: React.FC = () => {
             </button>
 
             <button
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-4 border-2 border-white/30 hover:border-white text-white hover:bg-white/10 rounded-full font-inter font-semibold transition-all duration-300 backdrop-blur-sm"
             >
-              Prohlédnout služby
+              Prohlédnout ceník
             </button>
           </div>
         </div>

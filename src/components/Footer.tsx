@@ -41,7 +41,6 @@ const Footer: React.FC = () => {
               {[
                 { label: 'Domů', href: 'home' },
                 { label: 'O mně', href: 'about' },
-                { label: 'Služby', href: 'services' },
                 { label: 'Galerie', href: 'gallery' },
                 { label: 'Ceník', href: 'pricing' },
                 { label: 'Rezervace', href: 'booking' }
