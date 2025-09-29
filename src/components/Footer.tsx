@@ -1,6 +1,5 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Heart } from 'lucide-react';
-import Logo from './ui/Logo';
 
 const Footer: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -16,8 +15,14 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <div className="mb-6">
-              <Logo showText={true} size="lg" variant="default" className="mb-4" />
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center">
+                <span className="text-white font-playfair font-bold text-xl">B</span>
+              </div>
+              <div>
+                <h3 className="font-playfair font-bold text-xl">Helena Bošínová</h3>
+                <p className="text-neutral-400 text-sm">Kadeřnictví POHODA</p>
+              </div>
             </div>
             <p className="text-neutral-300 font-inter text-sm leading-relaxed mb-4">
               Kadeřnice a kosmetická poradkyně MK s více než 20letou praxí. 

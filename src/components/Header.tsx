@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon, Phone, Mail } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
-import Logo from './ui/Logo';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,7 +41,11 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Logo showText={true} size="md" variant="compact" />
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center">
+              <span className="text-white font-playfair font-bold text-lg">B</span>
+            </div>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
@@ -86,10 +89,10 @@ const Header: React.FC = () => {
               {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              Helena Bošínová
               className="p-2 rounded-full bg-neutral-100 dark:bg-neutral-800"
             >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              Kadeřnictví POHODA
             </button>
           </div>
         </div>
