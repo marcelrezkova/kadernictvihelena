@@ -28,7 +28,6 @@ const Header: React.FC = () => {
     { label: 'O mně', href: 'about' },
     { label: 'Galerie', href: 'gallery' },
     { label: 'Ceník', href: 'pricing' },
-    { label: 'Ceník', href: 'pricing' },
     { label: 'Rezervace', href: 'booking' },
     { label: 'Kontakt', href: 'contact' }
   ];
