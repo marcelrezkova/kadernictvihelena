@@ -96,7 +96,7 @@ const About: React.FC = () => {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-3xl blur-2xl opacity-20"></div>
                 <img
-                  src="https://images.pexels.com/photos/3992865/pexels-photo-3992865.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  src="/gallery/ALEI6657.jpg"
                   alt="Paní Bošínová v salonu"
                   className="relative w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
