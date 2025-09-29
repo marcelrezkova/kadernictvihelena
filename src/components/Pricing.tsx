@@ -45,7 +45,7 @@ const Pricing: React.FC = () => {
 
   // Kategorie pro filtry
   const categories = [
-    { id: 'all', label: 'Všechny služby', icon: '🔍' },
+    { id: 'all', label: 'Všechny služby', icon: '' },
     ...pricingCategories.map(cat => ({
       id: cat.id,
       label: cat.title.replace('kadeřnictví', '').replace('a melírování', '').trim(),
@@ -100,7 +100,6 @@ const Pricing: React.FC = () => {
                       : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700'
                   }`}
                 >
-                  <span className="mr-2">{category.icon}</span>
                   {category.label}
                 </button>
               ))}
