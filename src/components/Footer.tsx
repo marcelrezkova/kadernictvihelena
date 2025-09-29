@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div>
             <div className="mb-6">
-              <Logo showText={true} size="lg" className="mb-4" />
+              <Logo showText={true} size="lg" variant="default" className="mb-4" />
             </div>
             <p className="text-neutral-300 font-inter text-sm leading-relaxed mb-4">
               Kadeřnice a kosmetická poradkyně MK s více než 20letou praxí. 

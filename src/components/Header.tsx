@@ -42,7 +42,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Logo showText={true} size="md" />
+          <Logo showText={true} size="md" variant="compact" />
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
