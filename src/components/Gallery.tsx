@@ -212,15 +212,6 @@ const Gallery: React.FC = () => {
               )}
             </div>
 
-            {/* Gallery Stats */}
-            <div className="text-center mt-8">
-              <p className="text-neutral-600 dark:text-neutral-400 font-inter text-sm">
-                {currentIndex + 1} z {filteredImages.length} obrázků
-                {selectedCategory !== 'all' && (
-                  <span className="ml-2">• {getCategoryLabel(selectedCategory)}</span>
-                )}
-              </p>
-            </div>
           </div>
 
           {/* Call to Action */}
