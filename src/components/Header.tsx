@@ -87,17 +87,17 @@ const Header: React.FC = () => {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center space-x-4">
-            <div className={`flex items-center space-x-3 text-sm transition-all duration-200 ${
+            <div className={`flex items-center space-x-3 transition-all duration-200 ${
               isScrolled
-                ? 'text-neutral-600 dark:text-neutral-400'
-                : 'text-white dark:text-neutral-400'
+                ? 'text-neutral-600 dark:text-neutral-400 text-sm'
+                : 'text-white dark:text-white text-base font-medium'
             }`}>
               <div className="flex items-center space-x-1">
-                <Phone className="w-4 h-4" />
+                <Phone className={`transition-all duration-200 ${isScrolled ? 'w-4 h-4' : 'w-5 h-5'}`} />
                 <span>739 469 932</span>
               </div>
               <div className="flex items-center space-x-1">
-                <Mail className="w-4 h-4" />
+                <Mail className={`transition-all duration-200 ${isScrolled ? 'w-4 h-4' : 'w-5 h-5'}`} />
                 <span>helena.bosinova@email.cz</span>
               </div>
             </div>
