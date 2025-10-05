@@ -53,12 +53,16 @@ const Header: React.FC = () => {
               <img
                 src="/logo.png"
                 alt="Logo Kadernictvi Pohoda"
-                className={`h-10 w-auto transition-all duration-300 sm:h-12 lg:h-14 ${
+                className={`transition-all duration-300 ${
+                  isScrolled
+                    ? 'h-8 sm:h-10 lg:h-12'
+                    : 'h-10 sm:h-12 lg:h-14'
+                } ${
                   isDark
                     ? 'brightness-200 contrast-125 saturate-110'
-                    : isScrolled
-                    ? ''
-                    : 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]'
+                    : !isScrolled
+                    ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]'
+                    : ''
                 }`}
               />
             </div>
