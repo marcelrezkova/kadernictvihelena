@@ -46,7 +46,9 @@ const Header: React.FC = () => {
             className="flex items-center space-x-3 group"
           >
             <div className={`transition-all duration-300 rounded-full backdrop-blur-sm ${
-              isDark ? 'bg-white/25 p-2 shadow-lg' : 'bg-transparent'
+              isScrolled
+                ? (isDark ? 'bg-white/25 p-2 shadow-lg' : 'bg-transparent')
+                : 'bg-white/25 p-2 shadow-lg'
             }`}>
               <img
                 src="/logo.png"
