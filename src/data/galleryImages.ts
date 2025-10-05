@@ -638,7 +638,7 @@ export const getImagesByCategory = (category: GalleryImage['category']): Gallery
 };
 
 export const getAllCategories = (): GalleryImage['category'][] => {
-  return ['before-after', 'hairstyles', 'salon', 'products'];
+  return ['before-after', 'hairstyles', 'salon'];
 };
 
 export const getCategoryLabel = (category: GalleryImage['category']): string => {
