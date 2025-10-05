@@ -41,13 +41,20 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <button
+            onClick={() => scrollToSection('home')}
+            className="flex items-center space-x-3 group"
+          >
               <img
                 src="/logo.png"
                 alt="Logo Kadernictvi Pohoda"
-                className="h-12 w-auto transition-transform duration-300 dark:brightness-110 dark:contrast-125 lg:h-14"
+                className={`h-10 w-auto transition-all duration-300 sm:h-12 lg:h-14 ${
+                  isScrolled
+                    ? 'brightness-100 dark:brightness-125 dark:contrast-110'
+                    : 'brightness-110 drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)] dark:brightness-150 dark:drop-shadow-[0_2px_12px_rgba(255,255,255,0.2)]'
+                }`}
               />
-          </div>
+          </button>
           
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
@@ -91,10 +98,10 @@ const Header: React.FC = () => {
               {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
             <button
-              Helena Bošínová
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 rounded-full bg-neutral-100 dark:bg-neutral-800"
             >
-              Kadeřnictví POHODA
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
