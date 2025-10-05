@@ -87,33 +87,6 @@ const Gallery: React.FC = () => {
             </p>
           </div>
 
-          {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            <button
-              onClick={() => setSelectedCategory('all')}
-              className={`px-4 py-2 rounded-full font-inter font-medium text-sm transition-all duration-300 ${
-                selectedCategory === 'all'
-                  ? 'bg-primary-500 text-white shadow-lg'
-                  : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700'
-              }`}
-            >
-              Vše
-            </button>
-            {['hairstyles', 'salon', 'before-after', 'products'].map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category as GalleryImage['category'])}
-                className={`px-4 py-2 rounded-full font-inter font-medium text-sm transition-all duration-300 ${
-                  selectedCategory === category
-                    ? 'bg-primary-500 text-white shadow-lg'
-                    : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700'
-                }`}
-              >
-                {getCategoryLabel(category as GalleryImage['category'])}
-              </button>
-            ))}
-          </div>
-
           {/* Carousel Container */}
           <div className="max-w-4xl mx-auto">
             <div className="relative bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-2xl border border-neutral-200 dark:border-neutral-700">
