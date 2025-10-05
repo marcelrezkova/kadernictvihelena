@@ -45,15 +45,19 @@ const Header: React.FC = () => {
             onClick={() => scrollToSection('home')}
             className="flex items-center space-x-3 group"
           >
+            <div className={`transition-all duration-300 rounded-lg ${
+              isDark ? 'bg-white/90 p-2' : 'bg-transparent'
+            }`}>
               <img
                 src="/logo.png"
                 alt="Logo Kadernictvi Pohoda"
                 className={`h-10 w-auto transition-all duration-300 sm:h-12 lg:h-14 ${
                   isScrolled
-                    ? 'brightness-100 dark:brightness-125 dark:contrast-110'
-                    : 'brightness-110 drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)] dark:brightness-150 dark:drop-shadow-[0_2px_12px_rgba(255,255,255,0.2)]'
+                    ? ''
+                    : 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]'
                 }`}
               />
+            </div>
           </button>
           
           {/* Desktop Navigation */}
