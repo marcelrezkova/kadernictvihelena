@@ -646,7 +646,6 @@ export const getCategoryLabel = (category: GalleryImage['category']): string => 
     'before-after': 'Před a po',
     'hairstyles': 'Účesy',
     'salon': 'Studio',
-    'products': 'Produkty'
   };
   return labels[category];
 };
