@@ -42,11 +42,11 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img 
-              src="/logo.png" 
-              alt="Logo" 
-              className="h-10 w-auto"
-            />
+              <img
+                src="/logo.png"
+                alt="Logo Kadernictvi Pohoda"
+                className="h-12 w-auto transition-transform duration-300 dark:brightness-110 dark:contrast-125 lg:h-14"
+              />
           </div>
           
           {/* Desktop Navigation */}
