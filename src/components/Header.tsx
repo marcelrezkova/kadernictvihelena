@@ -45,8 +45,8 @@ const Header: React.FC = () => {
             onClick={() => scrollToSection('home')}
             className="flex items-center space-x-3 group"
           >
-            <div className={`transition-all duration-300 rounded-lg backdrop-blur-sm ${
-              isDark ? 'bg-white/15 p-2 shadow-lg' : 'bg-transparent'
+            <div className={`transition-all duration-300 rounded-full backdrop-blur-sm ${
+              isDark ? 'bg-white/25 p-2 shadow-lg' : 'bg-transparent'
             }`}>
               <img
                 src="/logo.png"
