@@ -68,11 +68,11 @@ const Header: React.FC = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`transition-all duration-200 font-inter font-medium ${
+                className={`transition-all duration-200 font-inter font-medium hover:text-primary-600 dark:hover:text-primary-400 ${
                   isScrolled
                     ? 'text-neutral-700 dark:text-neutral-300'
-                    : 'text-neutral-800 dark:text-neutral-300 drop-shadow-[0_2px_4px_rgba(255,255,255,0.9)]'
-                } hover:text-primary-600 dark:hover:text-primary-400`}
+                    : 'text-white dark:text-neutral-300'
+                }`}
               >
                 {item.label}
               </button>
@@ -84,7 +84,7 @@ const Header: React.FC = () => {
             <div className={`flex items-center space-x-3 text-sm transition-all duration-200 ${
               isScrolled
                 ? 'text-neutral-600 dark:text-neutral-400'
-                : 'text-neutral-800 dark:text-neutral-400 drop-shadow-[0_2px_4px_rgba(255,255,255,0.9)]'
+                : 'text-white dark:text-neutral-400'
             }`}>
               <div className="flex items-center space-x-1">
                 <Phone className="w-4 h-4" />
