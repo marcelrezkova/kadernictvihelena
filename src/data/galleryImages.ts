@@ -582,7 +582,6 @@ export const galleryImages: GalleryImage[] = [
     category: 'salon'
   },
 
-  // Produkty a péče
   {
     id: 'products-1',
     src: '/gallery/FQSV1709.jpg',
