@@ -27,9 +27,9 @@ export interface CalendarEvent {
 }
 
 class GoogleCalendarService {
-  private readonly CALENDAR_ID = process.env.REACT_APP_GOOGLE_CALENDAR_ID || 'primary';
-  private readonly API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
-  private readonly CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+  private readonly CALENDAR_ID = import.meta.env.VITE_GOOGLE_CALENDAR_ID || 'primary';
+  private readonly API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
+  private readonly CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
   // Inicializace Google Calendar API
   async initializeGapi(): Promise<void> {

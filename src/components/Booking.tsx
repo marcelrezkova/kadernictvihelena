@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { Calendar, Clock, User, Phone, Mail, MessageSquare, CheckCircle, AlertCircle } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { allServices } from '../data/pricing';
+import { useGoogleCalendar } from '../hooks/useGoogleCalendar';
+import { googleCalendarService } from '../services/googleCalendar';
 
 const Booking: React.FC = () => {
   const { ref, isVisible } = useScrollReveal();
+  const { isInitialized, isAuthorized, authorize, error: calendarError } = useGoogleCalendar();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,18 +19,32 @@ const Booking: React.FC = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setError(null);
 
     try {
-      // Simulace odeslání formuláře
-      console.log('Rezervace odeslána:', formData);
-      
-      // Simulace API volání
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      if (!isInitialized) {
+        throw new Error('Google Calendar není inicializován');
+      }
+
+      if (!isAuthorized) {
+        const authorized = await authorize();
+        if (!authorized) {
+          throw new Error('Nepodařilo se autorizovat přístup ke kalendáři');
+        }
+      }
+
+      const isAvailable = await googleCalendarService.checkAvailability(formData.date, formData.time);
+      if (!isAvailable) {
+        throw new Error('Tento termín již není dostupný. Prosím, vyberte jiný.');
+      }
+
+      await googleCalendarService.createBooking(formData);
+
       setIsSubmitted(true);
       setTimeout(() => setIsSubmitted(false), 5000);
       setFormData({
@@ -41,6 +58,7 @@ const Booking: React.FC = () => {
       });
     } catch (error) {
       console.error('Chyba při odesílání rezervace:', error);
+      setError(error instanceof Error ? error.message : 'Nepodařilo se vytvořit rezervaci');
     } finally {
       setIsLoading(false);
     }
@@ -92,6 +110,17 @@ const Booking: React.FC = () => {
                 <h3 className="font-playfair font-bold text-2xl text-neutral-800 dark:text-white mb-6">
                   Rezervační formulář
                 </h3>
+
+                {(calendarError || error) && (
+                  <div className="mb-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+                    <div className="flex items-start space-x-2">
+                      <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <p className="text-sm text-red-700 dark:text-red-300 font-inter">
+                        {error || calendarError}
+                      </p>
+                    </div>
+                  </div>
+                )}
 
                 {isSubmitted ? (
                   <div className="text-center py-8">
