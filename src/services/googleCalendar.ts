@@ -135,11 +135,15 @@ Kadeřnictví POHODA - Helena Bošínová
   async getAvailableSlots(date: string): Promise<string[]> {
     try {
       if (!this.CALENDAR_ID || !window.gapi?.client?.calendar) {
+        console.warn('Calendar not initialized yet');
         return [];
       }
 
       const startOfDay = new Date(`${date}T08:00:00`);
       const endOfDay = new Date(`${date}T18:00:00`);
+
+      console.log('Fetching events from calendar:', this.CALENDAR_ID);
+      console.log('Date range:', startOfDay.toISOString(), 'to', endOfDay.toISOString());
 
       const response = await window.gapi.client.calendar.events.list({
         calendarId: this.CALENDAR_ID,
@@ -149,10 +153,15 @@ Kadeřnictví POHODA - Helena Bošínová
         orderBy: 'startTime'
       });
 
-      const bookedSlots = response.result.items.map((event: any) => {
+      console.log('Calendar API response:', response);
+      console.log('Events found:', response.result.items?.length || 0);
+
+      const bookedSlots = (response.result.items || []).map((event: any) => {
         const start = new Date(event.start.dateTime || event.start.date);
         return start.toTimeString().slice(0, 5);
       });
+
+      console.log('Booked slots:', bookedSlots);
 
       const allSlots = [
         '08:00', '08:30', '09:00', '09:30', '10:00', '10:30',
@@ -161,7 +170,10 @@ Kadeřnictví POHODA - Helena Bošínová
         '17:00', '17:30'
       ];
 
-      return allSlots.filter(slot => !bookedSlots.includes(slot));
+      const availableSlots = allSlots.filter(slot => !bookedSlots.includes(slot));
+      console.log('Available slots:', availableSlots);
+
+      return availableSlots;
     } catch (error) {
       console.error('Error getting available slots:', error);
       return [];
