@@ -41,14 +41,20 @@ class GoogleCalendarService {
 
       window.gapi.load('client:auth2', async () => {
         try {
+          if (!this.CLIENT_ID) {
+            throw new Error('VITE_GOOGLE_CLIENT_ID není nastaven');
+          }
+
           await window.gapi.client.init({
-            apiKey: this.API_KEY,
             clientId: this.CLIENT_ID,
             discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
-            scope: 'https://www.googleapis.com/auth/calendar'
+            scope: 'https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/calendar.readonly'
           });
+
+          console.log('Google Calendar API initialized successfully');
           resolve();
         } catch (error) {
+          console.error('Error initializing Google Calendar API:', error);
           reject(error);
         }
       });

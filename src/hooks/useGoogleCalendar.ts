@@ -25,9 +25,13 @@ export const useGoogleCalendar = () => {
       await googleCalendarService.initializeGapi();
       setIsInitialized(true);
 
-      // Kontrola autorizace
-      const authInstance = window.gapi.auth2.getAuthInstance();
-      setIsAuthorized(authInstance.isSignedIn.get());
+      // Kontrola autorizace - s error handlingem
+      if (window.gapi && window.gapi.auth2) {
+        const authInstance = window.gapi.auth2.getAuthInstance();
+        if (authInstance) {
+          setIsAuthorized(authInstance.isSignedIn.get());
+        }
+      }
 
     } catch (err) {
       console.error('Failed to initialize Google Calendar:', err);
