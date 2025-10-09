@@ -134,29 +134,40 @@ Kadeřnictví POHODA - Helena Bošínová
   // Získání dostupných termínů
   async getAvailableSlots(date: string): Promise<string[]> {
     try {
-      if (!this.CALENDAR_ID || !window.gapi?.client?.calendar) {
-        console.warn('Calendar not initialized yet');
+      if (!this.CALENDAR_ID || !this.API_KEY) {
+        console.warn('Calendar not configured');
         return [];
       }
 
-      const startOfDay = new Date(`${date}T08:00:00`);
-      const endOfDay = new Date(`${date}T18:00:00`);
+      const startOfDay = new Date(`${date}T08:00:00+02:00`);
+      const endOfDay = new Date(`${date}T18:00:00+02:00`);
 
       console.log('Fetching events from calendar:', this.CALENDAR_ID);
       console.log('Date range:', startOfDay.toISOString(), 'to', endOfDay.toISOString());
 
-      const response = await window.gapi.client.calendar.events.list({
-        calendarId: this.CALENDAR_ID,
-        timeMin: startOfDay.toISOString(),
-        timeMax: endOfDay.toISOString(),
-        singleEvents: true,
-        orderBy: 'startTime'
-      });
+      // Použití REST API místo gapi client pro čtení veřejného kalendáře
+      const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(this.CALENDAR_ID)}/events?` +
+        `key=${this.API_KEY}&` +
+        `timeMin=${encodeURIComponent(startOfDay.toISOString())}&` +
+        `timeMax=${encodeURIComponent(endOfDay.toISOString())}&` +
+        `singleEvents=true&` +
+        `orderBy=startTime`;
 
-      console.log('Calendar API response:', response);
-      console.log('Events found:', response.result.items?.length || 0);
+      console.log('Fetching from URL:', url);
 
-      const bookedSlots = (response.result.items || []).map((event: any) => {
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('API Error:', response.status, errorText);
+        return [];
+      }
+
+      const data = await response.json();
+      console.log('Calendar API response:', data);
+      console.log('Events found:', data.items?.length || 0);
+
+      const bookedSlots = (data.items || []).map((event: any) => {
         const start = new Date(event.start.dateTime || event.start.date);
         return start.toTimeString().slice(0, 5);
       });
