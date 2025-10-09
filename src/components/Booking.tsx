@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, User, Phone, Mail, MessageSquare, CheckCircle, AlertCircle } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { allServices } from '../data/pricing';
-import { bookingApiService } from '../services/bookingApi';
+import { useGoogleCalendar } from '../hooks/useGoogleCalendar';
+import { googleCalendarService } from '../services/googleCalendar';
 
 const Booking: React.FC = () => {
   const { ref, isVisible } = useScrollReveal();
+  const { isInitialized, isAuthorized, authorize, error: calendarError } = useGoogleCalendar();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,14 +28,14 @@ const Booking: React.FC = () => {
   ]);
 
   useEffect(() => {
-    if (formData.date) {
+    if (formData.date && isInitialized && isAuthorized) {
       loadAvailableSlots(formData.date);
     }
-  }, [formData.date]);
+  }, [formData.date, isInitialized, isAuthorized]);
 
   const loadAvailableSlots = async (date: string) => {
     try {
-      const slots = await bookingApiService.getAvailableSlots(date);
+      const slots = await googleCalendarService.getAvailableSlots(date);
       setAvailableTimes(slots);
     } catch (error) {
       console.error('Error loading available slots:', error);
@@ -46,28 +48,35 @@ const Booking: React.FC = () => {
     setError(null);
 
     try {
-      const isAvailable = await bookingApiService.checkAvailability(formData.date, formData.time);
+      if (!isInitialized) {
+        throw new Error('Google Calendar se stále načítá. Počkejte prosím chvíli.');
+      }
+
+      if (!isAuthorized) {
+        const authorized = await authorize();
+        if (!authorized) {
+          throw new Error('Pro vytvoření rezervace musíte povolit přístup ke kalendáři.');
+        }
+      }
+
+      const isAvailable = await googleCalendarService.checkAvailability(formData.date, formData.time);
       if (!isAvailable) {
         throw new Error('Tento termín již není dostupný. Prosím, vyberte jiný.');
       }
 
-      const result = await bookingApiService.createBooking(formData);
+      await googleCalendarService.createBooking(formData);
 
-      if (result.success) {
-        setIsSubmitted(true);
-        setTimeout(() => setIsSubmitted(false), 5000);
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          service: '',
-          date: '',
-          time: '',
-          message: ''
-        });
-      } else {
-        throw new Error(result.error || 'Nepodařilo se vytvořit rezervaci');
-      }
+      setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 5000);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        date: '',
+        time: '',
+        message: ''
+      });
     } catch (error) {
       console.error('Chyba při odesílání rezervace:', error);
       setError(error instanceof Error ? error.message : 'Nepodařilo se vytvořit rezervaci');
@@ -114,12 +123,42 @@ const Booking: React.FC = () => {
                   Rezervační formulář
                 </h3>
 
-                {error && (
+                {!isInitialized && !calendarError && (
+                  <div className="mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                    <div className="flex items-start space-x-2">
+                      <div className="w-5 h-5 border-2 border-blue-500 border-t-transparent rounded-full animate-spin flex-shrink-0 mt-0.5"></div>
+                      <p className="text-sm text-blue-700 dark:text-blue-300 font-inter">
+                        Načítám Google Calendar...
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {isInitialized && !isAuthorized && !error && (
+                  <div className="mb-4 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+                    <div className="flex items-start justify-between">
+                      <div className="flex items-start space-x-2">
+                        <AlertCircle className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
+                        <p className="text-sm text-yellow-700 dark:text-yellow-300 font-inter">
+                          Pro rezervaci je potřeba se přihlásit k Google účtu
+                        </p>
+                      </div>
+                      <button
+                        onClick={authorize}
+                        className="ml-4 px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg text-sm font-inter font-medium transition-colors"
+                      >
+                        Přihlásit se
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {(calendarError || error) && (
                   <div className="mb-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
                     <div className="flex items-start space-x-2">
                       <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                       <p className="text-sm text-red-700 dark:text-red-300 font-inter">
-                        {error}
+                        {error || calendarError}
                       </p>
                     </div>
                   </div>
@@ -278,7 +317,7 @@ const Booking: React.FC = () => {
                     {/* Submit Button */}
                     <button
                       type="submit"
-                      disabled={isLoading}
+                      disabled={isLoading || !isInitialized || !isAuthorized}
                       className="w-full px-6 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 disabled:from-neutral-400 disabled:to-neutral-500 text-white rounded-lg font-inter font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl disabled:transform-none disabled:shadow-none flex items-center justify-center space-x-2"
                     >
                       {isLoading ? (
