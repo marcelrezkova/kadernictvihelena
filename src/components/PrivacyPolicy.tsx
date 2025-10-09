@@ -41,9 +41,9 @@ export default function PrivacyPolicy({ onClose }: PrivacyPolicyProps) {
               </h3>
               <div className="bg-neutral-50 dark:bg-neutral-900 rounded-lg p-4 space-y-1">
                 <p><strong>Provozovatel:</strong> Helena Bošínová</p>
-                <p><strong>Sídlo:</strong> Kadeřnictví POHODA</p>
-                <p><strong>Email:</strong> info@kadernictvi-pohoda.cz</p>
-                <p><strong>Telefon:</strong> +420 XXX XXX XXX</p>
+                <p><strong>Sídlo:</strong> Kadeřnictví POHODA, Moskevská 637, 460 01 Liberec</p>
+                <p><strong>Email:</strong> helena.bosinova@email.cz</p>
+                <p><strong>Telefon:</strong> +420 739 469 932</p>
               </div>
             </section>
 
@@ -151,7 +151,7 @@ export default function PrivacyPolicy({ onClose }: PrivacyPolicyProps) {
                 <li><strong>Odvolání souhlasu:</strong> Kdykoliv odvolat souhlas se zpracováním</li>
               </ul>
               <p className="mt-4 text-sm bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4">
-                Pro uplatnění práv nás kontaktujte na: <strong>info@kadernictvi-pohoda.cz</strong>
+                Pro uplatnění práv nás kontaktujte na: <strong>helena.bosinova@email.cz</strong> nebo <strong>+420 739 469 932</strong>
               </p>
             </section>
 
@@ -226,9 +226,9 @@ export default function PrivacyPolicy({ onClose }: PrivacyPolicyProps) {
                 Pro jakékoli dotazy ohledně zpracování osobních údajů nás kontaktujte:
               </p>
               <div className="bg-neutral-50 dark:bg-neutral-900 rounded-lg p-4 space-y-2">
-                <p><strong>Email:</strong> info@kadernictvi-pohoda.cz</p>
-                <p><strong>Telefon:</strong> +420 XXX XXX XXX</p>
-                <p><strong>Adresa:</strong> Kadeřnictví POHODA, [Vaše adresa]</p>
+                <p><strong>Email:</strong> helena.bosinova@email.cz</p>
+                <p><strong>Telefon:</strong> +420 739 469 932</p>
+                <p><strong>Adresa:</strong> Kadeřnictví POHODA, Moskevská 637, 460 01 Liberec</p>
               </div>
             </section>
           </div>

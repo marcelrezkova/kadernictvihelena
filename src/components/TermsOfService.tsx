@@ -41,9 +41,9 @@ export default function TermsOfService({ onClose }: TermsOfServiceProps) {
               </h3>
               <div className="bg-neutral-50 dark:bg-neutral-900 rounded-lg p-4 space-y-1">
                 <p><strong>Poskytovatel služeb:</strong> Helena Bošínová</p>
-                <p><strong>Provozovna:</strong> Kadeřnictví POHODA</p>
-                <p><strong>Email:</strong> info@kadernictvi-pohoda.cz</p>
-                <p><strong>Telefon:</strong> +420 XXX XXX XXX</p>
+                <p><strong>Provozovna:</strong> Kadeřnictví POHODA, Moskevská 637, 460 01 Liberec</p>
+                <p><strong>Email:</strong> helena.bosinova@email.cz</p>
+                <p><strong>Telefon:</strong> +420 739 469 932</p>
               </div>
             </section>
 
@@ -220,13 +220,9 @@ export default function TermsOfService({ onClose }: TermsOfServiceProps) {
                 8. Provozní doba
               </h3>
               <div className="bg-neutral-50 dark:bg-neutral-900 rounded-lg p-4">
-                <ul className="space-y-1 text-sm">
-                  <li><strong>Pondělí - Pátek:</strong> 8:00 - 18:00</li>
-                  <li><strong>Sobota:</strong> 8:00 - 12:00</li>
-                  <li><strong>Neděle:</strong> Zavřeno</li>
-                </ul>
+                <p className="text-sm">Dle objednávek</p>
                 <p className="mt-3 text-xs text-neutral-600 dark:text-neutral-400">
-                  Změny provozní doby (např. o svátcích) jsou zveřejněny na webu a sociálních sítích.
+                  Provozní doba je primárně dle objednávek. Pro rezervaci kontaktujte telefonicky nebo online.
                 </p>
               </div>
             </section>
@@ -265,9 +261,9 @@ export default function TermsOfService({ onClose }: TermsOfServiceProps) {
                 Pro jakékoli dotazy nebo připomínky nás kontaktujte:
               </p>
               <div className="bg-rose-50 dark:bg-rose-900/20 border border-rose-200 dark:border-rose-800 rounded-lg p-4 space-y-2 text-sm">
-                <p><strong>Email:</strong> info@kadernictvi-pohoda.cz</p>
-                <p><strong>Telefon:</strong> +420 XXX XXX XXX</p>
-                <p><strong>Adresa:</strong> Kadeřnictví POHODA, [Vaše adresa]</p>
+                <p><strong>Email:</strong> helena.bosinova@email.cz</p>
+                <p><strong>Telefon:</strong> +420 739 469 932</p>
+                <p><strong>Adresa:</strong> Kadeřnictví POHODA, Moskevská 637, 460 01 Liberec</p>
               </div>
             </section>
 

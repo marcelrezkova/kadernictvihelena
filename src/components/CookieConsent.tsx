@@ -58,8 +58,8 @@ export default function CookieConsent() {
                     </h3>
                     <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
                       Tento web používá nezbytné cookies pro zajištění funkčnosti rezervačního systému
-                      a funkční cookies od Google OAuth pro správu rezervací. Více informací najdete
-                      v našich{' '}
+                      a funkční cookies od Google pro správu online rezervací přes Google Calendar API.
+                      Více informací najdete v našich{' '}
                       <button className="text-rose-600 dark:text-rose-400 hover:underline font-medium">
                         Zásadách ochrany osobních údajů
                       </button>.
@@ -132,7 +132,7 @@ export default function CookieConsent() {
                         Funkční cookies (Google OAuth)
                       </h4>
                       <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                        Cookies od Google pro autentizaci a správu online rezervací přes Google Calendar.
+                        Cookies od Google Calendar API pro správu online rezervací a kontrolu volných termínů.
                         Bez těchto cookies nebude možné provést online rezervaci.
                       </p>
                     </div>
