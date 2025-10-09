@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, User, Phone, Mail, MessageSquare, CheckCircle, AlertCircle } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { allServices } from '../data/pricing';
-import { useGoogleCalendar } from '../hooks/useGoogleCalendar';
-import { googleCalendarService } from '../services/googleCalendar';
+import { bookingApiService } from '../services/bookingApi';
 
 const Booking: React.FC = () => {
   const { ref, isVisible } = useScrollReveal();
-  const { isInitialized, isAuthorized, authorize, error: calendarError } = useGoogleCalendar();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,6 +18,27 @@ const Booking: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [availableTimes, setAvailableTimes] = useState<string[]>([
+    '08:00', '08:30', '09:00', '09:30', '10:00', '10:30',
+    '11:00', '11:30', '12:00', '12:30', '13:00', '13:30',
+    '14:00', '14:30', '15:00', '15:30', '16:00', '16:30',
+    '17:00', '17:30'
+  ]);
+
+  useEffect(() => {
+    if (formData.date) {
+      loadAvailableSlots(formData.date);
+    }
+  }, [formData.date]);
+
+  const loadAvailableSlots = async (date: string) => {
+    try {
+      const slots = await bookingApiService.getAvailableSlots(date);
+      setAvailableTimes(slots);
+    } catch (error) {
+      console.error('Error loading available slots:', error);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,35 +46,28 @@ const Booking: React.FC = () => {
     setError(null);
 
     try {
-      if (!isInitialized) {
-        throw new Error('Google Calendar není inicializován');
-      }
-
-      if (!isAuthorized) {
-        const authorized = await authorize();
-        if (!authorized) {
-          throw new Error('Nepodařilo se autorizovat přístup ke kalendáři');
-        }
-      }
-
-      const isAvailable = await googleCalendarService.checkAvailability(formData.date, formData.time);
+      const isAvailable = await bookingApiService.checkAvailability(formData.date, formData.time);
       if (!isAvailable) {
         throw new Error('Tento termín již není dostupný. Prosím, vyberte jiný.');
       }
 
-      await googleCalendarService.createBooking(formData);
+      const result = await bookingApiService.createBooking(formData);
 
-      setIsSubmitted(true);
-      setTimeout(() => setIsSubmitted(false), 5000);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        date: '',
-        time: '',
-        message: ''
-      });
+      if (result.success) {
+        setIsSubmitted(true);
+        setTimeout(() => setIsSubmitted(false), 5000);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          date: '',
+          time: '',
+          message: ''
+        });
+      } else {
+        throw new Error(result.error || 'Nepodařilo se vytvořit rezervaci');
+      }
     } catch (error) {
       console.error('Chyba při odesílání rezervace:', error);
       setError(error instanceof Error ? error.message : 'Nepodařilo se vytvořit rezervaci');
@@ -71,15 +83,6 @@ const Booking: React.FC = () => {
     });
   };
 
-  // Dostupné časy (později bude načítáno z API)
-  const availableTimes = [
-    '08:00', '08:30', '09:00', '09:30', '10:00', '10:30',
-    '11:00', '11:30', '12:00', '12:30', '13:00', '13:30',
-    '14:00', '14:30', '15:00', '15:30', '16:00', '16:30',
-    '17:00', '17:30'
-  ];
-
-  // Minimální datum (dnes)
   const today = new Date().toISOString().split('T')[0];
 
   return (
@@ -111,12 +114,12 @@ const Booking: React.FC = () => {
                   Rezervační formulář
                 </h3>
 
-                {(calendarError || error) && (
+                {error && (
                   <div className="mb-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
                     <div className="flex items-start space-x-2">
                       <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                       <p className="text-sm text-red-700 dark:text-red-300 font-inter">
-                        {error || calendarError}
+                        {error}
                       </p>
                     </div>
                   </div>
