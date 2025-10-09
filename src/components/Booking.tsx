@@ -338,7 +338,7 @@ const Booking: React.FC = () => {
                     <div className="flex items-center space-x-2 text-sm">
                       <Phone className="w-4 h-4 text-primary-500" />
                       <a href="tel:739469932" className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-inter">
-                        739 469 932
+                        +420 739 469 932
                       </a>
                     </div>
                     <div className="flex items-center space-x-2 text-sm">
