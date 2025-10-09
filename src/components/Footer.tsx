@@ -128,9 +128,22 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <p className="text-neutral-400 font-inter text-sm">
-                © {new Date().getFullYear()} Helena Bošínová - Kadeřnictví POHODA. Všechna práva vyhrazena.
-              </p>
+              <div className="flex flex-col items-center md:items-start space-y-2">
+                <p className="text-neutral-400 font-inter text-sm">
+                  © {new Date().getFullYear()} Helena Bošínová - Kadeřnictví POHODA. Všechna práva vyhrazena.
+                </p>
+                <p className="text-neutral-500 font-inter text-xs">
+                  Made by{' '}
+                  <a
+                    href="https://smooth-development.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-400 hover:text-primary-300 transition-colors font-medium"
+                  >
+                    Smooth Development
+                  </a>
+                </p>
+              </div>
               <div className="flex items-center space-x-4 text-neutral-400 text-sm">
                 <span>Dámské • Pánské • Dětské • Holičství</span>
               </div>
