@@ -25,13 +25,7 @@ export const useGoogleCalendar = () => {
       await googleCalendarService.initializeGapi();
       setIsInitialized(true);
 
-      // Kontrola autorizace - s error handlingem
-      if (window.gapi && window.gapi.auth2) {
-        const authInstance = window.gapi.auth2.getAuthInstance();
-        if (authInstance) {
-          setIsAuthorized(authInstance.isSignedIn.get());
-        }
-      }
+      setIsAuthorized(googleCalendarService.isAuthorized());
 
     } catch (err) {
       console.error('Failed to initialize Google Calendar:', err);
@@ -43,16 +37,33 @@ export const useGoogleCalendar = () => {
 
   const loadGoogleAPI = (): Promise<void> => {
     return new Promise((resolve, reject) => {
-      if (window.gapi) {
-        resolve();
-        return;
-      }
+      const loadGapi = new Promise<void>((res, rej) => {
+        if (window.gapi) {
+          res();
+          return;
+        }
+        const script = document.createElement('script');
+        script.src = 'https://apis.google.com/js/api.js';
+        script.onload = () => res();
+        script.onerror = () => rej(new Error('Failed to load gapi'));
+        document.head.appendChild(script);
+      });
 
-      const script = document.createElement('script');
-      script.src = 'https://apis.google.com/js/api.js';
-      script.onload = () => resolve();
-      script.onerror = () => reject(new Error('Failed to load Google API'));
-      document.head.appendChild(script);
+      const loadGsi = new Promise<void>((res, rej) => {
+        if (window.google?.accounts) {
+          res();
+          return;
+        }
+        const script = document.createElement('script');
+        script.src = 'https://accounts.google.com/gsi/client';
+        script.onload = () => res();
+        script.onerror = () => rej(new Error('Failed to load GSI'));
+        document.head.appendChild(script);
+      });
+
+      Promise.all([loadGapi, loadGsi])
+        .then(() => resolve())
+        .catch(reject);
     });
   };
 
@@ -73,11 +84,8 @@ export const useGoogleCalendar = () => {
   };
 
   const signOut = () => {
-    if (window.gapi && window.gapi.auth2) {
-      const authInstance = window.gapi.auth2.getAuthInstance();
-      authInstance.signOut();
-      setIsAuthorized(false);
-    }
+    googleCalendarService.signOut();
+    setIsAuthorized(false);
   };
 
   return {

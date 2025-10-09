@@ -31,7 +31,9 @@ class GoogleCalendarService {
   private readonly API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
   private readonly CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
-  // Inicializace Google Calendar API
+  private accessToken: string | null = null;
+  private tokenClient: any = null;
+
   async initializeGapi(): Promise<void> {
     return new Promise((resolve, reject) => {
       if (typeof window.gapi === 'undefined') {
@@ -39,16 +41,27 @@ class GoogleCalendarService {
         return;
       }
 
-      window.gapi.load('client:auth2', async () => {
-        try {
-          if (!this.CLIENT_ID) {
-            throw new Error('VITE_GOOGLE_CLIENT_ID není nastaven');
-          }
+      if (!this.CLIENT_ID) {
+        reject(new Error('VITE_GOOGLE_CLIENT_ID není nastaven'));
+        return;
+      }
 
+      window.gapi.load('client', async () => {
+        try {
           await window.gapi.client.init({
-            clientId: this.CLIENT_ID,
-            discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
-            scope: 'https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/calendar.readonly'
+            discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest']
+          });
+
+          this.tokenClient = window.google.accounts.oauth2.initTokenClient({
+            client_id: this.CLIENT_ID,
+            scope: 'https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/calendar.readonly',
+            callback: (response: any) => {
+              if (response.error) {
+                console.error('Token error:', response);
+                return;
+              }
+              this.accessToken = response.access_token;
+            },
           });
 
           console.log('Google Calendar API initialized successfully');
@@ -161,28 +174,55 @@ Kadeřnictví POHODA - Helena Bošínová
     }
   }
 
-  // Autorizace uživatele
   async authorize(): Promise<boolean> {
-    try {
-      const authInstance = window.gapi.auth2.getAuthInstance();
-      if (authInstance.isSignedIn.get()) {
-        return true;
+    return new Promise((resolve) => {
+      if (!this.tokenClient) {
+        console.error('Token client not initialized');
+        resolve(false);
+        return;
       }
-      
-      await authInstance.signIn();
-      return authInstance.isSignedIn.get();
-    } catch (error) {
-      console.error('Authorization failed:', error);
-      return false;
+
+      if (this.accessToken) {
+        window.gapi.client.setToken({ access_token: this.accessToken });
+        resolve(true);
+        return;
+      }
+
+      this.tokenClient.callback = (response: any) => {
+        if (response.error) {
+          console.error('Authorization failed:', response);
+          resolve(false);
+          return;
+        }
+        this.accessToken = response.access_token;
+        window.gapi.client.setToken({ access_token: this.accessToken });
+        resolve(true);
+      };
+
+      this.tokenClient.requestAccessToken({ prompt: 'consent' });
+    });
+  }
+
+  isAuthorized(): boolean {
+    return !!this.accessToken;
+  }
+
+  signOut(): void {
+    if (this.accessToken) {
+      window.google.accounts.oauth2.revoke(this.accessToken, () => {
+        console.log('Access token revoked');
+      });
+      this.accessToken = null;
+      window.gapi.client.setToken(null);
     }
   }
 }
 
 export const googleCalendarService = new GoogleCalendarService();
 
-// Typy pro window.gapi
 declare global {
   interface Window {
     gapi: any;
+    google: any;
   }
 }
