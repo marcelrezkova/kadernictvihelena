@@ -1,12 +1,23 @@
-import React from 'react';
-import { MapPin, Phone, Mail, Heart } from 'lucide-react';
+import React, { useState } from 'react';
+import { MapPin, Phone, Mail, Heart, Shield, FileText, Cookie } from 'lucide-react';
+import PrivacyPolicy from './PrivacyPolicy';
+import TermsOfService from './TermsOfService';
 
 const Footer: React.FC = () => {
+  const [showPrivacy, setShowPrivacy] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
+  const [showCookieSettings, setShowCookieSettings] = useState(false);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const openCookieSettings = () => {
+    localStorage.removeItem('cookieConsent');
+    window.location.reload();
   };
 
   return (
@@ -89,18 +100,47 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Legal Links */}
         <div className="border-t border-neutral-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-neutral-400 font-inter text-sm">
-              © 2024 Helena Bošínová - Kadeřnictví POHODA. Všechna práva vyhrazena.
-            </p>
-            <div className="flex items-center space-x-4 text-neutral-400 text-sm">
-              <span>Dámské • Pánské • Dětské • Holičství</span>
+          <div className="flex flex-col space-y-6">
+            <div className="flex flex-wrap justify-center gap-6">
+              <button
+                onClick={() => setShowPrivacy(true)}
+                className="flex items-center gap-2 text-neutral-400 hover:text-primary-400 transition-colors font-inter text-sm"
+              >
+                <Shield className="w-4 h-4" />
+                Ochrana osobních údajů
+              </button>
+              <button
+                onClick={() => setShowTerms(true)}
+                className="flex items-center gap-2 text-neutral-400 hover:text-primary-400 transition-colors font-inter text-sm"
+              >
+                <FileText className="w-4 h-4" />
+                Obchodní podmínky
+              </button>
+              <button
+                onClick={openCookieSettings}
+                className="flex items-center gap-2 text-neutral-400 hover:text-primary-400 transition-colors font-inter text-sm"
+              >
+                <Cookie className="w-4 h-4" />
+                Nastavení cookies
+              </button>
+            </div>
+
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <p className="text-neutral-400 font-inter text-sm">
+                © {new Date().getFullYear()} Helena Bošínová - Kadeřnictví POHODA. Všechna práva vyhrazena.
+              </p>
+              <div className="flex items-center space-x-4 text-neutral-400 text-sm">
+                <span>Dámské • Pánské • Dětské • Holičství</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      {showPrivacy && <PrivacyPolicy onClose={() => setShowPrivacy(false)} />}
+      {showTerms && <TermsOfService onClose={() => setShowTerms(false)} />}
     </footer>
   );
 };

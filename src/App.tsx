@@ -7,6 +7,7 @@ import Pricing from './components/Pricing';
 import Booking from './components/Booking';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CookieConsent from './components/CookieConsent';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <CookieConsent />
     </div>
   );
 }
