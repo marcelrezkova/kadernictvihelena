@@ -41,7 +41,7 @@ const About: React.FC = () => {
                   Helena Bošínová
                 </h3>
                 <p className="text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed mb-6">
-                  Jmenuji se Helena Bošínová a kadeřnicině se věnuji přes 20 let. Do Liberce jsme se 
+                  Jmenuji se Helena Bošínová a kadeřnictví se věnuji přes 15 let. Do Liberce jsme se 
                   přistěhovali v roce 2013, nechala jsem se zaměstnat v kadeřnictví IrisHair. Pak přišli 
                   děti, mateřská atd. Momentálně mě najdete v Kadeřnictví Pohoda v Moskevské 637/6, 
                   kde mě mezi sebe přijala parta úžasných holek a kadeřnic.
