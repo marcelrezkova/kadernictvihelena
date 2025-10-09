@@ -4,6 +4,9 @@
 
 [build.environment]
   NODE_VERSION = "18"
+  VITE_GOOGLE_API_KEY = "AIzaSyCoPvaIsDYbp9dbhB_vSSMQZS9D16902BY"
+  VITE_GOOGLE_CLIENT_ID = "302172555541-o4tdjvp06q3mci523e8rssr7j1de6mgg.apps.googleusercontent.com"
+  VITE_GOOGLE_CALENDAR_ID = "primary"
 
 [[redirects]]
   from = "/*"
