@@ -41,34 +41,24 @@ class GoogleCalendarService {
         return;
       }
 
-      if (!this.CLIENT_ID) {
-        reject(new Error('VITE_GOOGLE_CLIENT_ID není nastaven'));
+      if (!this.CLIENT_ID || !this.API_KEY) {
+        console.warn('Google Calendar credentials not configured - using fallback mode');
+        resolve();
         return;
       }
 
       window.gapi.load('client', async () => {
         try {
           await window.gapi.client.init({
+            apiKey: this.API_KEY,
             discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest']
-          });
-
-          this.tokenClient = window.google.accounts.oauth2.initTokenClient({
-            client_id: this.CLIENT_ID,
-            scope: 'https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/calendar.readonly',
-            callback: (response: any) => {
-              if (response.error) {
-                console.error('Token error:', response);
-                return;
-              }
-              this.accessToken = response.access_token;
-            },
           });
 
           console.log('Google Calendar API initialized successfully');
           resolve();
         } catch (error) {
           console.error('Error initializing Google Calendar API:', error);
-          reject(error);
+          resolve();
         }
       });
     });
@@ -144,6 +134,10 @@ Kadeřnictví POHODA - Helena Bošínová
   // Získání dostupných termínů
   async getAvailableSlots(date: string): Promise<string[]> {
     try {
+      if (!this.CALENDAR_ID || !window.gapi?.client?.calendar) {
+        return [];
+      }
+
       const startOfDay = new Date(`${date}T08:00:00`);
       const endOfDay = new Date(`${date}T18:00:00`);
 
@@ -155,8 +149,8 @@ Kadeřnictví POHODA - Helena Bošínová
         orderBy: 'startTime'
       });
 
-      const bookedSlots = response.result.items.map(event => {
-        const start = new Date(event.start.dateTime);
+      const bookedSlots = response.result.items.map((event: any) => {
+        const start = new Date(event.start.dateTime || event.start.date);
         return start.toTimeString().slice(0, 5);
       });
 

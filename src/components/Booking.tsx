@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Clock, User, Phone, Mail, MessageSquare, CheckCircle, AlertCircle } from 'lucide-react';
+import { Calendar, Clock, User, Phone, Mail, MessageSquare, Send, AlertCircle } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { allServices } from '../data/pricing';
 import { useGoogleCalendar } from '../hooks/useGoogleCalendar';
 import { googleCalendarService } from '../services/googleCalendar';
 
+const BOOKING_EMAIL = 'rezervace@test.cz';
+
 const Booking: React.FC = () => {
   const { ref, isVisible } = useScrollReveal();
-  const { isInitialized, isAuthorized, authorize, error: calendarError } = useGoogleCalendar();
+  const { isInitialized } = useGoogleCalendar();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,9 +19,7 @@ const Booking: React.FC = () => {
     time: '',
     message: ''
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const [availableTimes, setAvailableTimes] = useState<string[]>([
     '08:00', '08:30', '09:00', '09:30', '10:00', '10:30',
     '11:00', '11:30', '12:00', '12:30', '13:00', '13:30',
@@ -28,61 +28,64 @@ const Booking: React.FC = () => {
   ]);
 
   useEffect(() => {
-    if (formData.date && isInitialized && isAuthorized) {
+    if (formData.date && isInitialized) {
       loadAvailableSlots(formData.date);
     }
-  }, [formData.date, isInitialized, isAuthorized]);
+  }, [formData.date, isInitialized]);
 
   const loadAvailableSlots = async (date: string) => {
+    setIsLoading(true);
     try {
       const slots = await googleCalendarService.getAvailableSlots(date);
-      setAvailableTimes(slots);
+      setAvailableTimes(slots.length > 0 ? slots : [
+        '08:00', '08:30', '09:00', '09:30', '10:00', '10:30',
+        '11:00', '11:30', '12:00', '12:30', '13:00', '13:30',
+        '14:00', '14:30', '15:00', '15:30', '16:00', '16:30',
+        '17:00', '17:30'
+      ]);
     } catch (error) {
       console.error('Error loading available slots:', error);
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setError(null);
-
-    try {
-      if (!isInitialized) {
-        throw new Error('Google Calendar se stále načítá. Počkejte prosím chvíli.');
-      }
-
-      if (!isAuthorized) {
-        const authorized = await authorize();
-        if (!authorized) {
-          throw new Error('Pro vytvoření rezervace musíte povolit přístup ke kalendáři.');
-        }
-      }
-
-      const isAvailable = await googleCalendarService.checkAvailability(formData.date, formData.time);
-      if (!isAvailable) {
-        throw new Error('Tento termín již není dostupný. Prosím, vyberte jiný.');
-      }
-
-      await googleCalendarService.createBooking(formData);
-
-      setIsSubmitted(true);
-      setTimeout(() => setIsSubmitted(false), 5000);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        date: '',
-        time: '',
-        message: ''
-      });
-    } catch (error) {
-      console.error('Chyba při odesílání rezervace:', error);
-      setError(error instanceof Error ? error.message : 'Nepodařilo se vytvořit rezervaci');
+      setAvailableTimes([
+        '08:00', '08:30', '09:00', '09:30', '10:00', '10:30',
+        '11:00', '11:30', '12:00', '12:30', '13:00', '13:30',
+        '14:00', '14:30', '15:00', '15:30', '16:00', '16:30',
+        '17:00', '17:30'
+      ]);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const selectedService = allServices.find(s => s.name === formData.service);
+    const serviceName = selectedService?.name || formData.service;
+
+    const formattedDate = new Date(formData.date).toLocaleDateString('cs-CZ', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+
+    const emailSubject = encodeURIComponent(`Žádost o rezervaci - ${serviceName}`);
+    const emailBody = encodeURIComponent(
+      `Dobrý den,\n\n` +
+      `žádám o rezervaci termínu v kadeřnictví POHODA.\n\n` +
+      `KONTAKTNÍ ÚDAJE:\n` +
+      `Jméno: ${formData.name}\n` +
+      `Telefon: ${formData.phone}\n` +
+      `Email: ${formData.email}\n\n` +
+      `POŽADOVANÝ TERMÍN:\n` +
+      `Služba: ${serviceName}\n` +
+      `Datum: ${formattedDate}\n` +
+      `Čas: ${formData.time}\n\n` +
+      `${formData.message ? `POZNÁMKA:\n${formData.message}\n\n` : ''}` +
+      `S pozdravem,\n${formData.name}`
+    );
+
+    window.location.href = `mailto:${BOOKING_EMAIL}?subject=${emailSubject}&body=${emailBody}`;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -110,8 +113,7 @@ const Booking: React.FC = () => {
               <span className="block text-primary-600 dark:text-primary-400">na termín</span>
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto font-inter leading-relaxed">
-              Vyberte si službu a termín, který vám vyhovuje. Potvrzení rezervace obdržíte 
-              na váš e-mail do několika minut.
+              Vyberte si službu a termín, který vám vyhovuje. Odešleme za vás žádost o rezervaci emailem.
             </p>
           </div>
 
@@ -123,69 +125,18 @@ const Booking: React.FC = () => {
                   Rezervační formulář
                 </h3>
 
-                {!isInitialized && !calendarError && (
+                {!isInitialized && (
                   <div className="mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
                     <div className="flex items-start space-x-2">
                       <div className="w-5 h-5 border-2 border-blue-500 border-t-transparent rounded-full animate-spin flex-shrink-0 mt-0.5"></div>
                       <p className="text-sm text-blue-700 dark:text-blue-300 font-inter">
-                        Načítám Google Calendar...
+                        Načítám dostupné termíny z kalendáře...
                       </p>
                     </div>
                   </div>
                 )}
 
-                {isInitialized && !isAuthorized && !error && (
-                  <div className="mb-4 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
-                    <div className="flex items-start justify-between">
-                      <div className="flex items-start space-x-2">
-                        <AlertCircle className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
-                        <p className="text-sm text-yellow-700 dark:text-yellow-300 font-inter">
-                          Pro rezervaci je potřeba se přihlásit k Google účtu
-                        </p>
-                      </div>
-                      <button
-                        onClick={authorize}
-                        className="ml-4 px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg text-sm font-inter font-medium transition-colors"
-                      >
-                        Přihlásit se
-                      </button>
-                    </div>
-                  </div>
-                )}
-
-                {(calendarError || error) && (
-                  <div className="mb-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
-                    <div className="flex items-start space-x-2">
-                      <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                      <p className="text-sm text-red-700 dark:text-red-300 font-inter">
-                        {error || calendarError}
-                      </p>
-                    </div>
-                  </div>
-                )}
-
-                {isSubmitted ? (
-                  <div className="text-center py-8">
-                    <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                    <h4 className="font-inter font-semibold text-lg text-neutral-800 dark:text-white mb-2">
-                      Rezervace úspěšně odeslána!
-                    </h4>
-                    <p className="text-neutral-600 dark:text-neutral-300 font-inter mb-4">
-                      Děkujeme za vaši rezervaci. Potvrzení obdržíte na e-mail do několika minut.
-                    </p>
-                    <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 text-left">
-                      <h5 className="font-inter font-semibold text-green-800 dark:text-green-300 mb-2">
-                        Detaily rezervace:
-                      </h5>
-                      <div className="space-y-1 text-sm text-green-700 dark:text-green-400">
-                        <p><strong>Služba:</strong> {formData.service}</p>
-                        <p><strong>Datum:</strong> {formData.date}</p>
-                        <p><strong>Čas:</strong> {formData.time}</p>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                     {/* Personal Information */}
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
@@ -317,48 +268,60 @@ const Booking: React.FC = () => {
                     {/* Submit Button */}
                     <button
                       type="submit"
-                      disabled={isLoading || !isInitialized || !isAuthorized}
+                      disabled={!formData.name || !formData.email || !formData.phone || !formData.service || !formData.date || !formData.time}
                       className="w-full px-6 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 disabled:from-neutral-400 disabled:to-neutral-500 text-white rounded-lg font-inter font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl disabled:transform-none disabled:shadow-none flex items-center justify-center space-x-2"
                     >
-                      {isLoading ? (
-                        <>
-                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                          <span>Odesílám...</span>
-                        </>
-                      ) : (
-                        <>
-                          <Calendar className="w-5 h-5" />
-                          <span>Odeslat rezervaci</span>
-                        </>
-                      )}
+                      <Send className="w-5 h-5" />
+                      <span>Odeslat žádost o rezervaci</span>
                     </button>
+
+                    <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                      <div className="flex items-start space-x-2">
+                        <AlertCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                        <p className="text-sm text-blue-700 dark:text-blue-300 font-inter">
+                          Po kliknutí na tlačítko se otevře váš emailový klient s předvyplněnou zprávou.
+                          Stačí ji odeslat a my vás budeme kontaktovat pro potvrzení termínu.
+                        </p>
+                      </div>
+                    </div>
                   </form>
-                )}
               </div>
 
               {/* Booking Information */}
               <div className="space-y-8">
+                {/* Calendar Info */}
+                {isLoading && (
+                  <div className="bg-blue-50 dark:bg-blue-900/20 rounded-2xl p-6 border border-blue-200 dark:border-blue-800">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-5 h-5 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                      <p className="text-sm text-blue-700 dark:text-blue-300 font-inter">
+                        Načítám dostupné termíny...
+                      </p>
+                    </div>
+                  </div>
+                )}
+
                 {/* Important Information */}
                 <div className="bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-2xl p-6">
                   <h4 className="font-playfair font-bold text-xl text-neutral-800 dark:text-white mb-4">
-                    Důležité informace
+                    Jak to funguje
                   </h4>
                   <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-300 font-inter">
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>Potvrzení rezervace obdržíte na e-mail do 15 minut</span>
+                      <div className="w-6 h-6 rounded-full bg-primary-500 text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</div>
+                      <span>Vyplňte formulář s vašimi údaji a vyberte termín</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>Rezervaci lze zrušit zdarma do 24 hodin před termínem</span>
+                      <div className="w-6 h-6 rounded-full bg-primary-500 text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</div>
+                      <span>Otevře se emailová aplikace s předvyplněnou zprávou</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>Při prvním návštěvě je konzultace zdarma</span>
+                      <div className="w-6 h-6 rounded-full bg-primary-500 text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</div>
+                      <span>Odešlete email a my vás budeme kontaktovat pro potvrzení</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <AlertCircle className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
-                      <span>Prosíme, dostavte se 5 minut před termínem</span>
+                      <AlertCircle className="w-4 h-4 text-primary-500 mt-1 flex-shrink-0" />
+                      <span>Termíny jsou orientační - zobrazují obsazenost kalendáře</span>
                     </div>
                   </div>
                 </div>
