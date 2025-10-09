@@ -5,7 +5,7 @@ import { allServices } from '../data/pricing';
 import { useGoogleCalendar } from '../hooks/useGoogleCalendar';
 import { googleCalendarService } from '../services/googleCalendar';
 
-const BOOKING_EMAIL = 'rezervace@test.cz';
+const BOOKING_EMAIL = 'helena.bosinova@email.cz';
 
 const Booking: React.FC = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -279,8 +279,7 @@ const Booking: React.FC = () => {
                       <div className="flex items-start space-x-2">
                         <AlertCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
                         <p className="text-sm text-blue-700 dark:text-blue-300 font-inter">
-                          Po kliknutí na tlačítko se otevře váš emailový klient s předvyplněnou zprávou.
-                          Stačí ji odeslat a my vás budeme kontaktovat pro potvrzení termínu.
+                          Tlačítko otevře emailovou aplikaci s předvyplněnou žádostí. Potvrzení termínu obdržíte do 24 hodin.
                         </p>
                       </div>
                     </div>
