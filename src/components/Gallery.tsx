@@ -89,8 +89,9 @@ const Gallery: React.FC = () => {
                   </h3>
                 </div>
                 <div className="p-6">
-                  <p className="text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed">
-                    Folayage kombinuje přednosti fólií a balayage. Výsledkem jsou krásně rozsvícené pasemka s přirozeným přechodem barev, které dodají vlasům objem a hloubku.
+                  <p className="text-neutral-600 dark:text-neutral-300 font-inter text-sm leading-relaxed">
+                    <strong className="block mb-2 text-neutral-800 dark:text-white">Folayage – výrazné prosvětlení a zároveň přirozený vzhled</strong>
+                    Zesvětlení o 5 až 9 odstínů. Celkový čas návštěvy cca 3-4,5 hodin. Cena od 2000-4500,- Kč. Výrazné prosvětlení s jemnými přechody při odrůstání. Vlasy vypadají svěže i po delší době a není nutné tak často navštěvovat kadeřníka. Dosažení světlého efektu, který vypadá přirozeně.
                   </p>
                 </div>
               </div>
