@@ -109,8 +109,9 @@ const Gallery: React.FC = () => {
                   </h3>
                 </div>
                 <div className="p-6">
-                  <p className="text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed">
-                    Freehand je ruční technika nanášení barvy volnou rukou bez fólií. Umožňuje vytvářet jemné, přirozené přechody a individuální vzhled přizpůsobený tvaru obličeje.
+                  <p className="text-neutral-600 dark:text-neutral-300 font-inter text-sm leading-relaxed">
+                    <strong className="block mb-2 text-neutral-800 dark:text-white">Freehand technika - přirozené rozjasnění vlasů</strong>
+                    Zesvětlení o 2-5 odstínů. Technika při které se nanáší směs přímo na prameny volnou rukou a štětcem bez použití alobalu či fólií. Výsledkem je jemné a přirozené zesvětlení s plynulými přechody a postupným odrůstáním bez výrazných hran.
                   </p>
                 </div>
               </div>
