@@ -4,631 +4,670 @@ export interface GalleryImage {
   alt: string;
   title: string;
   description: string;
-  category: 'before-after' | 'hairstyles' | 'salon' | 'products';
+  category: 'damske-strihy' | 'panske-strihy' | 'detske-strihy' | 'barveni' | 'spolecenske' | 'kratkovlasky' | 'meliry';
 }
 
 export const galleryImages: GalleryImage[] = [
-  // Účesy a střihy
+  // Dámské střihy - Bob
   {
-    id: 'hair-1',
-    src: '/gallery/IMG_2604.jpg',
-    alt: 'Moderní dámský střih',
-    title: 'Stylový bob střih',
-    description: 'Elegantní bob s jemnými vlnami',
-    category: 'hairstyles'
+    id: 'damsky-bob-1',
+    src: '/gallery/dámský střih bob.jpg',
+    alt: 'Dámský střih bob',
+    title: 'Klasický Bob',
+    description: 'Elegantní střih bob',
+    category: 'damske-strihy'
   },
   {
-    id: 'hair-2',
-    src: '/gallery/IMG_2605.jpg',
-    alt: 'Dlouhé vlasy s melírem',
-    title: 'Balayage technika',
-    description: 'Přírodní přechody pro dlouhé vlasy',
-    category: 'hairstyles'
+    id: 'damsky-bob-2',
+    src: '/gallery/dámský střih bob(1).jpg',
+    alt: 'Dámský střih bob - variace',
+    title: 'Bob s Vrstvami',
+    description: 'Bob střih s jemnými vrstvami',
+    category: 'damske-strihy'
   },
   {
-    id: 'hair-3',
-    src: '/gallery/IMG_2617.jpg',
-    alt: 'Společenský účes',
-    title: 'Svatební účes',
-    description: 'Elegantní účes pro speciální příležitosti',
-    category: 'hairstyles'
+    id: 'damsky-bob-3',
+    src: '/gallery/dámský střih bob(2).jpg',
+    alt: 'Dámský střih bob - moderní',
+    title: 'Moderní Bob',
+    description: 'Současný přístup k bobu',
+    category: 'damske-strihy'
   },
   {
-    id: 'hair-4',
-    src: '/gallery/IMG_2618.jpg',
-    alt: 'Krátký moderní střih',
-    title: 'Pixie cut',
-    description: 'Odvážný krátký střih',
-    category: 'hairstyles'
+    id: 'damsky-bob-4',
+    src: '/gallery/dámský střih bob(3).jpg',
+    alt: 'Dámský střih bob - stylový',
+    title: 'Stylový Bob',
+    description: 'Trendy variace bobu',
+    category: 'damske-strihy'
   },
   {
-    id: 'hair-5',
-    src: '/gallery/IMG_2619.jpg',
-    alt: 'Melírované vlasy',
-    title: 'Klasický melír',
+    id: 'damsky-bob-5',
+    src: '/gallery/dámský střih bob(4).jpg',
+    alt: 'Dámský střih bob - elegantní',
+    title: 'Elegantní Bob',
+    description: 'Sofistikovaný bob střih',
+    category: 'damske-strihy'
+  },
+
+  // Krátkovlásky
+  {
+    id: 'kratkovlasky-1',
+    src: '/gallery/krátkovlásky.jpg',
+    alt: 'Krátkovlasý střih',
+    title: 'Krátký Střih',
+    description: 'Odvážný krátký účes',
+    category: 'kratkovlasky'
+  },
+  {
+    id: 'kratkovlasky-2',
+    src: '/gallery/krátkovlásky(1).jpg',
+    alt: 'Krátké vlasy - pixie',
+    title: 'Pixie Cut',
+    description: 'Moderní pixie střih',
+    category: 'kratkovlasky'
+  },
+  {
+    id: 'kratkovlasky-3',
+    src: '/gallery/krátkovlásky(2).jpg',
+    alt: 'Krátké vlasy - undercut',
+    title: 'Undercut Style',
+    description: 'Trendy undercut',
+    category: 'kratkovlasky'
+  },
+  {
+    id: 'kratkovlasky-4',
+    src: '/gallery/krátkovlásky(3).jpg',
+    alt: 'Krátké vlasy - elegantní',
+    title: 'Elegantní Krátký Střih',
+    description: 'Jemný krátký účes',
+    category: 'kratkovlasky'
+  },
+  {
+    id: 'kratkovlasky-5',
+    src: '/gallery/krátkovlásky(4).jpg',
+    alt: 'Krátké vlasy - textured',
+    title: 'Texturovaný Střih',
+    description: 'Střih s texturou',
+    category: 'kratkovlasky'
+  },
+  {
+    id: 'kratkovlasky-6',
+    src: '/gallery/krátkovlásky(5).jpg',
+    alt: 'Krátké vlasy - asymetrický',
+    title: 'Asymetrický Střih',
+    description: 'Asymetrie pro krátké vlasy',
+    category: 'kratkovlasky'
+  },
+  {
+    id: 'kratkovlasky-7',
+    src: '/gallery/krátkovlásky(6).jpg',
+    alt: 'Krátké vlasy - praktický',
+    title: 'Praktický Střih',
+    description: 'Snadno udržovatelný',
+    category: 'kratkovlasky'
+  },
+  {
+    id: 'kratkovlasky-8',
+    src: '/gallery/krátkovlásky(7).jpg',
+    alt: 'Krátké vlasy - chic',
+    title: 'Chic Krátký Střih',
+    description: 'Stylový a elegantní',
+    category: 'kratkovlasky'
+  },
+  {
+    id: 'kratkovlasky-9',
+    src: '/gallery/krátkovlásky(8).jpg',
+    alt: 'Krátké vlasy - mladistvý',
+    title: 'Mladistvý Střih',
+    description: 'Osvěžující vzhled',
+    category: 'kratkovlasky'
+  },
+  {
+    id: 'kratkovlasky-10',
+    src: '/gallery/krátkovlásky(9).jpg',
+    alt: 'Krátké vlasy - odvážný',
+    title: 'Odvážný Střih',
+    description: 'Pro sebevědomé ženy',
+    category: 'kratkovlasky'
+  },
+  {
+    id: 'kratkovlasky-11',
+    src: '/gallery/krátkovlásky(10).jpg',
+    alt: 'Krátké vlasy - klasický',
+    title: 'Klasický Krátký Střih',
+    description: 'Nadčasový střih',
+    category: 'kratkovlasky'
+  },
+  {
+    id: 'kratkovlasky-12',
+    src: '/gallery/krátkovlásky(11).jpg',
+    alt: 'Krátké vlasy - trendy',
+    title: 'Trendy Krátký Střih',
+    description: 'Aktuální módní trend',
+    category: 'kratkovlasky'
+  },
+
+  // Pánské střihy
+  {
+    id: 'pansky-stih-pred-1',
+    src: '/gallery/pánský střih před.jpg',
+    alt: 'Pánský střih - před',
+    title: 'Pánský Střih - Před',
+    description: 'Výchozí stav',
+    category: 'panske-strihy'
+  },
+  {
+    id: 'pansky-stih-po-1',
+    src: '/gallery/pánský střih po.jpg',
+    alt: 'Pánský střih - po',
+    title: 'Pánský Střih - Po',
+    description: 'Moderní pánský střih',
+    category: 'panske-strihy'
+  },
+  {
+    id: 'pansky-stih-po-2',
+    src: '/gallery/pánský střih po(1).jpg',
+    alt: 'Pánský střih - detail',
+    title: 'Pánský Střih - Detail',
+    description: 'Detailní pohled',
+    category: 'panske-strihy'
+  },
+  {
+    id: 'pansky-stih-pred-2',
+    src: '/gallery/pánský střih před2.jpg',
+    alt: 'Pánský střih - před úpravou',
+    title: 'Před Úpravou',
+    description: 'Původní stav',
+    category: 'panske-strihy'
+  },
+  {
+    id: 'pansky-stih-po-3',
+    src: '/gallery/pánský střih po2.jpg',
+    alt: 'Pánský střih - po úpravě',
+    title: 'Po Úpravě',
+    description: 'Čistý profesionální střih',
+    category: 'panske-strihy'
+  },
+  {
+    id: 'foto-po-pansky',
+    src: '/gallery/foto po pánský střih.jpg',
+    alt: 'Pánský střih - výsledek',
+    title: 'Finální Výsledek',
+    description: 'Dokonalý pánský střih',
+    category: 'panske-strihy'
+  },
+  {
+    id: 'foto-pred-panske',
+    src: '/gallery/foto před pánské2.jpg',
+    alt: 'Před pánským střihem',
+    title: 'Před Střihem',
+    description: 'Stav před úpravou',
+    category: 'panske-strihy'
+  },
+
+  // Dětské střihy
+  {
+    id: 'detsky-1',
+    src: '/gallery/dětský střih.jpg',
+    alt: 'Dětský střih',
+    title: 'Dětský Střih',
+    description: 'Šetrný přístup k dětem',
+    category: 'detske-strihy'
+  },
+  {
+    id: 'detsky-2',
+    src: '/gallery/dětský střih(1).jpg',
+    alt: 'Dětský střih - moderní',
+    title: 'Moderní Dětský Střih',
+    description: 'Trendy střih pro děti',
+    category: 'detske-strihy'
+  },
+  {
+    id: 'detsky-3',
+    src: '/gallery/dětský střih(2).jpg',
+    alt: 'Dětský střih - praktický',
+    title: 'Praktický Dětský Střih',
+    description: 'Snadno udržovatelný',
+    category: 'detske-strihy'
+  },
+  {
+    id: 'detsky-4',
+    src: '/gallery/dětský střih(3).jpg',
+    alt: 'Dětský střih - stylový',
+    title: 'Stylový Dětský Střih',
+    description: 'Moderní a praktický',
+    category: 'detske-strihy'
+  },
+  {
+    id: 'detsky-5',
+    src: '/gallery/dětský střih(4).jpg',
+    alt: 'Dětský střih - cool',
+    title: 'Cool Dětský Střih',
+    description: 'Trendy pro mladé',
+    category: 'detske-strihy'
+  },
+  {
+    id: 'detsky-6',
+    src: '/gallery/dětský střih(5).jpg',
+    alt: 'Dětský střih - klasický',
+    title: 'Klasický Dětský Střih',
+    description: 'Nadčasový dětský střih',
+    category: 'detske-strihy'
+  },
+  {
+    id: 'foto-detske-pred',
+    src: '/gallery/foto před dětské.jpg',
+    alt: 'Před dětským střihem',
+    title: 'Před Střihem',
+    description: 'Výchozí stav',
+    category: 'detske-strihy'
+  },
+  {
+    id: 'foto-detske-po-1',
+    src: '/gallery/foto po dětské.jpg',
+    alt: 'Po dětském střihu',
+    title: 'Po Střihu',
+    description: 'Krásný výsledek',
+    category: 'detske-strihy'
+  },
+  {
+    id: 'foto-detske-po-2',
+    src: '/gallery/foto po dětské(1).jpg',
+    alt: 'Po dětském střihu - detail',
+    title: 'Detail Střihu',
+    description: 'Detailní pohled',
+    category: 'detske-strihy'
+  },
+
+  // Barvení - Cool Blond
+  {
+    id: 'cool-blond-pred-1',
+    src: '/gallery/cool blond před.jpg',
+    alt: 'Cool blond - před',
+    title: 'Cool Blond - Před',
+    description: 'Výchozí barva',
+    category: 'barveni'
+  },
+  {
+    id: 'cool-blond-pred-2',
+    src: '/gallery/cool bond před.jpg',
+    alt: 'Cool blond - před barvením',
+    title: 'Před Barvením',
+    description: 'Původní odstín',
+    category: 'barveni'
+  },
+  {
+    id: 'cool-blond-po-1',
+    src: '/gallery/cool blond po.jpg',
+    alt: 'Cool blond - po',
+    title: 'Cool Blond - Po',
+    description: 'Krásný chladný blond',
+    category: 'barveni'
+  },
+  {
+    id: 'cool-blond-po-2',
+    src: '/gallery/cool blond po(1).jpg',
+    alt: 'Cool blond - detail',
+    title: 'Cool Blond - Detail',
+    description: 'Detailní pohled na barvu',
+    category: 'barveni'
+  },
+  {
+    id: 'cool-blond-po-3',
+    src: '/gallery/cool blond po(2).jpg',
+    alt: 'Cool blond - výsledek',
+    title: 'Cool Blond - Výsledek',
+    description: 'Dokonalý chladný tón',
+    category: 'barveni'
+  },
+  {
+    id: 'cool-blond-po-4',
+    src: '/gallery/cool blond po(3).jpg',
+    alt: 'Cool blond - finální',
+    title: 'Cool Blond - Finální',
+    description: 'Perfektní výsledek',
+    category: 'barveni'
+  },
+
+  // Barvení - Vanilla Blond
+  {
+    id: 'vanilla-blond-pred',
+    src: '/gallery/foto vanila blond před.jpg',
+    alt: 'Vanilla blond - před',
+    title: 'Vanilla Blond - Před',
+    description: 'Výchozí barva vlasů',
+    category: 'barveni'
+  },
+  {
+    id: 'vanilla-blond-po-1',
+    src: '/gallery/foto vanila blond po.jpg',
+    alt: 'Vanilla blond - po',
+    title: 'Vanilla Blond - Po',
+    description: 'Teplý vanilkový blond',
+    category: 'barveni'
+  },
+  {
+    id: 'vanilla-blond-po-2',
+    src: '/gallery/foto po vanila blond.jpg',
+    alt: 'Vanilla blond - výsledek',
+    title: 'Vanilla Blond - Výsledek',
+    description: 'Krásný teplý odstín',
+    category: 'barveni'
+  },
+  {
+    id: 'vanilla-blond-po-3',
+    src: '/gallery/foto po vanila blond(1).jpg',
+    alt: 'Vanilla blond - detail',
+    title: 'Vanilla Blond - Detail',
+    description: 'Detailní pohled',
+    category: 'barveni'
+  },
+  {
+    id: 'vanilla-blond-po-4',
+    src: '/gallery/foto po vanila blond(2).jpg',
+    alt: 'Vanilla blond - finální',
+    title: 'Vanilla Blond - Finální',
+    description: 'Perfektní vanilkový tón',
+    category: 'barveni'
+  },
+
+  // Melíry - Mikromelír
+  {
+    id: 'mikromelir-1',
+    src: '/gallery/mikromelír.jpg',
+    alt: 'Mikromelír',
+    title: 'Mikromelír',
+    description: 'Jemné přírodní reflexy',
+    category: 'meliry'
+  },
+  {
+    id: 'mikromelir-2',
+    src: '/gallery/mikro melír.jpg',
+    alt: 'Mikro melír',
+    title: 'Mikro Melír',
+    description: 'Subtilní melírování',
+    category: 'meliry'
+  },
+  {
+    id: 'mikromelir-3',
+    src: '/gallery/mikromelír(1).jpg',
+    alt: 'Mikromelír - detail',
+    title: 'Mikromelír - Detail',
+    description: 'Jemné světlé pramínky',
+    category: 'meliry'
+  },
+  {
+    id: 'mikromelir-4',
+    src: '/gallery/mikromelír(2).jpg',
+    alt: 'Mikromelír - výsledek',
+    title: 'Mikromelír - Výsledek',
+    description: 'Přirozený vzhled',
+    category: 'meliry'
+  },
+  {
+    id: 'mikromelir-5',
+    src: '/gallery/mikromelír(3).jpg',
+    alt: 'Mikromelír - finální',
+    title: 'Mikromelír - Finální',
+    description: 'Dokonalé jemné reflexy',
+    category: 'meliry'
+  },
+
+  // Melíry - Foliage/Folayge
+  {
+    id: 'folayge-pred-1',
+    src: '/gallery/foto před folayge.jpg',
+    alt: 'Foliage - před',
+    title: 'Foliage - Před',
+    description: 'Výchozí stav vlasů',
+    category: 'meliry'
+  },
+  {
+    id: 'folayge-po-1',
+    src: '/gallery/foto po folayge.jpg',
+    alt: 'Foliage - po',
+    title: 'Foliage - Po',
+    description: 'Krásné přechody',
+    category: 'meliry'
+  },
+  {
+    id: 'falayge-po',
+    src: '/gallery/foto po falayge.jpg',
+    alt: 'Foliage technika',
+    title: 'Foliage Technika',
     description: 'Profesionální melírování',
-    category: 'hairstyles'
+    category: 'meliry'
   },
   {
-    id: 'hair-6',
-    src: '/gallery/IMG_2647.jpg',
-    alt: 'Polodlouhé vlasy',
-    title: 'Moderní střih',
-    description: 'Trendy střih pro polodlouhé vlasy',
-    category: 'hairstyles'
+    id: 'folayge-pred-2',
+    src: '/gallery/foto před folayge2.jpg',
+    alt: 'Foliage 2 - před',
+    title: 'Foliage - Před Úpravou',
+    description: 'Původní barva',
+    category: 'meliry'
   },
   {
-    id: 'hair-7',
-    src: '/gallery/IMG_2648.jpg',
-    alt: 'Barvené vlasy',
-    title: 'Barevné reflexy',
-    description: 'Krásné barevné akcenty',
-    category: 'hairstyles'
+    id: 'folayge-po-2',
+    src: '/gallery/foto po folayge2.jpg',
+    alt: 'Foliage 2 - po',
+    title: 'Foliage - Po Úpravě',
+    description: 'Nádherné přírodní přechody',
+    category: 'meliry'
   },
   {
-    id: 'hair-8',
-    src: '/gallery/IMG_2650.jpg',
-    alt: 'Kudrnaté vlasy',
-    title: 'Péče o kudrny',
-    description: 'Stylizace kudrnatých vlasů',
-    category: 'hairstyles'
+    id: 'folayge-pred-3',
+    src: '/gallery/foto před folayge2(1).jpg',
+    alt: 'Foliage 3 - před',
+    title: 'Před Foliage',
+    description: 'Výchozí stav',
+    category: 'meliry'
   },
   {
-    id: 'hair-9',
+    id: 'folayge-po-3',
+    src: '/gallery/foto po folayge2(1).jpg',
+    alt: 'Foliage 3 - po',
+    title: 'Po Foliage',
+    description: 'Krásný výsledek',
+    category: 'meliry'
+  },
+
+  // Melíry - Freehand
+  {
+    id: 'freehand-pred-1',
+    src: '/gallery/foto před freehand.jpg',
+    alt: 'Freehand - před',
+    title: 'Freehand - Před',
+    description: 'Výchozí barva vlasů',
+    category: 'meliry'
+  },
+  {
+    id: 'freehand-po-1',
+    src: '/gallery/foto po freehand.jpg',
+    alt: 'Freehand - po',
+    title: 'Freehand - Po',
+    description: 'Umělecké melírování',
+    category: 'meliry'
+  },
+  {
+    id: 'freehand-po-2',
+    src: '/gallery/foto po freehand(1).jpg',
+    alt: 'Freehand - detail',
+    title: 'Freehand - Detail',
+    description: 'Detailní pohled',
+    category: 'meliry'
+  },
+  {
+    id: 'freehand-po-3',
+    src: '/gallery/foto po freehand(2).jpg',
+    alt: 'Freehand - výsledek',
+    title: 'Freehand - Výsledek',
+    description: 'Kreativní přechody',
+    category: 'meliry'
+  },
+  {
+    id: 'freehand-zrz-pred-1',
+    src: '/gallery/foto před freehand zrz.jpg',
+    alt: 'Freehand zrzavé - před',
+    title: 'Freehand Zrzavé - Před',
+    description: 'Výchozí stav',
+    category: 'meliry'
+  },
+  {
+    id: 'freehand-zrz-pred-2',
+    src: '/gallery/foto před freehand zrz(1).jpg',
+    alt: 'Freehand zrzavé - před úpravou',
+    title: 'Před Zrzavým Freehand',
+    description: 'Původní barva',
+    category: 'meliry'
+  },
+  {
+    id: 'freehand-zrz-po',
+    src: '/gallery/foto po freehand zrz.jpg',
+    alt: 'Freehand zrzavé - po',
+    title: 'Freehand Zrzavé - Po',
+    description: 'Krásné zrzavé tóny',
+    category: 'meliry'
+  },
+
+  // Společenské účesy
+  {
+    id: 'spolecensky-1',
+    src: '/gallery/společenský účes.jpg',
+    alt: 'Společenský účes',
+    title: 'Společenský Účes',
+    description: 'Elegantní účes pro speciální příležitosti',
+    category: 'spolecenske'
+  },
+  {
+    id: 'spolecensky-2',
+    src: '/gallery/společenský účes(1).jpg',
+    alt: 'Společenský účes - svatební',
+    title: 'Svatební Účes',
+    description: 'Romantický účes pro nevěsty',
+    category: 'spolecenske'
+  },
+
+  // Další fotografie
+  {
+    id: 'img-2653',
     src: '/gallery/IMG_2653.jpg',
-    alt: 'Rovné vlasy',
-    title: 'Hladký střih',
-    description: 'Perfektně rovné vlasy',
-    category: 'hairstyles'
+    alt: 'Dámský účes',
+    title: 'Elegantní Účes',
+    description: 'Stylový dámský účes',
+    category: 'damske-strihy'
   },
   {
-    id: 'hair-10',
+    id: 'img-2655',
     src: '/gallery/IMG_2655.jpg',
-    alt: 'Vlnité vlasy',
-    title: 'Přírodní vlny',
-    description: 'Jemné vlny pro každodenní nošení',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-11',
-    src: '/gallery/IMG_2663.jpg',
     alt: 'Moderní účes',
-    title: 'Trendy styling',
-    description: 'Aktuální módní trendy',
-    category: 'hairstyles'
+    title: 'Moderní Styling',
+    description: 'Současné trendy',
+    category: 'damske-strihy'
   },
   {
-    id: 'hair-12',
-    src: '/gallery/IMG_2664.jpg',
-    alt: 'Elegantní účes',
-    title: 'Společenský styling',
-    description: 'Pro speciální příležitosti',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-13',
-    src: '/gallery/IMG_2665.jpg',
-    alt: 'Barevné vlasy',
-    title: 'Kreativní barvení',
-    description: 'Originální barevné řešení',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-14',
-    src: '/gallery/IMG_2666.jpg',
-    alt: 'Střih s ofinou',
-    title: 'Moderní ofina',
-    description: 'Stylová ofina pro mladý vzhled',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-15',
-    src: '/gallery/IMG_2667.jpg',
-    alt: 'Dlouhé zdravé vlasy',
-    title: 'Péče o dlouhé vlasy',
-    description: 'Zdravé a lesklé dlouhé vlasy',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-16',
-    src: '/gallery/IMG_2668.jpg',
-    alt: 'Asymetrický střih',
-    title: 'Asymetrie',
-    description: 'Moderní asymetrický střih',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-17',
+    id: 'img-2740',
     src: '/gallery/IMG_2740.jpg',
-    alt: 'Objemný účes',
-    title: 'Objem a lesk',
-    description: 'Dokonalý objem pro jemné vlasy',
-    category: 'hairstyles'
+    alt: 'Dlouhé vlasy',
+    title: 'Dlouhé Vlasy',
+    description: 'Péče o dlouhé vlasy',
+    category: 'damske-strihy'
   },
   {
-    id: 'hair-18',
-    src: '/gallery/IMG_2744.jpg',
-    alt: 'Retro účes',
-    title: 'Vintage styling',
-    description: 'Klasický retro účes',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-19',
+    id: 'img-2758',
     src: '/gallery/IMG_2758.jpg',
-    alt: 'Moderní melír',
-    title: 'Foliage technika',
-    description: 'Pokročilá melírovací technika',
-    category: 'hairstyles'
+    alt: 'Střední délka',
+    title: 'Polodlouhé Vlasy',
+    description: 'Praktická délka',
+    category: 'damske-strihy'
   },
   {
-    id: 'hair-20',
+    id: 'img-2761',
     src: '/gallery/IMG_2761.jpg',
-    alt: 'Krátký střih',
-    title: 'Praktický střih',
-    description: 'Snadná údržba, stylový vzhled',
-    category: 'hairstyles'
+    alt: 'Vlnité vlasy',
+    title: 'Přírodní Vlny',
+    description: 'Jemné vlny',
+    category: 'damske-strihy'
   },
   {
-    id: 'hair-21',
+    id: 'img-2764',
     src: '/gallery/IMG_2764.jpg',
     alt: 'Barvené vlasy',
-    title: 'Intenzivní barva',
-    description: 'Výrazná změna barvy',
-    category: 'hairstyles'
+    title: 'Změna Barvy',
+    description: 'Nová barva vlasů',
+    category: 'barveni'
   },
   {
-    id: 'hair-22',
-    src: '/gallery/IMG_2803.jpg',
-    alt: 'Společenský účes',
-    title: 'Večerní styling',
-    description: 'Elegance pro večerní příležitosti',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-23',
-    src: '/gallery/IMG_2804.jpg',
-    alt: 'Přírodní vlny',
-    title: 'Beach waves',
-    description: 'Nepřinucené přírodní vlny',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-24',
-    src: '/gallery/IMG_2805.jpg',
-    alt: 'Moderní bob',
-    title: 'Textured bob',
-    description: 'Bob s texturou a pohybem',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-25',
-    src: '/gallery/IMG_2806.jpg',
-    alt: 'Dlouhé vlasy',
-    title: 'Zdravé dlouhé vlasy',
-    description: 'Péče o dlouhé vlasy',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-26',
-    src: '/gallery/IMG_2809.jpg',
-    alt: 'Melírované vlasy',
-    title: 'Jemný melír',
-    description: 'Subtilní melírování',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-27',
-    src: '/gallery/IMG_2810.jpg',
-    alt: 'Kudrnaté vlasy',
-    title: 'Definované kudrny',
-    description: 'Krásně tvarované kudrny',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-28',
-    src: '/gallery/IMG_2811.jpg',
-    alt: 'Rovné vlasy',
-    title: 'Sleek look',
-    description: 'Dokonale hladké vlasy',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-29',
-    src: '/gallery/IMG_2812.jpg',
-    alt: 'Barevné vlasy',
-    title: 'Fashion colors',
-    description: 'Módní barevné trendy',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-30',
-    src: '/gallery/IMG_2813.jpg',
-    alt: 'Střih s vrstvami',
-    title: 'Vrstvený střih',
-    description: 'Objem díky vrstvám',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-31',
-    src: '/gallery/IMG_2814.jpg',
-    alt: 'Elegantní účes',
-    title: 'Klasická elegance',
-    description: 'Nadčasový elegantní účes',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-32',
-    src: '/gallery/IMG_2816.jpg',
-    alt: 'Moderní střih',
-    title: 'Contemporary cut',
-    description: 'Současné trendy v kadeřnictví',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-33',
-    src: '/gallery/IMG_2818.jpg',
-    alt: 'Vlnité vlasy',
-    title: 'Soft waves',
-    description: 'Jemné romantické vlny',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-34',
-    src: '/gallery/IMG_2824.jpg',
-    alt: 'Krátký střih',
-    title: 'Chic short cut',
-    description: 'Elegantní krátký střih',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-35',
-    src: '/gallery/IMG_2825.jpg',
-    alt: 'Barvené vlasy',
-    title: 'Color transformation',
-    description: 'Dramatická změna barvy',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-36',
-    src: '/gallery/IMG_2826.jpg',
-    alt: 'Polodlouhé vlasy',
-    title: 'Medium length',
-    description: 'Praktická délka pro každý den',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-37',
-    src: '/gallery/IMG_2830.jpg',
-    alt: 'Společenský účes',
-    title: 'Updo styling',
-    description: 'Profesionální společenský účes',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-38',
-    src: '/gallery/IMG_2857.jpg',
-    alt: 'Moderní účes',
-    title: 'Trendy hairstyle',
-    description: 'Nejnovější módní trendy',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-39',
-    src: '/gallery/IMG_2858.jpg',
-    alt: 'Přírodní vzhled',
-    title: 'Natural beauty',
-    description: 'Zdůraznění přirozené krásy',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-40',
-    src: '/gallery/IMG_2914.jpg',
-    alt: 'Melírované vlasy',
-    title: 'Highlights',
-    description: 'Profesionální melírování',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-41',
-    src: '/gallery/IMG_2915.jpg',
-    alt: 'Kudrnaté vlasy',
-    title: 'Curly hair care',
-    description: 'Specializovaná péče o kudrny',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-42',
-    src: '/gallery/IMG_2916.jpg',
-    alt: 'Rovné vlasy',
-    title: 'Straight perfection',
-    description: 'Dokonale rovné vlasy',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-43',
-    src: '/gallery/IMG_2919.jpg',
-    alt: 'Barevné vlasy',
-    title: 'Creative coloring',
-    description: 'Kreativní přístup k barvení',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-44',
-    src: '/gallery/IMG_2921.jpg',
-    alt: 'Elegantní střih',
-    title: 'Sophisticated cut',
-    description: 'Sofistikovaný přístup ke střihu',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-45',
-    src: '/gallery/IMG_2923.jpg',
-    alt: 'Moderní účes',
-    title: 'Modern styling',
-    description: 'Současné trendy v úpravě vlasů',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-46',
-    src: '/gallery/IMG_2924.jpg',
-    alt: 'Přírodní vlny',
-    title: 'Effortless waves',
-    description: 'Nepřinucené přírodní vlny',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-47',
-    src: '/gallery/IMG_3537.jpg',
-    alt: 'Krátký střih',
-    title: 'Bold short cut',
-    description: 'Odvážný krátký střih',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-48',
-    src: '/gallery/IMG_3538.jpg',
-    alt: 'Barvené vlasy',
-    title: 'Vibrant color',
-    description: 'Živé a zářivé barvy',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-49',
-    src: '/gallery/IMG_3539.jpg',
-    alt: 'Dlouhé vlasy',
-    title: 'Long hair beauty',
-    description: 'Krása dlouhých vlasů',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-50',
-    src: '/gallery/IMG_3540.jpg',
-    alt: 'Melírované vlasy',
-    title: 'Balayage highlights',
-    description: 'Moderní melírovací technika',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-51',
-    src: '/gallery/IMG_3541.jpg',
-    alt: 'Vlnité vlasy',
-    title: 'Textured waves',
-    description: 'Vlny s texturou a objemem',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-52',
-    src: '/gallery/IMG_3542.jpg',
-    alt: 'Elegantní účes',
-    title: 'Timeless elegance',
-    description: 'Nadčasová elegance',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-53',
-    src: '/gallery/IMG_3543.jpg',
-    alt: 'Moderní střih',
-    title: 'Fashion forward',
-    description: 'Módní pokrokovost',
-    category: 'hairstyles'
-  },
-  {
-    id: 'hair-54',
-    src: '/gallery/IMG_3544.jpg',
-    alt: 'Přírodní vzhled',
-    title: 'Effortless beauty',
-    description: 'Nepřinucená přirozená krása',
-    category: 'hairstyles'
-  },
-
-  // Před a po transformace
-  {
-    id: 'before-after-1',
-    src: '/gallery/20514.jpg',
-    alt: 'Transformace vlasů - před a po',
-    title: 'Dramatická změna',
-    description: 'Kompletní proměna účesu',
-    category: 'before-after'
-  },
-  {
-    id: 'before-after-2',
-    src: '/gallery/20516.jpg',
-    alt: 'Změna barvy vlasů',
-    title: 'Barevná transformace',
-    description: 'Profesionální změna barvy',
-    category: 'before-after'
-  },
-  {
-    id: 'before-after-3',
-    src: '/gallery/20517.jpg',
-    alt: 'Střih a styling',
-    title: 'Nový střih',
-    description: 'Moderní střih s novým stylingem',
-    category: 'before-after'
-  },
-  {
-    id: 'before-after-4',
-    src: '/gallery/20726.jpg',
-    alt: 'Melírování před a po',
-    title: 'Melírovací transformace',
-    description: 'Profesionální melírování',
-    category: 'before-after'
-  },
-  {
-    id: 'before-after-5',
-    src: '/gallery/20727.jpg',
-    alt: 'Regenerace vlasů',
-    title: 'Obnova zdraví vlasů',
-    description: 'Keratinová regenerace',
-    category: 'before-after'
-  },
-  {
-    id: 'before-after-6',
-    src: '/gallery/20728.jpg',
-    alt: 'Kompletní změna',
-    title: 'Celková proměna',
-    description: 'Střih, barva a styling',
-    category: 'before-after'
-  },
-  {
-    id: 'before-after-7',
-    src: '/gallery/20792.jpg',
-    alt: 'Krátký střih transformace',
-    title: 'Z dlouhých na krátké',
-    description: 'Odvážná změna délky',
-    category: 'before-after'
-  },
-  {
-    id: 'before-after-8',
-    src: '/gallery/20793.jpg',
-    alt: 'Barevná změna',
-    title: 'Nová barva',
-    description: 'Výrazná změna odstínu',
-    category: 'before-after'
-  },
-  {
-    id: 'before-after-9',
-    src: '/gallery/20797.jpg',
-    alt: 'Styling transformace',
-    title: 'Nový styling',
-    description: 'Moderní přístup k úpravě',
-    category: 'before-after'
-  },
-  {
-    id: 'before-after-10',
-    src: '/gallery/20799.jpg',
-    alt: 'Péče o vlasy',
-    title: 'Regenerační ošetření',
-    description: 'Obnova poškozených vlasů',
-    category: 'before-after'
-  },
-  {
-    id: 'before-after-11',
-    src: '/gallery/20800.jpg',
-    alt: 'Kompletní makeover',
-    title: 'Celková proměna',
-    description: 'Kompletní změna vzhledu',
-    category: 'before-after'
-  },
-
-  // Studio a prostředí
-  {
-    id: 'salon-1',
+    id: 'alei6657',
     src: '/gallery/ALEI6657.jpg',
-    alt: 'Interiér kadeřnictví POHODA',
-    title: 'Naše studio',
-    description: 'Moderní a příjemné prostředí',
-    category: 'salon'
+    alt: 'Kadeřnický salon',
+    title: 'Naše Studio',
+    description: 'Profesionální prostředí',
+    category: 'damske-strihy'
   },
   {
-    id: 'salon-2',
-    src: '/gallery/CTFR3137.jpg',
-    alt: 'Kadeřnické křeslo',
-    title: 'Profesionální vybavení',
-    description: 'Kvalitní nástroje a pohodlí',
-    category: 'salon'
-  },
-  {
-    id: 'salon-3',
-    src: '/gallery/DUGK3375.jpg',
-    alt: 'Pracovní místo kadeřnice',
-    title: 'Profesionální prostředí',
-    description: 'Vše pro dokonalý výsledek',
-    category: 'salon'
-  },
-  {
-    id: 'salon-4',
-    src: '/gallery/FCPS1025.jpg',
-    alt: 'Atmosféra studia',
-    title: 'Příjemná atmosféra',
-    description: 'Relaxační prostředí pro klienty',
-    category: 'salon'
-  },
-  {
-    id: 'salon-5',
-    src: '/gallery/FDHV3878.jpg',
-    alt: 'Kadeřnické nástroje',
-    title: 'Profesionální nástroje',
-    description: 'Kvalitní vybavení pro nejlepší výsledky',
-    category: 'salon'
-  },
-  {
-    id: 'salon-6',
-    src: '/gallery/FFII2567.jpg',
-    alt: 'Prostředí kadeřnictví',
-    title: 'Moderní design',
-    description: 'Stylové a funkční prostředí',
-    category: 'salon'
-  },
-
-  {
-    id: 'products-1',
-    src: '/gallery/FQSV1709.jpg',
-    alt: 'Profesionální produkty',
-    title: 'Kvalitní kosmetika',
-    description: 'Používáme pouze prémiové produkty',
-    category: 'products'
-  },
-  {
-    id: 'products-2',
-    src: '/gallery/GSMK9718.jpg',
-    alt: 'Péče o vlasy',
-    title: 'Regenerační ošetření',
-    description: 'Speciální péče pro zdravé vlasy',
-    category: 'products'
-  },
-  {
-    id: 'products-3',
-    src: '/gallery/IHNZ9223.jpg',
-    alt: 'Keratinová kúra',
-    title: 'Keratinové ošetření',
-    description: 'Intenzivní regenerace vlasů',
-    category: 'products'
-  },
-  {
-    id: 'products-4',
+    id: 'kcsm0452',
     src: '/gallery/KCSM0452.jpg',
-    alt: 'Barvicí produkty',
-    title: 'Profesionální barvy',
-    description: 'Kvalitní barvicí produkty',
-    category: 'products'
+    alt: 'Kadeřnické služby',
+    title: 'Profesionální Péče',
+    description: 'Kvalitní služby',
+    category: 'damske-strihy'
   },
   {
-    id: 'products-5',
+    id: 'lbxa3910',
     src: '/gallery/LBXA3910.jpg',
-    alt: 'Stylingové produkty',
-    title: 'Styling produkty',
-    description: 'Pro dokonalý styling',
-    category: 'products'
+    alt: 'Úprava vlasů',
+    title: 'Profesionální Úprava',
+    description: 'Odborná péče o vlasy',
+    category: 'damske-strihy'
   },
   {
-    id: 'products-6',
-    src: '/gallery/MCRR8216.jpg',
-    alt: 'Péče o pokožku hlavy',
-    title: 'Péče o pokožku',
-    description: 'Speciální ošetření pokožky hlavy',
-    category: 'products'
+    id: 'xkfk8742',
+    src: '/gallery/XKFK8742.jpg',
+    alt: 'Styling vlasů',
+    title: 'Kreativní Styling',
+    description: 'Originální přístup',
+    category: 'damske-strihy'
+  },
+  {
+    id: 'xyzz3594',
+    src: '/gallery/XYZZ3594.jpg',
+    alt: 'Kadeřnické umění',
+    title: 'Umění Kadeřnictví',
+    description: 'Profesionální výsledky',
+    category: 'damske-strihy'
+  },
+  {
+    id: 'dols1184',
+    src: '/gallery/DOLS1184.jpg',
+    alt: 'Moderní účes',
+    title: 'Trendy Účes',
+    description: 'Aktuální módní trendy',
+    category: 'damske-strihy'
+  },
+  {
+    id: 'acrz3289',
+    src: '/gallery/ACRZ3289.jpg',
+    alt: 'Profesionální střih',
+    title: 'Profesionální Přístup',
+    description: 'Odborné provedení',
+    category: 'damske-strihy'
+  },
+  {
+    id: 'ja-hb',
+    src: '/gallery/Já HB.jpg',
+    alt: 'Kadeřnice POHODA',
+    title: 'O Nás',
+    description: 'Profesionální kadeřnice',
+    category: 'damske-strihy'
+  },
+  {
+    id: 'uvodni',
+    src: '/gallery/úvodní foto.jpg',
+    alt: 'Kadeřnictví POHODA',
+    title: 'Vítejte v POHODĚ',
+    description: 'Váš kadeřnický salon',
+    category: 'damske-strihy'
   }
 ];
 
@@ -638,14 +677,18 @@ export const getImagesByCategory = (category: GalleryImage['category']): Gallery
 };
 
 export const getAllCategories = (): GalleryImage['category'][] => {
-  return ['before-after', 'hairstyles', 'salon'];
+  return ['damske-strihy', 'panske-strihy', 'detske-strihy', 'barveni', 'meliry', 'kratkovlasky', 'spolecenske'];
 };
 
 export const getCategoryLabel = (category: GalleryImage['category']): string => {
   const labels = {
-    'before-after': 'Před a po',
-    'hairstyles': 'Účesy',
-    'salon': 'Studio',
+    'damske-strihy': 'Dámské Střihy',
+    'panske-strihy': 'Pánské Střihy',
+    'detske-strihy': 'Dětské Střihy',
+    'barveni': 'Barvení',
+    'meliry': 'Melíry',
+    'kratkovlasky': 'Krátkovlásky',
+    'spolecenske': 'Společenské Účesy'
   };
   return labels[category];
 };
