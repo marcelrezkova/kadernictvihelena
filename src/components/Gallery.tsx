@@ -1,59 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, X, Play, Pause } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { galleryImages, getImagesByCategory, getCategoryLabel, getAllCategories, GalleryImage } from '../data/galleryImages';
+import { galleryImages } from '../data/galleryImages';
 
 const Gallery: React.FC = () => {
   const { ref, isVisible } = useScrollReveal();
-  const [selectedCategory, setSelectedCategory] = useState<GalleryImage['category']>('damske-strihy');
-  const [currentIndices, setCurrentIndices] = useState<Record<GalleryImage['category'], number>>({
-    'damske-strihy': 0,
-    'panske-strihy': 0,
-    'detske-strihy': 0,
-    'barveni': 0,
-    'meliry': 0,
-    'kratkovlasky': 0,
-    'spolecenske': 0
-  });
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
-  const categories = getAllCategories();
-  const currentIndex = currentIndices[selectedCategory];
-  const filteredImages = getImagesByCategory(selectedCategory);
-
   useEffect(() => {
-    if (!isAutoPlay || filteredImages.length <= 1) return;
+    if (!isAutoPlay || galleryImages.length <= 1) return;
 
     const interval = setInterval(() => {
-      setCurrentIndices(prev => ({
-        ...prev,
-        [selectedCategory]: (prev[selectedCategory] + 1) % filteredImages.length
-      }));
+      setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlay, filteredImages.length, selectedCategory]);
+  }, [isAutoPlay]);
 
   const goToNext = () => {
-    setCurrentIndices(prev => ({
-      ...prev,
-      [selectedCategory]: (prev[selectedCategory] + 1) % filteredImages.length
-    }));
+    setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
   };
 
   const goToPrevious = () => {
-    setCurrentIndices(prev => ({
-      ...prev,
-      [selectedCategory]: (prev[selectedCategory] - 1 + filteredImages.length) % filteredImages.length
-    }));
+    setCurrentIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
 
   const goToSlide = (index: number) => {
-    setCurrentIndices(prev => ({
-      ...prev,
-      [selectedCategory]: index
-    }));
+    setCurrentIndex(index);
   };
 
   const openLightbox = (imageSrc: string) => {
@@ -66,17 +41,17 @@ const Gallery: React.FC = () => {
     setIsAutoPlay(true);
   };
 
-  if (filteredImages.length === 0) {
+  if (galleryImages.length === 0) {
     return (
       <section id="gallery" className="py-20 bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-800">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-neutral-600 dark:text-neutral-300">Žádné obrázky v této kategorii.</p>
+          <p className="text-neutral-600 dark:text-neutral-300">Žádné obrázky v galerii.</p>
         </div>
       </section>
     );
   }
 
-  const currentImage = filteredImages[currentIndex];
+  const currentImage = galleryImages[currentIndex];
 
   return (
     <section id="gallery" className="py-20 bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-800">
@@ -97,22 +72,6 @@ const Gallery: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full font-inter font-medium transition-all duration-300 ${
-                  selectedCategory === category
-                    ? 'bg-primary-500 text-white shadow-lg scale-105'
-                    : 'bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-primary-50 dark:hover:bg-neutral-700 border border-neutral-200 dark:border-neutral-700'
-                }`}
-              >
-                {getCategoryLabel(category)}
-              </button>
-            ))}
-          </div>
-
           <div className="max-w-4xl mx-auto">
             <div className="relative bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-2xl border border-neutral-200 dark:border-neutral-700">
 
@@ -126,7 +85,7 @@ const Gallery: React.FC = () => {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
-                {filteredImages.length > 1 && (
+                {galleryImages.length > 1 && (
                   <>
                     <button
                       onClick={goToPrevious}
@@ -143,7 +102,7 @@ const Gallery: React.FC = () => {
                   </>
                 )}
 
-                {filteredImages.length > 1 && (
+                {galleryImages.length > 1 && (
                   <button
                     onClick={() => setIsAutoPlay(!isAutoPlay)}
                     className="absolute top-4 right-4 p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
@@ -153,10 +112,10 @@ const Gallery: React.FC = () => {
                 )}
               </div>
 
-              {filteredImages.length > 1 && (
+              {galleryImages.length > 1 && (
                 <div className="p-4 bg-neutral-50 dark:bg-neutral-900">
                   <div className="flex space-x-2 overflow-x-auto pb-2">
-                    {filteredImages.map((image, index) => (
+                    {galleryImages.map((image, index) => (
                       <button
                         key={image.id}
                         onClick={() => goToSlide(index)}
@@ -177,9 +136,9 @@ const Gallery: React.FC = () => {
                 </div>
               )}
 
-              {filteredImages.length > 1 && (
+              {galleryImages.length > 1 && (
                 <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                  {filteredImages.map((_, index) => (
+                  {galleryImages.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => goToSlide(index)}
