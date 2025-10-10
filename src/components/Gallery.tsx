@@ -130,8 +130,9 @@ const Gallery: React.FC = () => {
                   </h3>
                 </div>
                 <div className="p-6">
-                  <p className="text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed">
-                    Jemné prosvětlení vlasů pomocí velmi tenkých pramínků, které vytváří efekt přirozeně rozsvícených vlasů sluncem. Ideální pro jemný a nenápadný vzhled.
+                  <p className="text-neutral-600 dark:text-neutral-300 font-inter text-sm leading-relaxed">
+                    <strong className="block mb-2 text-neutral-800 dark:text-white">Mikromelír – největší prosvětlení celých vlasů od kořínků po konečky</strong>
+                    Zesvětlení o 5-9 odstínů. Velmi jemný decentní melírek, který odrůstá téměř neviditelně. Díky této technice můžu dát melírek opravdu blízko pokožce. Výsledný efekt dlouhodobě melírovaných vlasů je v délkách celistvá blond.
                   </p>
                 </div>
               </div>
