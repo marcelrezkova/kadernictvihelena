@@ -529,14 +529,6 @@ export const galleryImages: GalleryImage[] = [
     category: 'spolecenske-ucesy'
   },
   {
-    id: 'kadernice',
-    src: '/gallery/Já HB.jpg',
-    alt: 'Kadeřnice',
-    title: 'Naše kadeřnice',
-    description: 'Profesionální péče',
-    category: 'damske-strihy'
-  },
-  {
     id: 'img-2653',
     src: '/gallery/IMG_2653.jpg',
     alt: 'Dámský účes',
