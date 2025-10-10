@@ -115,10 +115,10 @@ const About: React.FC = () => {
 
             {/* Image Carousel & Stats */}
             <div className="space-y-8">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-3xl blur-2xl opacity-20"></div>
+              <div className="relative flex justify-center">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full blur-3xl opacity-20"></div>
 
-                <div className="relative h-96 overflow-hidden rounded-2xl shadow-2xl">
+                <div className="relative w-96 h-96 overflow-hidden rounded-full shadow-2xl border-8 border-white dark:border-neutral-800">
                   {aboutImages.map((image, index) => (
                     <div
                       key={index}
@@ -130,9 +130,8 @@ const About: React.FC = () => {
                         src={image}
                         alt={`Helena Bošinová ${index + 1}`}
                         className="w-full h-full object-cover object-center"
-                        style={{ objectPosition: 'center 30%' }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10"></div>
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20"></div>
                     </div>
                   ))}
 
@@ -151,12 +150,12 @@ const About: React.FC = () => {
                         <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                       </button>
 
-                      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+                      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
                         {aboutImages.map((_, index) => (
                           <button
                             key={index}
                             onClick={() => setCurrentImageIndex(index)}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                               index === currentImageIndex
                                 ? 'bg-white scale-125'
                                 : 'bg-white/50 hover:bg-white/75'
