@@ -129,9 +129,10 @@ const About: React.FC = () => {
                       <img
                         src={image}
                         alt={`Helena Bošinová ${index + 1}`}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center"
+                        style={{ objectPosition: 'center 30%' }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10"></div>
                     </div>
                   ))}
 
