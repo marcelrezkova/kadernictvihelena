@@ -1,4 +1,4 @@
-export interface GalleryImage {
+﻿export interface GalleryImage {
   id: string;
   src: string;
   alt: string;
@@ -10,266 +10,266 @@ export interface GalleryImage {
 export const galleryImages: GalleryImage[] = [
   {
     id: 'damsky-bob-1',
-    src: '/gallery/dámský střih bob.jpg',
-    alt: 'Dámský střih bob',
-    title: 'Elegantní bob',
-    description: 'Klasický dámský střih bob',
+    src: '/gallery/dĂˇmskĂ˝ stĹ™ih bob.jpg',
+    alt: 'DĂˇmskĂ˝ stĹ™ih bob',
+    title: 'ElegantnĂ­ bob',
+    description: 'KlasickĂ˝ dĂˇmskĂ˝ stĹ™ih bob',
     category: 'damske-strihy'
   },
   {
     id: 'damsky-bob-2',
-    src: '/gallery/dámský střih bob(1).jpg',
-    alt: 'Dámský střih bob',
-    title: 'Moderní bob',
-    description: 'Stylový bob střih',
+    src: '/gallery/dĂˇmskĂ˝ stĹ™ih bob(1).jpg',
+    alt: 'DĂˇmskĂ˝ stĹ™ih bob',
+    title: 'ModernĂ­ bob',
+    description: 'StylovĂ˝ bob stĹ™ih',
     category: 'damske-strihy'
   },
   {
     id: 'damsky-bob-3',
-    src: '/gallery/dámský střih bob(2).jpg',
-    alt: 'Dámský střih bob',
+    src: '/gallery/dĂˇmskĂ˝ stĹ™ih bob(2).jpg',
+    alt: 'DĂˇmskĂ˝ stĹ™ih bob',
     title: 'Bob s vrstvami',
-    description: 'Bob střih s jemnými vrstvami',
+    description: 'Bob stĹ™ih s jemnĂ˝mi vrstvami',
     category: 'damske-strihy'
   },
   {
     id: 'damsky-bob-4',
-    src: '/gallery/dámský střih bob(3).jpg',
-    alt: 'Dámský střih bob',
-    title: 'Asymetrický bob',
-    description: 'Moderní asymetrický bob',
+    src: '/gallery/dĂˇmskĂ˝ stĹ™ih bob(3).jpg',
+    alt: 'DĂˇmskĂ˝ stĹ™ih bob',
+    title: 'AsymetrickĂ˝ bob',
+    description: 'ModernĂ­ asymetrickĂ˝ bob',
     category: 'damske-strihy'
   },
   {
     id: 'damsky-bob-5',
-    src: '/gallery/dámský střih bob(4).jpg',
-    alt: 'Dámský střih bob',
-    title: 'Texturovaný bob',
+    src: '/gallery/dĂˇmskĂ˝ stĹ™ih bob(4).jpg',
+    alt: 'DĂˇmskĂ˝ stĹ™ih bob',
+    title: 'TexturovanĂ˝ bob',
     description: 'Bob s texturou',
     category: 'damske-strihy'
   },
   {
     id: 'kratkovlasky-1',
-    src: '/gallery/krátkovlásky.jpg',
-    alt: 'Krátkovlasý střih',
-    title: 'Krátký střih',
-    description: 'Praktický krátký střih',
+    src: '/gallery/krĂˇtkovlĂˇsky.jpg',
+    alt: 'KrĂˇtkovlasĂ˝ stĹ™ih',
+    title: 'KrĂˇtkĂ˝ stĹ™ih',
+    description: 'PraktickĂ˝ krĂˇtkĂ˝ stĹ™ih',
     category: 'kratkovlasky'
   },
   {
     id: 'kratkovlasky-2',
-    src: '/gallery/krátkovlásky(1).jpg',
-    alt: 'Krátkovlasý střih',
-    title: 'Pixie střih',
-    description: 'Odvážný pixie',
+    src: '/gallery/krĂˇtkovlĂˇsky(1).jpg',
+    alt: 'KrĂˇtkovlasĂ˝ stĹ™ih',
+    title: 'Pixie stĹ™ih',
+    description: 'OdvĂˇĹľnĂ˝ pixie',
     category: 'kratkovlasky'
   },
   {
     id: 'kratkovlasky-3',
-    src: '/gallery/krátkovlásky(2).jpg',
-    alt: 'Krátkovlasý střih',
-    title: 'Krátký layered',
-    description: 'Vrstvený střih',
+    src: '/gallery/krĂˇtkovlĂˇsky(2).jpg',
+    alt: 'KrĂˇtkovlasĂ˝ stĹ™ih',
+    title: 'KrĂˇtkĂ˝ layered',
+    description: 'VrstvenĂ˝ stĹ™ih',
     category: 'kratkovlasky'
   },
   {
     id: 'kratkovlasky-4',
-    src: '/gallery/krátkovlásky(3).jpg',
-    alt: 'Krátkovlasý střih',
-    title: 'Elegantní krátký',
-    description: 'Sofistikovaný účes',
+    src: '/gallery/krĂˇtkovlĂˇsky(3).jpg',
+    alt: 'KrĂˇtkovlasĂ˝ stĹ™ih',
+    title: 'ElegantnĂ­ krĂˇtkĂ˝',
+    description: 'SofistikovanĂ˝ ĂşÄŤes',
     category: 'kratkovlasky'
   },
   {
     id: 'kratkovlasky-5',
-    src: '/gallery/krátkovlásky(4).jpg',
-    alt: 'Krátkovlasý střih',
-    title: 'Moderní short cut',
-    description: 'Trendy střih',
+    src: '/gallery/krĂˇtkovlĂˇsky(4).jpg',
+    alt: 'KrĂˇtkovlasĂ˝ stĹ™ih',
+    title: 'ModernĂ­ short cut',
+    description: 'Trendy stĹ™ih',
     category: 'kratkovlasky'
   },
   {
     id: 'kratkovlasky-6',
-    src: '/gallery/krátkovlásky(5).jpg',
-    alt: 'Krátkovlasý střih',
-    title: 'Asymetrický krátký',
+    src: '/gallery/krĂˇtkovlĂˇsky(5).jpg',
+    alt: 'KrĂˇtkovlasĂ˝ stĹ™ih',
+    title: 'AsymetrickĂ˝ krĂˇtkĂ˝',
     description: 'Asymetrie',
     category: 'kratkovlasky'
   },
   {
     id: 'kratkovlasky-7',
-    src: '/gallery/krátkovlásky(6).jpg',
-    alt: 'Krátkovlasý střih',
-    title: 'Texturovaný krátký',
+    src: '/gallery/krĂˇtkovlĂˇsky(6).jpg',
+    alt: 'KrĂˇtkovlasĂ˝ stĹ™ih',
+    title: 'TexturovanĂ˝ krĂˇtkĂ˝',
     description: 'S texturou',
     category: 'kratkovlasky'
   },
   {
     id: 'kratkovlasky-8',
-    src: '/gallery/krátkovlásky(7).jpg',
-    alt: 'Krátkovlasý střih',
-    title: 'Undercut pro dámy',
-    description: 'Moderní undercut',
+    src: '/gallery/krĂˇtkovlĂˇsky(7).jpg',
+    alt: 'KrĂˇtkovlasĂ˝ stĹ™ih',
+    title: 'Undercut pro dĂˇmy',
+    description: 'ModernĂ­ undercut',
     category: 'kratkovlasky'
   },
   {
     id: 'kratkovlasky-9',
-    src: '/gallery/krátkovlásky(8).jpg',
-    alt: 'Krátkovlasý střih',
-    title: 'Krátký s ofinou',
+    src: '/gallery/krĂˇtkovlĂˇsky(8).jpg',
+    alt: 'KrĂˇtkovlasĂ˝ stĹ™ih',
+    title: 'KrĂˇtkĂ˝ s ofinou',
     description: 'Se stylovou ofinou',
     category: 'kratkovlasky'
   },
   {
     id: 'kratkovlasky-10',
-    src: '/gallery/krátkovlásky(9).jpg',
-    alt: 'Krátkovlasý střih',
+    src: '/gallery/krĂˇtkovlĂˇsky(9).jpg',
+    alt: 'KrĂˇtkovlasĂ˝ stĹ™ih',
     title: 'Messy short',
-    description: 'Rozcuchaný look',
+    description: 'RozcuchanĂ˝ look',
     category: 'kratkovlasky'
   },
   {
     id: 'kratkovlasky-11',
-    src: '/gallery/krátkovlásky(10).jpg',
-    alt: 'Krátkovlasý střih',
+    src: '/gallery/krĂˇtkovlĂˇsky(10).jpg',
+    alt: 'KrĂˇtkovlasĂ˝ stĹ™ih',
     title: 'Slick short',
-    description: 'Uhlazený střih',
+    description: 'UhlazenĂ˝ stĹ™ih',
     category: 'kratkovlasky'
   },
   {
     id: 'kratkovlasky-12',
-    src: '/gallery/krátkovlásky(11).jpg',
-    alt: 'Krátkovlasý střih',
-    title: 'Krátký s objemem',
-    description: 'Objemný účes',
+    src: '/gallery/krĂˇtkovlĂˇsky(11).jpg',
+    alt: 'KrĂˇtkovlasĂ˝ stĹ™ih',
+    title: 'KrĂˇtkĂ˝ s objemem',
+    description: 'ObjemnĂ˝ ĂşÄŤes',
     category: 'kratkovlasky'
   },
   {
     id: 'pansky-strih-1',
-    src: '/gallery/foto po pánský střih.jpg',
-    alt: 'Pánský střih po',
-    title: 'Pánský střih',
-    description: 'Profesionální střih',
+    src: '/gallery/foto po pĂˇnskĂ˝ stĹ™ih.jpg',
+    alt: 'PĂˇnskĂ˝ stĹ™ih po',
+    title: 'PĂˇnskĂ˝ stĹ™ih',
+    description: 'ProfesionĂˇlnĂ­ stĹ™ih',
     category: 'panske-strihy'
   },
   {
     id: 'pansky-strih-2',
-    src: '/gallery/foto před pánské2.jpg',
-    alt: 'Pánský střih před',
-    title: 'Před úpravou',
-    description: 'Výchozí stav',
+    src: '/gallery/foto pĹ™ed pĂˇnskĂ©2.jpg',
+    alt: 'PĂˇnskĂ˝ stĹ™ih pĹ™ed',
+    title: 'PĹ™ed Ăşpravou',
+    description: 'VĂ˝chozĂ­ stav',
     category: 'panske-strihy'
   },
   {
     id: 'pansky-strih-3',
-    src: '/gallery/pánský střih po.jpg',
-    alt: 'Pánský střih po',
-    title: 'Moderní pánský střih',
-    description: 'Výsledek střihu',
+    src: '/gallery/pĂˇnskĂ˝ stĹ™ih po.jpg',
+    alt: 'PĂˇnskĂ˝ stĹ™ih po',
+    title: 'ModernĂ­ pĂˇnskĂ˝ stĹ™ih',
+    description: 'VĂ˝sledek stĹ™ihu',
     category: 'panske-strihy'
   },
   {
     id: 'pansky-strih-4',
-    src: '/gallery/pánský střih po(1).jpg',
-    alt: 'Pánský střih po',
-    title: 'Klasický střih',
-    description: 'Elegantní účes',
+    src: '/gallery/pĂˇnskĂ˝ stĹ™ih po(1).jpg',
+    alt: 'PĂˇnskĂ˝ stĹ™ih po',
+    title: 'KlasickĂ˝ stĹ™ih',
+    description: 'ElegantnĂ­ ĂşÄŤes',
     category: 'panske-strihy'
   },
   {
     id: 'pansky-strih-5',
-    src: '/gallery/pánský střih po2.jpg',
-    alt: 'Pánský střih po',
-    title: 'Trendy střih',
-    description: 'Moderní styling',
+    src: '/gallery/pĂˇnskĂ˝ stĹ™ih po2.jpg',
+    alt: 'PĂˇnskĂ˝ stĹ™ih po',
+    title: 'Trendy stĹ™ih',
+    description: 'ModernĂ­ styling',
     category: 'panske-strihy'
   },
   {
     id: 'pansky-strih-6',
-    src: '/gallery/pánský střih před.jpg',
-    alt: 'Pánský střih před',
-    title: 'Před úpravou',
-    description: 'Výchozí stav',
+    src: '/gallery/pĂˇnskĂ˝ stĹ™ih pĹ™ed.jpg',
+    alt: 'PĂˇnskĂ˝ stĹ™ih pĹ™ed',
+    title: 'PĹ™ed Ăşpravou',
+    description: 'VĂ˝chozĂ­ stav',
     category: 'panske-strihy'
   },
   {
     id: 'pansky-strih-7',
-    src: '/gallery/pánský střih před2.jpg',
-    alt: 'Pánský střih před',
-    title: 'Před střihem',
-    description: 'Před úpravou',
+    src: '/gallery/pĂˇnskĂ˝ stĹ™ih pĹ™ed2.jpg',
+    alt: 'PĂˇnskĂ˝ stĹ™ih pĹ™ed',
+    title: 'PĹ™ed stĹ™ihem',
+    description: 'PĹ™ed Ăşpravou',
     category: 'panske-strihy'
   },
   {
     id: 'detsky-strih-1',
-    src: '/gallery/dětský střih.jpg',
-    alt: 'Dětský střih',
-    title: 'Dětský střih',
-    description: 'Profesionální střihání',
+    src: '/gallery/dÄ›tskĂ˝ stĹ™ih.jpg',
+    alt: 'DÄ›tskĂ˝ stĹ™ih',
+    title: 'DÄ›tskĂ˝ stĹ™ih',
+    description: 'ProfesionĂˇlnĂ­ stĹ™ihĂˇnĂ­',
     category: 'detske-strihy'
   },
   {
     id: 'detsky-strih-2',
-    src: '/gallery/dětský střih(1).jpg',
-    alt: 'Dětský střih',
-    title: 'Dětský účes',
-    description: 'Hravý střih',
+    src: '/gallery/dÄ›tskĂ˝ stĹ™ih(1).jpg',
+    alt: 'DÄ›tskĂ˝ stĹ™ih',
+    title: 'DÄ›tskĂ˝ ĂşÄŤes',
+    description: 'HravĂ˝ stĹ™ih',
     category: 'detske-strihy'
   },
   {
     id: 'detsky-strih-3',
-    src: '/gallery/dětský střih(2).jpg',
-    alt: 'Dětský střih',
-    title: 'Moderní dětský',
-    description: 'Stylový střih',
+    src: '/gallery/dÄ›tskĂ˝ stĹ™ih(2).jpg',
+    alt: 'DÄ›tskĂ˝ stĹ™ih',
+    title: 'ModernĂ­ dÄ›tskĂ˝',
+    description: 'StylovĂ˝ stĹ™ih',
     category: 'detske-strihy'
   },
   {
     id: 'detsky-strih-4',
-    src: '/gallery/dětský střih(3).jpg',
-    alt: 'Dětský střih',
-    title: 'Klasický dětský',
-    description: 'Praktický střih',
+    src: '/gallery/dÄ›tskĂ˝ stĹ™ih(3).jpg',
+    alt: 'DÄ›tskĂ˝ stĹ™ih',
+    title: 'KlasickĂ˝ dÄ›tskĂ˝',
+    description: 'PraktickĂ˝ stĹ™ih',
     category: 'detske-strihy'
   },
   {
     id: 'detsky-strih-5',
-    src: '/gallery/dětský střih(4).jpg',
-    alt: 'Dětský střih',
-    title: 'Trendy dětský',
-    description: 'Módní účes',
+    src: '/gallery/dÄ›tskĂ˝ stĹ™ih(4).jpg',
+    alt: 'DÄ›tskĂ˝ stĹ™ih',
+    title: 'Trendy dÄ›tskĂ˝',
+    description: 'MĂłdnĂ­ ĂşÄŤes',
     category: 'detske-strihy'
   },
   {
     id: 'detsky-strih-6',
-    src: '/gallery/dětský střih(5).jpg',
-    alt: 'Dětský střih',
-    title: 'Cool dětský',
-    description: 'Stylový účes',
+    src: '/gallery/dÄ›tskĂ˝ stĹ™ih(5).jpg',
+    alt: 'DÄ›tskĂ˝ stĹ™ih',
+    title: 'Cool dÄ›tskĂ˝',
+    description: 'StylovĂ˝ ĂşÄŤes',
     category: 'detske-strihy'
   },
   {
     id: 'detsky-foto-1',
-    src: '/gallery/foto po dětské.jpg',
-    alt: 'Dětský střih po',
-    title: 'Výsledek',
-    description: 'Po úpravě',
+    src: '/gallery/foto po dÄ›tskĂ©.jpg',
+    alt: 'DÄ›tskĂ˝ stĹ™ih po',
+    title: 'VĂ˝sledek',
+    description: 'Po ĂşpravÄ›',
     category: 'detske-strihy'
   },
   {
     id: 'detsky-foto-2',
-    src: '/gallery/foto po dětské(1).jpg',
-    alt: 'Dětský střih po',
-    title: 'Účes hotový',
-    description: 'Finální výsledek',
+    src: '/gallery/foto po dÄ›tskĂ©(1).jpg',
+    alt: 'DÄ›tskĂ˝ stĹ™ih po',
+    title: 'ĂšÄŤes hotovĂ˝',
+    description: 'FinĂˇlnĂ­ vĂ˝sledek',
     category: 'detske-strihy'
   },
   {
     id: 'detsky-foto-3',
-    src: '/gallery/foto před dětské.jpg',
-    alt: 'Dětský střih před',
-    title: 'Před střihem',
-    description: 'Výchozí stav',
+    src: '/gallery/foto pĹ™ed dÄ›tskĂ©.jpg',
+    alt: 'DÄ›tskĂ˝ stĹ™ih pĹ™ed',
+    title: 'PĹ™ed stĹ™ihem',
+    description: 'VĂ˝chozĂ­ stav',
     category: 'detske-strihy'
   },
   {
@@ -277,7 +277,7 @@ export const galleryImages: GalleryImage[] = [
     src: '/gallery/cool blond po.jpg',
     alt: 'Cool blond po',
     title: 'Cool blond',
-    description: 'Chladné blond tóny',
+    description: 'ChladnĂ© blond tĂłny',
     category: 'barveni'
   },
   {
@@ -285,7 +285,7 @@ export const galleryImages: GalleryImage[] = [
     src: '/gallery/cool blond po(1).jpg',
     alt: 'Cool blond po',
     title: 'Cool blond styling',
-    description: 'Chladné tóny',
+    description: 'ChladnĂ© tĂłny',
     category: 'barveni'
   },
   {
@@ -293,31 +293,31 @@ export const galleryImages: GalleryImage[] = [
     src: '/gallery/cool blond po(2).jpg',
     alt: 'Cool blond po',
     title: 'Cool blond efekt',
-    description: 'Perfektní chladné blond',
+    description: 'PerfektnĂ­ chladnĂ© blond',
     category: 'barveni'
   },
   {
     id: 'cool-blond-4',
     src: '/gallery/cool blond po(3).jpg',
     alt: 'Cool blond po',
-    title: 'Cool blond výsledek',
-    description: 'Zářivé blond',
+    title: 'Cool blond vĂ˝sledek',
+    description: 'ZĂˇĹ™ivĂ© blond',
     category: 'barveni'
   },
   {
     id: 'cool-blond-5',
-    src: '/gallery/cool blond před.jpg',
-    alt: 'Cool blond před',
-    title: 'Před cool blond',
-    description: 'Stav před barvením',
+    src: '/gallery/cool blond pĹ™ed.jpg',
+    alt: 'Cool blond pĹ™ed',
+    title: 'PĹ™ed cool blond',
+    description: 'Stav pĹ™ed barvenĂ­m',
     category: 'barveni'
   },
   {
     id: 'cool-bond-1',
-    src: '/gallery/cool bond před.jpg',
-    alt: 'Cool bond před',
-    title: 'Před úpravou',
-    description: 'Výchozí stav',
+    src: '/gallery/cool bond pĹ™ed.jpg',
+    alt: 'Cool bond pĹ™ed',
+    title: 'PĹ™ed Ăşpravou',
+    description: 'VĂ˝chozĂ­ stav',
     category: 'barveni'
   },
   {
@@ -325,7 +325,7 @@ export const galleryImages: GalleryImage[] = [
     src: '/gallery/foto po vanila blond.jpg',
     alt: 'Vanila blond po',
     title: 'Vanila blond',
-    description: 'Teplé vanilkové tóny',
+    description: 'TeplĂ© vanilkovĂ© tĂłny',
     category: 'barveni'
   },
   {
@@ -333,7 +333,7 @@ export const galleryImages: GalleryImage[] = [
     src: '/gallery/foto po vanila blond(1).jpg',
     alt: 'Vanila blond po',
     title: 'Vanila blond styling',
-    description: 'Jemné odstíny',
+    description: 'JemnĂ© odstĂ­ny',
     category: 'barveni'
   },
   {
@@ -341,31 +341,31 @@ export const galleryImages: GalleryImage[] = [
     src: '/gallery/foto po vanila blond(2).jpg',
     alt: 'Vanila blond po',
     title: 'Vanila blond efekt',
-    description: 'Krásné tóny',
+    description: 'KrĂˇsnĂ© tĂłny',
     category: 'barveni'
   },
   {
     id: 'vanila-blond-4',
     src: '/gallery/foto vanila blond po.jpg',
-    alt: 'Vanila blond hotový',
-    title: 'Vanila blond výsledek',
-    description: 'Finální blond',
+    alt: 'Vanila blond hotovĂ˝',
+    title: 'Vanila blond vĂ˝sledek',
+    description: 'FinĂˇlnĂ­ blond',
     category: 'barveni'
   },
   {
     id: 'vanila-blond-5',
-    src: '/gallery/foto vanila blond před.jpg',
-    alt: 'Vanila blond před',
-    title: 'Před vanila blond',
-    description: 'Stav před barvením',
+    src: '/gallery/foto vanila blond pĹ™ed.jpg',
+    alt: 'Vanila blond pĹ™ed',
+    title: 'PĹ™ed vanila blond',
+    description: 'Stav pĹ™ed barvenĂ­m',
     category: 'barveni'
   },
   {
     id: 'freehand-1',
     src: '/gallery/foto po freehand.jpg',
     alt: 'Freehand technika po',
-    title: 'Freehand barvení',
-    description: 'Volná ruka technika',
+    title: 'Freehand barvenĂ­',
+    description: 'VolnĂˇ ruka technika',
     category: 'barveni'
   },
   {
@@ -373,7 +373,7 @@ export const galleryImages: GalleryImage[] = [
     src: '/gallery/foto po freehand(1).jpg',
     alt: 'Freehand technika po',
     title: 'Freehand styling',
-    description: 'Kreativní barvení',
+    description: 'KreativnĂ­ barvenĂ­',
     category: 'barveni'
   },
   {
@@ -381,39 +381,15 @@ export const galleryImages: GalleryImage[] = [
     src: '/gallery/foto po freehand(2).jpg',
     alt: 'Freehand technika po',
     title: 'Freehand efekt',
-    description: 'Přírodní přechody',
+    description: 'PĹ™Ă­rodnĂ­ pĹ™echody',
     category: 'barveni'
   },
   {
     id: 'freehand-4',
-    src: '/gallery/foto před freehand.jpg',
-    alt: 'Freehand před',
-    title: 'Před freehand',
-    description: 'Stav před úpravou',
-    category: 'barveni'
-  },
-  {
-    id: 'freehand-zrz-1',
-    src: '/gallery/foto po freehand zrz.jpg',
-    alt: 'Freehand zrzavá po',
-    title: 'Freehand zrzavá',
-    description: 'Zrzavé tóny',
-    category: 'barveni'
-  },
-  {
-    id: 'freehand-zrz-2',
-    src: '/gallery/foto před freehand zrz.jpg',
-    alt: 'Freehand zrzavá před',
-    title: 'Před freehand zrzavá',
-    description: 'Výchozí stav',
-    category: 'barveni'
-  },
-  {
-    id: 'freehand-zrz-3',
-    src: '/gallery/foto před freehand zrz(1).jpg',
-    alt: 'Freehand zrzavá před',
-    title: 'Před úpravou',
-    description: 'Před aplikací',
+    src: '/gallery/foto pĹ™ed freehand.jpg',
+    alt: 'Freehand pĹ™ed',
+    title: 'PĹ™ed freehand',
+    description: 'Stav pĹ™ed Ăşpravou',
     category: 'barveni'
   },
   {
@@ -421,15 +397,15 @@ export const galleryImages: GalleryImage[] = [
     src: '/gallery/foto po folayge.jpg',
     alt: 'Foliage technika po',
     title: 'Foliage',
-    description: 'Moderní foliage',
+    description: 'ModernĂ­ foliage',
     category: 'meliry'
   },
   {
     id: 'folayge-2',
-    src: '/gallery/foto před folayge.jpg',
-    alt: 'Foliage před',
-    title: 'Před foliage',
-    description: 'Stav před úpravou',
+    src: '/gallery/foto pĹ™ed folayge.jpg',
+    alt: 'Foliage pĹ™ed',
+    title: 'PĹ™ed foliage',
+    description: 'Stav pĹ™ed Ăşpravou',
     category: 'meliry'
   },
   {
@@ -437,15 +413,15 @@ export const galleryImages: GalleryImage[] = [
     src: '/gallery/foto po folayge2.jpg',
     alt: 'Foliage po',
     title: 'Foliage styling',
-    description: 'Profesionální foliage',
+    description: 'ProfesionĂˇlnĂ­ foliage',
     category: 'meliry'
   },
   {
     id: 'folayge-4',
-    src: '/gallery/foto před folayge2.jpg',
-    alt: 'Foliage před',
-    title: 'Před foliage',
-    description: 'Výchozí stav',
+    src: '/gallery/foto pĹ™ed folayge2.jpg',
+    alt: 'Foliage pĹ™ed',
+    title: 'PĹ™ed foliage',
+    description: 'VĂ˝chozĂ­ stav',
     category: 'meliry'
   },
   {
@@ -453,15 +429,15 @@ export const galleryImages: GalleryImage[] = [
     src: '/gallery/foto po folayge2(1).jpg',
     alt: 'Foliage po',
     title: 'Foliage efekt',
-    description: 'Krásné přechody',
+    description: 'KrĂˇsnĂ© pĹ™echody',
     category: 'meliry'
   },
   {
     id: 'folayge-6',
-    src: '/gallery/foto před folayge2(1).jpg',
-    alt: 'Foliage před',
-    title: 'Před aplikací',
-    description: 'Před technikou',
+    src: '/gallery/foto pĹ™ed folayge2(1).jpg',
+    alt: 'Foliage pĹ™ed',
+    title: 'PĹ™ed aplikacĂ­',
+    description: 'PĹ™ed technikou',
     category: 'meliry'
   },
   {
@@ -469,175 +445,175 @@ export const galleryImages: GalleryImage[] = [
     src: '/gallery/foto po falayge.jpg',
     alt: 'Balayage po',
     title: 'Balayage',
-    description: 'Profesionální balayage',
+    description: 'ProfesionĂˇlnĂ­ balayage',
     category: 'meliry'
   },
   {
     id: 'mikromelir-1',
-    src: '/gallery/mikromelír.jpg',
-    alt: 'Mikromelír',
-    title: 'Mikromelír',
-    description: 'Jemný mikromelír',
+    src: '/gallery/mikromelĂ­r.jpg',
+    alt: 'MikromelĂ­r',
+    title: 'MikromelĂ­r',
+    description: 'JemnĂ˝ mikromelĂ­r',
     category: 'meliry'
   },
   {
     id: 'mikromelir-2',
-    src: '/gallery/mikromelír(1).jpg',
-    alt: 'Mikromelír',
-    title: 'Jemný melír',
-    description: 'Subtilní melírování',
+    src: '/gallery/mikromelĂ­r(1).jpg',
+    alt: 'MikromelĂ­r',
+    title: 'JemnĂ˝ melĂ­r',
+    description: 'SubtilnĂ­ melĂ­rovĂˇnĂ­',
     category: 'meliry'
   },
   {
     id: 'mikromelir-3',
-    src: '/gallery/mikromelír(2).jpg',
-    alt: 'Mikromelír',
-    title: 'Přírodní melír',
-    description: 'Přirozené pramínky',
+    src: '/gallery/mikromelĂ­r(2).jpg',
+    alt: 'MikromelĂ­r',
+    title: 'PĹ™Ă­rodnĂ­ melĂ­r',
+    description: 'PĹ™irozenĂ© pramĂ­nky',
     category: 'meliry'
   },
   {
     id: 'mikromelir-4',
-    src: '/gallery/mikromelír(3).jpg',
-    alt: 'Mikromelír',
-    title: 'Decentní melír',
-    description: 'Nenápadné zesvětlení',
+    src: '/gallery/mikromelĂ­r(3).jpg',
+    alt: 'MikromelĂ­r',
+    title: 'DecentnĂ­ melĂ­r',
+    description: 'NenĂˇpadnĂ© zesvÄ›tlenĂ­',
     category: 'meliry'
   },
   {
     id: 'mikro-melir',
-    src: '/gallery/mikro melír.jpg',
-    alt: 'Mikro melír',
-    title: 'Mikro melír',
-    description: 'Extra jemný melír',
+    src: '/gallery/mikro melĂ­r.jpg',
+    alt: 'Mikro melĂ­r',
+    title: 'Mikro melĂ­r',
+    description: 'Extra jemnĂ˝ melĂ­r',
     category: 'meliry'
   },
   {
     id: 'spolecensky-uces-1',
-    src: '/gallery/společenský účes.jpg',
-    alt: 'Společenský účes',
-    title: 'Společenský účes',
-    description: 'Elegantní účes',
+    src: '/gallery/spoleÄŤenskĂ˝ ĂşÄŤes.jpg',
+    alt: 'SpoleÄŤenskĂ˝ ĂşÄŤes',
+    title: 'SpoleÄŤenskĂ˝ ĂşÄŤes',
+    description: 'ElegantnĂ­ ĂşÄŤes',
     category: 'spolecenske-ucesy'
   },
   {
     id: 'spolecensky-uces-2',
-    src: '/gallery/společenský účes(1).jpg',
-    alt: 'Společenský účes',
-    title: 'Slavnostní účes',
-    description: 'Profesionální styling',
+    src: '/gallery/spoleÄŤenskĂ˝ ĂşÄŤes(1).jpg',
+    alt: 'SpoleÄŤenskĂ˝ ĂşÄŤes',
+    title: 'SlavnostnĂ­ ĂşÄŤes',
+    description: 'ProfesionĂˇlnĂ­ styling',
     category: 'spolecenske-ucesy'
   },
   {
     id: 'img-2653',
     src: '/gallery/IMG_2653.jpg',
-    alt: 'Dámský účes',
-    title: 'Stylový účes',
-    description: 'Moderní styling',
+    alt: 'DĂˇmskĂ˝ ĂşÄŤes',
+    title: 'StylovĂ˝ ĂşÄŤes',
+    description: 'ModernĂ­ styling',
     category: 'damske-strihy'
   },
   {
     id: 'img-2655',
     src: '/gallery/IMG_2655.jpg',
-    alt: 'Elegantní účes',
+    alt: 'ElegantnĂ­ ĂşÄŤes',
     title: 'Elegance',
-    description: 'Profesionální účes',
+    description: 'ProfesionĂˇlnĂ­ ĂşÄŤes',
     category: 'damske-strihy'
   },
   {
     id: 'img-2740',
     src: '/gallery/IMG_2740.jpg',
-    alt: 'Objemný účes',
+    alt: 'ObjemnĂ˝ ĂşÄŤes',
     title: 'Objem',
-    description: 'Dokonalý objem',
+    description: 'DokonalĂ˝ objem',
     category: 'damske-strihy'
   },
   {
     id: 'img-2758',
     src: '/gallery/IMG_2758.jpg',
-    alt: 'Moderní střih',
-    title: 'Moderní look',
-    description: 'Trendy střih',
+    alt: 'ModernĂ­ stĹ™ih',
+    title: 'ModernĂ­ look',
+    description: 'Trendy stĹ™ih',
     category: 'damske-strihy'
   },
   {
     id: 'img-2761',
     src: '/gallery/IMG_2761.jpg',
-    alt: 'Stylový účes',
-    title: 'Stylový look',
-    description: 'Profesionální styling',
+    alt: 'StylovĂ˝ ĂşÄŤes',
+    title: 'StylovĂ˝ look',
+    description: 'ProfesionĂˇlnĂ­ styling',
     category: 'damske-strihy'
   },
   {
     id: 'img-2764',
     src: '/gallery/IMG_2764.jpg',
-    alt: 'Krásný účes',
-    title: 'Krásný styling',
-    description: 'Elegantní úprava',
+    alt: 'KrĂˇsnĂ˝ ĂşÄŤes',
+    title: 'KrĂˇsnĂ˝ styling',
+    description: 'ElegantnĂ­ Ăşprava',
     category: 'damske-strihy'
   },
   {
     id: 'alei-6657',
     src: '/gallery/ALEI6657.jpg',
-    alt: 'Profesionální práce',
-    title: 'Naše práce',
-    description: 'Výsledek péče',
+    alt: 'ProfesionĂˇlnĂ­ prĂˇce',
+    title: 'NaĹˇe prĂˇce',
+    description: 'VĂ˝sledek pĂ©ÄŤe',
     category: 'damske-strihy'
   },
   {
     id: 'kcsm-0452',
     src: '/gallery/KCSM0452.jpg',
-    alt: 'Kadeřnická práce',
-    title: 'Profesionální úprava',
-    description: 'Kvalitní práce',
+    alt: 'KadeĹ™nickĂˇ prĂˇce',
+    title: 'ProfesionĂˇlnĂ­ Ăşprava',
+    description: 'KvalitnĂ­ prĂˇce',
     category: 'damske-strihy'
   },
   {
     id: 'lbxa-3910',
     src: '/gallery/LBXA3910.jpg',
     alt: 'Styling',
-    title: 'Moderní styling',
-    description: 'Trendy účes',
+    title: 'ModernĂ­ styling',
+    description: 'Trendy ĂşÄŤes',
     category: 'damske-strihy'
   },
   {
     id: 'xkfk-8742',
     src: '/gallery/XKFK8742.jpg',
-    alt: 'Účes',
-    title: 'Stylový účes',
-    description: 'Profesionální péče',
+    alt: 'ĂšÄŤes',
+    title: 'StylovĂ˝ ĂşÄŤes',
+    description: 'ProfesionĂˇlnĂ­ pĂ©ÄŤe',
     category: 'damske-strihy'
   },
   {
     id: 'xyzz-3594',
     src: '/gallery/XYZZ3594.jpg',
-    alt: 'Kadeřnická péče',
-    title: 'Naše péče',
-    description: 'Kvalitní služby',
+    alt: 'KadeĹ™nickĂˇ pĂ©ÄŤe',
+    title: 'NaĹˇe pĂ©ÄŤe',
+    description: 'KvalitnĂ­ sluĹľby',
     category: 'damske-strihy'
   },
   {
     id: 'acrz-3289',
     src: '/gallery/ACRZ3289.jpg',
-    alt: 'Profesionální střih',
-    title: 'Profesionální práce',
-    description: 'Kvalitní střih',
+    alt: 'ProfesionĂˇlnĂ­ stĹ™ih',
+    title: 'ProfesionĂˇlnĂ­ prĂˇce',
+    description: 'KvalitnĂ­ stĹ™ih',
     category: 'damske-strihy'
   },
   {
     id: 'dols-1184',
     src: '/gallery/DOLS1184.jpg',
-    alt: 'Moderní účes',
-    title: 'Moderní styling',
-    description: 'Trendy účes',
+    alt: 'ModernĂ­ ĂşÄŤes',
+    title: 'ModernĂ­ styling',
+    description: 'Trendy ĂşÄŤes',
     category: 'damske-strihy'
   },
   {
     id: 'featured',
     src: '/gallery/494411993_9616073661780900_4629982627161214151_n.jpg',
-    alt: 'Vybraná práce',
-    title: 'Vybraná práce',
-    description: 'Naše oblíbená práce',
+    alt: 'VybranĂˇ prĂˇce',
+    title: 'VybranĂˇ prĂˇce',
+    description: 'NaĹˇe oblĂ­benĂˇ prĂˇce',
     category: 'damske-strihy'
   }
 ];
@@ -652,13 +628,13 @@ export const getAllCategories = (): GalleryImage['category'][] => {
 
 export const getCategoryLabel = (category: GalleryImage['category']): string => {
   const labels = {
-    'damske-strihy': 'Dámské střihy',
-    'panske-strihy': 'Pánské střihy',
-    'detske-strihy': 'Dětské střihy',
-    'barveni': 'Barvení',
-    'meliry': 'Melíry',
-    'spolecenske-ucesy': 'Společenské účesy',
-    'kratkovlasky': 'Krátkovlásky'
+    'damske-strihy': 'DĂˇmskĂ© stĹ™ihy',
+    'panske-strihy': 'PĂˇnskĂ© stĹ™ihy',
+    'detske-strihy': 'DÄ›tskĂ© stĹ™ihy',
+    'barveni': 'BarvenĂ­',
+    'meliry': 'MelĂ­ry',
+    'spolecenske-ucesy': 'SpoleÄŤenskĂ© ĂşÄŤesy',
+    'kratkovlasky': 'KrĂˇtkovlĂˇsky'
   };
   return labels[category];
 };
