@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Calendar, Search, Star, Clock, ArrowRight } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { allServices, pricingCategories, getServicesByCategory, searchServices } from '../data/pricing';
@@ -12,7 +12,7 @@ const Pricing: React.FC = () => {
     const element = document.getElementById('booking');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      // PĹ™edvyplnÄ›nĂ­ sluĹľby v rezervaÄŤnĂ­m formulĂˇĹ™i
+      // Předvyplnění služby v rezervačním formuláři
       if (serviceName) {
         setTimeout(() => {
           const serviceSelect = document.querySelector('select[name="service"]') as HTMLSelectElement;
@@ -25,10 +25,10 @@ const Pricing: React.FC = () => {
     }
   };
 
-  // FiltrovĂˇnĂ­ sluĹľeb
+  // Filtrování služeb
   const getFilteredServices = () => {
-    let services = activeCategory === 'all' 
-      ? allServices 
+    let services = activeCategory === 'all'
+      ? allServices
       : getServicesByCategory(activeCategory);
 
     if (searchTerm) {
@@ -45,10 +45,10 @@ const Pricing: React.FC = () => {
 
   // Kategorie pro filtry
   const categories = [
-    { id: 'all', label: 'VĹˇechny sluĹľby', icon: '' },
+    { id: 'all', label: 'Všechny služby', icon: '' },
     ...pricingCategories.map(cat => ({
       id: cat.id,
-      label: cat.title.replace('kadeĹ™nictvĂ­', '').replace('a melĂ­rovĂˇnĂ­', '').trim(),
+      label: cat.title.replace('kadeřnictví', '').replace('a melírování', '').trim(),
       icon: cat.icon
     }))
   ];
@@ -62,15 +62,15 @@ const Pricing: React.FC = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400 text-sm font-inter font-medium mb-4">
-              CenĂ­k sluĹľeb
+              Ceník služeb
             </span>
             <h2 className="font-playfair font-bold text-4xl md:text-5xl text-neutral-800 dark:text-white mb-6">
-              TransparentnĂ­
-              <span className="block text-primary-600 dark:text-primary-400">ceny sluĹľeb</span>
+              Transparentní
+              <span className="block text-primary-600 dark:text-primary-400">ceny služeb</span>
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto font-inter leading-relaxed">
-              VĹˇechny ceny jsou finĂˇlnĂ­ a zahrnujĂ­ konzultaci, produkty i nĂˇslednou pĂ©ÄŤi. 
-              KliknÄ›te na sluĹľbu pro rychlou rezervaci.
+              Všechny ceny jsou finální a zahrnují konzultaci, produkty i následnou péči.
+              Klikněte na službu pro rychlou rezervaci.
             </p>
           </div>
 
@@ -81,7 +81,7 @@ const Pricing: React.FC = () => {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400 w-5 h-5" />
               <input
                 type="text"
-                placeholder="Hledat sluĹľbu..."
+                placeholder="Hledat službu..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-neutral-800 text-neutral-800 dark:text-white font-inter"
@@ -106,16 +106,16 @@ const Pricing: React.FC = () => {
             </div>
           </div>
 
-          {/* Services List - RolovacĂ­ cenĂ­k */}
+          {/* Services List - Rolovací ceník */}
           <div className="max-w-6xl mx-auto">
             <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden">
               {/* Header */}
               <div className="bg-gradient-to-r from-primary-500 to-primary-600 p-6 text-center">
                 <h3 className="font-playfair font-bold text-2xl text-white mb-2">
-                  KompletnĂ­ cenĂ­k sluĹľeb
+                  Kompletní ceník služeb
                 </h3>
                 <p className="text-white/80 font-inter text-sm">
-                  {filteredServices.length} sluĹľeb â€˘ KliknÄ›te na sluĹľbu pro rezervaci
+                  {filteredServices.length} služeb • Klikněte na službu pro rezervaci
                 </p>
               </div>
 
@@ -141,14 +141,14 @@ const Pricing: React.FC = () => {
                                   {service.popular && (
                                     <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-800 dark:bg-primary-900/30 dark:text-primary-300">
                                       <Star className="w-3 h-3 mr-1" />
-                                      OblĂ­benĂ©
+                                      Oblíbené
                                     </span>
                                   )}
                                 </div>
                               </div>
                               <div className="flex items-center space-x-4 mt-1">
                                 <span className="text-sm text-neutral-500 dark:text-neutral-400">
-                                  {category?.title || 'OstatnĂ­'}
+                                  {category?.title || 'Ostatní'}
                                 </span>
                                 {service.duration && (
                                   <div className="flex items-center space-x-1 text-sm text-neutral-500 dark:text-neutral-400">
@@ -158,7 +158,7 @@ const Pricing: React.FC = () => {
                                 )}
                               </div>
                             </div>
-                            
+
                             <div className="flex items-center space-x-3">
                               <div className="text-right">
                                 <div className="font-inter font-bold text-lg text-primary-600 dark:text-primary-400">
@@ -183,7 +183,7 @@ const Pricing: React.FC = () => {
                       <Search className="w-12 h-12 mx-auto mb-4" />
                     </div>
                     <p className="text-neutral-600 dark:text-neutral-400 font-inter">
-                      NenaĹˇli jsme ĹľĂˇdnĂ© sluĹľby odpovĂ­dajĂ­cĂ­ vaĹˇemu hledĂˇnĂ­.
+                      Nenašli jsme žádné služby odpovídající vašemu hledání.
                     </p>
                   </div>
                 )}
@@ -196,7 +196,7 @@ const Pricing: React.FC = () => {
                   className="w-full px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-lg font-inter font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
                 >
                   <Calendar className="w-5 h-5 inline mr-2" />
-                  Objednat se na termĂ­n
+                  Objednat se na termín
                 </button>
               </div>
             </div>
@@ -206,43 +206,43 @@ const Pricing: React.FC = () => {
           <div className="mt-16 bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-3xl p-8 md:p-12 max-w-4xl mx-auto">
             <div className="text-center">
               <h3 className="font-playfair font-bold text-2xl md:text-3xl text-neutral-800 dark:text-white mb-8">
-                DĹŻleĹľitĂ© informace
+                Důležité informace
               </h3>
-              
+
               <div className="grid md:grid-cols-3 gap-6 text-left">
                 <div className="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-xl p-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white text-xl">đź“…</span>
+                    <span className="text-white text-xl">📅</span>
                   </div>
                   <h4 className="font-inter font-semibold text-neutral-800 dark:text-white mb-2 text-center">
                     Rezervace
                   </h4>
                   <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed text-center">
-                    Rezervace lze stornovat do 24 hodin pĹ™ed termĂ­nem zdarma.
+                    Rezervace lze stornovat do 24 hodin před termínem zdarma.
                   </p>
                 </div>
 
                 <div className="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-xl p-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white text-xl">đź’ł</span>
+                    <span className="text-white text-xl">💳</span>
                   </div>
                   <h4 className="font-inter font-semibold text-neutral-800 dark:text-white mb-2 text-center">
                     Platba
                   </h4>
                   <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed text-center">
-                    PĹ™ijĂ­mĂˇme hotovost a bezhotovostnĂ­ pĹ™evod.
+                    Přijímáme hotovost a bezhotovostní převod.
                   </p>
                 </div>
 
                 <div className="bg-white/60 dark:bg-neutral-800/60 backdrop-blur-sm rounded-xl p-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white text-xl">đź’¬</span>
+                    <span className="text-white text-xl">💬</span>
                   </div>
                   <h4 className="font-inter font-semibold text-neutral-800 dark:text-white mb-2 text-center">
                     Konzultace
                   </h4>
                   <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed text-center">
-                    PrvnĂ­ konzultace je vĹľdy zdarma. Ceny jsou koneÄŤnĂ©.
+                    První konzultace je vždy zdarma. Ceny jsou konečné.
                   </p>
                 </div>
               </div>
