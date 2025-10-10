@@ -91,7 +91,7 @@ const Gallery: React.FC = () => {
                 <div className="p-6">
                   <p className="text-neutral-600 dark:text-neutral-300 font-inter text-sm leading-relaxed">
                     <strong className="block mb-2 text-neutral-800 dark:text-white">Folayage – výrazné prosvětlení a zároveň přirozený vzhled</strong>
-                    Zesvětlení o 5 až 9 odstínů. Celkový čas návštěvy cca 3-4,5 hodin. Cena od 2000-4500,- Kč. Výrazné prosvětlení s jemnými přechody při odrůstání. Vlasy vypadají svěže i po delší době a není nutné tak často navštěvovat kadeřníka. Dosažení světlého efektu, který vypadá přirozeně.
+                    Zesvětlení o 5 až 9 odstínů. Výrazné prosvětlení s jemnými přechody při odrůstání. Vlasy vypadají svěže i po delší době a není nutné tak často navštěvovat kadeřníka. Dosažení světlého efektu, který vypadá přirozeně.
                   </p>
                 </div>
               </div>
