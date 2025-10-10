@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/gallery/IMG_2604.jpg"
+          src="/gallery/úvodní foto.jpg"
           alt="Elegantní kadeřnické studio"
           className="w-full h-full object-cover"
         />

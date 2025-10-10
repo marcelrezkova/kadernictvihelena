@@ -529,14 +529,6 @@ export const galleryImages: GalleryImage[] = [
     category: 'spolecenske-ucesy'
   },
   {
-    id: 'hlavni-foto',
-    src: '/gallery/úvodní foto.jpg',
-    alt: 'Úvodní foto',
-    title: 'Naše práce',
-    description: 'Ukázka práce',
-    category: 'damske-strihy'
-  },
-  {
     id: 'kadernice',
     src: '/gallery/Já HB.jpg',
     alt: 'Kadeřnice',
