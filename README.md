@@ -1,4 +1,4 @@
-# Kadeřnictví POHODA - Helena Bošínová
+# Kadeřnictví POHODA - Helena Bošinová
 
 Moderní webová stránka pro kadeřnictví POHODA v Liberci.
 
@@ -41,7 +41,7 @@ REACT_APP_GOOGLE_MAPS_API_KEY=your_maps_key
 
 ## 📞 Kontakt
 
-Helena Bošínová  
+Helena Bošinová  
 Kadeřnice a kosmetická poradkyně MK  
 Kadeřnictví POHODA  
 Moskevská 637, Liberec  

@@ -31,7 +31,7 @@ export default function TermsOfService({ onClose }: TermsOfServiceProps) {
               </p>
               <p className="leading-relaxed">
                 Tyto obchodní podmínky upravují vztah mezi poskytovatelem kadeřnických služeb a klientem
-                při využívání služeb Kadeřnictví POHODA – Helena Bošínová.
+                při využívání služeb Kadeřnictví POHODA – Helena Bošinová.
               </p>
             </section>
 
@@ -40,7 +40,7 @@ export default function TermsOfService({ onClose }: TermsOfServiceProps) {
                 1. Základní údaje
               </h3>
               <div className="bg-neutral-50 dark:bg-neutral-900 rounded-lg p-4 space-y-1">
-                <p><strong>Poskytovatel služeb:</strong> Helena Bošínová</p>
+                <p><strong>Poskytovatel služeb:</strong> Helena Bošinová</p>
                 <p><strong>Provozovna:</strong> Kadeřnictví POHODA, Moskevská 637, 460 01 Liberec</p>
                 <p><strong>Email:</strong> helena.bosinova@email.cz</p>
                 <p><strong>Telefon:</strong> +420 739 469 932</p>

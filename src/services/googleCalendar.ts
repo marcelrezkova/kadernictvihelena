@@ -100,7 +100,7 @@ Email: ${bookingData.email}
 Služba: ${bookingData.service}
 ${bookingData.message ? `Poznámka: ${bookingData.message}` : ''}
 
-Kadeřnictví POHODA - Helena Bošínová
+Kadeřnictví POHODA - Helena Bošinová
         `.trim(),
         start: {
           dateTime: startDateTime.toISOString(),

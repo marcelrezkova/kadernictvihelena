@@ -30,7 +30,7 @@ export default function PrivacyPolicy({ onClose }: PrivacyPolicyProps) {
                 Poslední aktualizace: {new Date().toLocaleDateString('cs-CZ')}
               </p>
               <p className="leading-relaxed">
-                Vážíme si Vašeho soukromí. Tyto zásady popisují, jak Kadeřnictví POHODA – Helena Bošínová
+                Vážíme si Vašeho soukromí. Tyto zásady popisují, jak Kadeřnictví POHODA – Helena Bošinová
                 shromažďuje, používá a chrání Vaše osobní údaje v souladu s nařízením GDPR.
               </p>
             </section>
@@ -40,7 +40,7 @@ export default function PrivacyPolicy({ onClose }: PrivacyPolicyProps) {
                 1. Správce osobních údajů
               </h3>
               <div className="bg-neutral-50 dark:bg-neutral-900 rounded-lg p-4 space-y-1">
-                <p><strong>Provozovatel:</strong> Helena Bošínová</p>
+                <p><strong>Provozovatel:</strong> Helena Bošinová</p>
                 <p><strong>Sídlo:</strong> Kadeřnictví POHODA, Moskevská 637, 460 01 Liberec</p>
                 <p><strong>Email:</strong> helena.bosinova@email.cz</p>
                 <p><strong>Telefon:</strong> +420 739 469 932</p>

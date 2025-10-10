@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center space-x-3 mb-6">
               <div>
-                <h3 className="font-playfair font-bold text-xl">Helena Bošínová</h3>
+                <h3 className="font-playfair font-bold text-xl">Helena Bošinová</h3>
                 <p className="text-neutral-400 text-sm">Kadeřnictví POHODA</p>
               </div>
             </div>
@@ -130,7 +130,7 @@ const Footer: React.FC = () => {
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="flex flex-col items-center md:items-start space-y-2">
                 <p className="text-neutral-400 font-inter text-sm">
-                  © {new Date().getFullYear()} Helena Bošínová - Kadeřnictví POHODA. Všechna práva vyhrazena.
+                  © {new Date().getFullYear()} Helena Bošinová - Kadeřnictví POHODA. Všechna práva vyhrazena.
                 </p>
                 <p className="text-neutral-500 font-inter text-xs">
                   Made by{' '}

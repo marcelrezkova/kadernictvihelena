@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
         }`}>
           <h1 className="font-playfair font-bold text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
             <span className="block text-3xl md:text-4xl lg:text-5xl text-neutral-200 font-inter font-light mb-2">
-              Helena Bošínová
+              Helena Bošinová
             </span>
             <span className="block bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
               Kadeřnictví POHODA

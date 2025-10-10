@@ -38,10 +38,10 @@ const About: React.FC = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="font-playfair font-bold text-2xl text-neutral-800 dark:text-white mb-4">
-                  Helena Bošínová
+                  Helena Bošinová
                 </h3>
                 <p className="text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed mb-6">
-                  Jmenuji se Helena Bošínová a kadeřnictví se věnuji přes 15 let. Do Liberce jsme se 
+                  Jmenuji se Helena Bošinová a kadeřnictví se věnuji přes 15 let. Do Liberce jsme se 
                   přistěhovali v roce 2013, nechala jsem se zaměstnat v kadeřnictví IrisHair. Pak přišli 
                   děti, mateřská atd. Momentálně mě najdete v Kadeřnictví Pohoda v Moskevské 637/6, 
                   kde mě mezi sebe přijala parta úžasných holek a kadeřnic.
@@ -134,7 +134,7 @@ const About: React.FC = () => {
               </p>
               <div className="mt-6">
                 <span className="font-playfair italic text-primary-600 dark:text-primary-400">
-                  - Helena Bošínová
+                  - Helena Bošinová
                 </span>
               </div>
             </div>
