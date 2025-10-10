@@ -27,7 +27,7 @@ export interface CalendarEvent {
 }
 
 class GoogleCalendarService {
-  private readonly CALENDAR_ID = 'kadernictvih@gmail.com';
+  private readonly CALENDAR_ID = 'helena.rakova.hr@gmail.com';
   private readonly API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
   private readonly CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
