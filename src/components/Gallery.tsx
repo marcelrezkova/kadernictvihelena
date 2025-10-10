@@ -78,11 +78,24 @@ const Gallery: React.FC = () => {
               {/* Folayage */}
               <div className="group bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700 hover:shadow-xl transition-all duration-300">
                 <div className="relative h-64 overflow-hidden">
-                  <img
-                    src="/gallery/foto po folayge.jpg"
-                    alt="Folayage technika"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+                  <div className="grid grid-cols-2 h-full">
+                    <div className="relative">
+                      <img
+                        src="/gallery/foto před folayge.jpg"
+                        alt="Folayage - před"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute top-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">Před</div>
+                    </div>
+                    <div className="relative">
+                      <img
+                        src="/gallery/foto po folayge.jpg"
+                        alt="Folayage - po"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute top-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">Po</div>
+                    </div>
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <h3 className="absolute bottom-4 left-4 right-4 font-playfair font-bold text-2xl text-white">
                     Folayage
@@ -99,11 +112,24 @@ const Gallery: React.FC = () => {
               {/* Freehand */}
               <div className="group bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700 hover:shadow-xl transition-all duration-300">
                 <div className="relative h-64 overflow-hidden">
-                  <img
-                    src="/gallery/foto po freehand.jpg"
-                    alt="Freehand technika"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+                  <div className="grid grid-cols-2 h-full">
+                    <div className="relative">
+                      <img
+                        src="/gallery/foto před freehand.jpg"
+                        alt="Freehand - před"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute top-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">Před</div>
+                    </div>
+                    <div className="relative">
+                      <img
+                        src="/gallery/foto po freehand.jpg"
+                        alt="Freehand - po"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute top-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">Po</div>
+                    </div>
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <h3 className="absolute bottom-4 left-4 right-4 font-playfair font-bold text-2xl text-white">
                     Freehand
@@ -120,11 +146,24 @@ const Gallery: React.FC = () => {
               {/* Mikromelír */}
               <div className="group bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700 hover:shadow-xl transition-all duration-300">
                 <div className="relative h-64 overflow-hidden">
-                  <img
-                    src="/gallery/mikromelír.jpg"
-                    alt="Mikromelír technika"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+                  <div className="grid grid-cols-2 h-full">
+                    <div className="relative">
+                      <img
+                        src="/gallery/mikro melír.jpg"
+                        alt="Mikromelír - před"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute top-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">Před</div>
+                    </div>
+                    <div className="relative">
+                      <img
+                        src="/gallery/mikromelír.jpg"
+                        alt="Mikromelír - po"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute top-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">Po</div>
+                    </div>
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <h3 className="absolute bottom-4 left-4 right-4 font-playfair font-bold text-2xl text-white">
                     Mikromelír
