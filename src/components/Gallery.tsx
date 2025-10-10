@@ -72,6 +72,71 @@ const Gallery: React.FC = () => {
             </p>
           </div>
 
+          {/* Techniky barvení */}
+          <div className="max-w-6xl mx-auto mb-16">
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Folayage */}
+              <div className="group bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700 hover:shadow-xl transition-all duration-300">
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src="/gallery/foto po folayge.jpg"
+                    alt="Folayage technika"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <h3 className="absolute bottom-4 left-4 right-4 font-playfair font-bold text-2xl text-white">
+                    Folayage
+                  </h3>
+                </div>
+                <div className="p-6">
+                  <p className="text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed">
+                    Folayage kombinuje přednosti fólií a balayage. Výsledkem jsou krásně rozsvícené pasemka s přirozeným přechodem barev, které dodají vlasům objem a hloubku.
+                  </p>
+                </div>
+              </div>
+
+              {/* Freehand */}
+              <div className="group bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700 hover:shadow-xl transition-all duration-300">
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src="/gallery/foto po freehand.jpg"
+                    alt="Freehand technika"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <h3 className="absolute bottom-4 left-4 right-4 font-playfair font-bold text-2xl text-white">
+                    Freehand
+                  </h3>
+                </div>
+                <div className="p-6">
+                  <p className="text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed">
+                    Freehand je ruční technika nanášení barvy volnou rukou bez fólií. Umožňuje vytvářet jemné, přirozené přechody a individuální vzhled přizpůsobený tvaru obličeje.
+                  </p>
+                </div>
+              </div>
+
+              {/* Mikromelír */}
+              <div className="group bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700 hover:shadow-xl transition-all duration-300">
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src="/gallery/mikromelír.jpg"
+                    alt="Mikromelír technika"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <h3 className="absolute bottom-4 left-4 right-4 font-playfair font-bold text-2xl text-white">
+                    Mikromelír
+                  </h3>
+                </div>
+                <div className="p-6">
+                  <p className="text-neutral-600 dark:text-neutral-300 font-inter leading-relaxed">
+                    Jemné prosvětlení vlasů pomocí velmi tenkých pramínků, které vytváří efekt přirozeně rozsvícených vlasů sluncem. Ideální pro jemný a nenápadný vzhled.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="max-w-4xl mx-auto">
             <div className="relative bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden shadow-2xl border border-neutral-200 dark:border-neutral-700">
 
