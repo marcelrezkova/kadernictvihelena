@@ -151,15 +151,6 @@ const Gallery: React.FC = () => {
                     {isAutoPlay ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
                   </button>
                 )}
-
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="font-playfair font-bold text-xl text-white mb-1">
-                    {currentImage.title}
-                  </h3>
-                  <p className="text-white/80 font-inter text-sm">
-                    {currentImage.description}
-                  </p>
-                </div>
               </div>
 
               {filteredImages.length > 1 && (
